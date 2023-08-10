@@ -27,16 +27,16 @@ const JobCategories = () => {
         <h2 className="text-3xl font-semibold mb-3">Popular Job Categories</h2>
         <p>2020 jobs live - 293 added taday</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {images.map((image, index) => (
-          <Image
-            key={index}
-            src={image.url}
-            alt="picture of JOb Category"
-            width={390}
-            height={100}
-            className=""
-          ></Image>
+          <div key={index} className="text-center">
+            <Image
+              src={image.url}
+              alt="picture of JOb Category"
+              width={390}
+              height={100}
+            ></Image>
+          </div>
         ))}
       </div>
     </div>
