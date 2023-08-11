@@ -98,6 +98,9 @@ const Navbar = () => {
                 <Link href="/">Home</Link>
               </li>
               <li className="py-4 hover:underline hover:duration-[#F68519]">
+                <Link href="/">Dashboard</Link>
+              </li>
+              <li className="py-4 hover:underline hover:duration-[#F68519]">
                 <Link href="/employers">Employers</Link>
               </li>
               <li className="py-4 hover:underline hover:duration-[#F68519]">
