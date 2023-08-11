@@ -15,8 +15,8 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="container mx-auto">
-      <nav className="w-full h-24 shadow-xl bg-black">
+    <header className="container max-w-full fixed  z-0 top-0 ">
+      <nav className="w-full h-24 shadow-xl bg-white">
         {/* Desktop part */}
         <div className="flex items-center justify-between h-full px-4 w-full">
           <Link href="/">
@@ -30,7 +30,7 @@ const Navbar = () => {
             ></Image>
           </Link>
           <div className="text-white hidden sm:flex">
-            <ul className="hidden sm:flex">
+            <ul className="hidden sm:flex text-black">
               <li
                 onClick={() => setMenuOpen(false)}
                 className={styles.navLinks}
@@ -63,7 +63,7 @@ const Navbar = () => {
               </li>
 
               <li className="flex items-center space-x-5 text-[#F68519]ml-10">
-                <h3 className="cursor-pointer border-[#F68519] px-4 py-1 rounded-full bg-[#F68519] text-black hover:bg-black hover:text-[#F68519] ease-out duration-300">
+                <h3 className="cursor-pointer border-[#40e1f9] px-4 py-1 rounded-full bg-[#40e1f9] text-black hover:bg-black hover:text-[#F68519] ease-out duration-300">
                   Login
                 </h3>
               </li>
@@ -110,7 +110,7 @@ const Navbar = () => {
                 <Link href="/about">About</Link>
               </li>
               <li className="flex items-center py-4 text-[#F68519]">
-                <p className="cursor-pointer px-4 py-1 rounded-full bg-[#F68519] block text-black hover:bg-black hover:text-[#F68519] ease-in-out duration-300">
+                <p className="cursor-pointer px-4 py-1 rounded-full bg-[#40e1f9] block text-black hover:bg-black hover:text-[#F68519] ease-in-out duration-300">
                   Login
                 </p>
               </li>
