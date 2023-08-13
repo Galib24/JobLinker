@@ -63,9 +63,11 @@ const Navbar = () => {
               </li>
 
               <li className="flex items-center space-x-5 text-[#F68519]ml-10">
-                <h3 className="cursor-pointer border-[#40e1f9] px-4 py-1 rounded-full bg-[#40e1f9] text-black hover:bg-black hover:text-[#F68519] ease-out duration-300">
-                  Login
-                </h3>
+                <Link href="/login">
+                  <h3 className="cursor-pointer border-[#40e1f9] px-4 py-1 rounded-full bg-[#40e1f9] text-black hover:bg-black hover:text-[#F68519] ease-out duration-300">
+                    Login
+                  </h3>
+                </Link>
               </li>
             </ul>
           </div>
@@ -113,9 +115,11 @@ const Navbar = () => {
                 <Link href="/about">About</Link>
               </li>
               <li className="flex items-center py-4 text-[#F68519]">
-                <p className="cursor-pointer px-4 py-1 rounded-full bg-[#40e1f9] block text-black hover:bg-black hover:text-[#F68519] ease-in-out duration-300">
-                  Login
-                </p>
+                <Link href="/login">
+                  <p className="cursor-pointer px-4 py-1 rounded-full bg-[#40e1f9] block text-black hover:bg-black hover:text-[#F68519] ease-in-out duration-300">
+                    Login
+                  </p>
+                </Link>
               </li>
             </ul>
           </div>
