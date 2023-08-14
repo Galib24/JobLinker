@@ -14,7 +14,7 @@ const JobsBanner = () => {
                <p className='mb-2'><FaCheck className='mr-2'></FaCheck> Bring to the table win-win survival</p>
                <p className='mb-2'><FaCheck className='mr-2'></FaCheck> Capitaliza on low hanging fruit to identify</p>
                <p className='mb-2'><FaCheck className='mr-2'></FaCheck> But I must explain to you how all this</p>
-               <button className='btn  bg-blue-500  p-3 rounded-lg text-white mt-3'>Get Started</button>
+               <button className='btn  bg-[#40e1f9]  p-3 rounded-lg text-black hover:bg-black hover:text-[#F68519] ease-out duration-300 mt-3'>Get Started</button>
    
            </div>
        </div>  
