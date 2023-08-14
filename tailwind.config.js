@@ -9,11 +9,11 @@ module.exports = {
     themes: [
       {
         mytheme: {
-        
 
-        
-"base-100": "#FFFFFF",
-        
+
+
+          "base-100": "#FFFFFF",
+
 
         },
       },
