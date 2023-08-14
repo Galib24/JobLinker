@@ -15,7 +15,7 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="container max-w-full fixed  z-0 top-0 ">
+    <header className="container max-w-full fixed  z-30 top-0 ">
       <nav className="w-full h-24 shadow-xl bg-white">
         {/* Desktop part */}
         <div className="flex items-center justify-between h-full px-4 w-full">
