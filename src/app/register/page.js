@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import registerLottie from "../../../public/register.json";
 import { BsFillPersonFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import { BiSolidLock } from "react-icons/bi";
+import { BiLinkExternal, BiSolidLock } from "react-icons/bi";
 import { SlLock } from "react-icons/sl";
 import Link from "next/link";
 
@@ -98,8 +98,8 @@ const RegisterPage = () => {
                     <Link
                         href="/login">
                         <div
-                            className="flex justify-center relative lg:bottom-16 link font-semibold hover:text-blue-600">
-                            I am already member
+                            className="flex justify-center relative lg:bottom-16 link font-semibold hover:text-blue-600 items-center">
+                            I already have an account <BiLinkExternal className="mr-2" />
                         </div>
                     </Link>
                 </div>
