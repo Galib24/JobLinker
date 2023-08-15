@@ -14,6 +14,12 @@ export default function Home() {
 
       {/* Featured Jobs Section */}
       <FeaturedJobs></FeaturedJobs>
+
+
+
+
+
+      {/* something */}
     </div>
   );
 }
