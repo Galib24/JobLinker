@@ -83,11 +83,11 @@ const LoginPage = () => {
                 </p>
                 <label
                     className="label mb-4 relative bottom-4">
-                    <a
+                    <Link
                         href="#"
                         className="label-text-alt link link-hover font-semibold text-sm">
                         Forgot password?
-                    </a>
+                    </Link>
                 </label>
                 <div>
                     <button
@@ -140,7 +140,7 @@ const LoginPage = () => {
                     </div>
                 </Link>
             </div>
-            {/* form */}
+            {/* form section end by Shakil */}
         </div>
     );
 };
