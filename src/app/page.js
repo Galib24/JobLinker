@@ -2,6 +2,7 @@ import HomeBanner from "@/components/HomePage/Banner/HomeBanner";
 import FeaturedJobs from "@/components/HomePage/FeaturedJobs/FeaturedJobs";
 import JobCategories from "@/components/HomePage/JobCategories/JobCategories";
 import JobsBanner from "@/components/HomePage/JobsBanner/JobsBanner";
+import TestimonialSection from "@/components/HomePage/TestimonialSection/TestimonialSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
 
       {/* Jobs Banner section */}
       <JobsBanner></JobsBanner>
+      {/* Testimonial section */}
+      <TestimonialSection></TestimonialSection>
     </div>
   );
 }
