@@ -10,6 +10,7 @@ const FeaturedJobs = () => {
         <div>
             <h2>feature job: {dataOfFeaturedJobs.length}</h2>
             <h2>{topFeaturedJobs.length}</h2>
+            <h4>Added Title for practice purpose</h4>
         </div>
     );
 };
