@@ -18,6 +18,7 @@ export default function Home() {
 
       {/* Jobs Banner section */}
       <JobsBanner></JobsBanner>
+
       {/* Testimonial section */}
       <TestimonialSection></TestimonialSection>
     </div>
