@@ -91,7 +91,7 @@ const LoginPage = () => {
                 </label>
                 <div>
                     <button
-                        className="btn btn-info w-[100%] md:w-[25%] text-white text-center relative bottom-4">
+                        className="hover:bg-black hover:text-[#F68519] ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4">
                         Login
                     </button>
                 </div>
@@ -105,7 +105,7 @@ const LoginPage = () => {
                     </div>
                     {/* facebook sigIn start */}
                     <div
-                        className="border-2 rounded-full flex items-center cursor-pointer">
+                        className="hover:bg-black hover:text-[#F68519] ease-out duration-300 border-2 rounded-full flex items-center cursor-pointer">
                         <Image
                             className="w-[7%] m-2"
                             src={googleLogo}
@@ -116,7 +116,7 @@ const LoginPage = () => {
                         </p>
                     </div>
                     <div
-                        className="border-2 rounded-full flex items-center my-4 cursor-pointer">
+                        className="hover:bg-[#40e1f9] hover:text-[white] ease-out duration-300 border-2 rounded-full flex items-center my-4 cursor-pointer">
                         <Image
                             className="w-[7%] m-2"
                             src={gitHub}

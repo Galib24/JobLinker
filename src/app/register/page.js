@@ -80,7 +80,7 @@ const RegisterPage = () => {
                             className="my-6"
                             type="submit">
                             <button
-                                className="btn btn-info text-white w-[100%] md:w-[25%]">
+                                className="hover:bg-black hover:text-[#F68519] ease-out duration-300 btn bg-[#40e1f9] btn text-white w-[100%] md:w-[25%]">
                                 Register
                             </button>
                         </div>
