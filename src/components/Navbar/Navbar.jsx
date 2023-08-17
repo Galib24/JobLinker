@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BsList, BsX, BsYoutube } from "react-icons/bs";
+import { AuthContext } from "@/provider/AuthProvider";
 
 const styles = {
   navLinks:
@@ -13,6 +14,14 @@ const styles = {
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // user come from AuthContext
+  const { user, signOutUser } = useContext(AuthContext);
+
+  // logout functionality
+  const handleLogout = () => {
+    signOutUser().then().catch();
+  };
 
   return (
     <header className="container max-w-full fixed  z-30 top-0 ">
@@ -63,11 +72,20 @@ const Navbar = () => {
               </li>
 
               <li className="flex items-center space-x-5 text-[#F68519]ml-10">
-                <Link href="/login">
-                  <h3 className="cursor-pointer border-[#40e1f9] px-4 py-1 rounded-full bg-[#40e1f9] text-white hover:bg-black hover:text-[#F68519] ease-out duration-300">
-                    Login
-                  </h3>
-                </Link>
+                {user ? (
+                  <button
+                    onClick={handleLogout}
+                    className="cursor-pointer border-[#40e1f9] px-4 py-1 rounded-full bg-[#40e1f9] text-white hover:bg-black hover:text-[#F68519] ease-out duration-300"
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <Link href="/login">
+                    <h3 className="cursor-pointer border-[#40e1f9] px-4 py-1 rounded-full bg-[#40e1f9] text-white hover:bg-black hover:text-[#F68519] ease-out duration-300">
+                      Login
+                    </h3>
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
