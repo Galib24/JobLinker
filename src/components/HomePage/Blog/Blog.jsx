@@ -27,9 +27,9 @@ import aImg5 from "@/asserts/blog-author/author5.jpg";
 
 const Blog = () => {
     return (
-        <div className='px-10'>
+        <div className='px-8'>
             <h2 className="text-3xl font-bold mt-20 mb-3 text-center">Latest Blog</h2>
-            <p className="text-center font-medium">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p className="text-center font-medium">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate dolorem architecto, harum dolorum enim nam!</p>
 
         <div className=' mt-8'>
             <Swiper
