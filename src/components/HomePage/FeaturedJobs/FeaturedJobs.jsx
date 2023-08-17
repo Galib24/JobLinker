@@ -5,7 +5,7 @@ import dataOfFeaturedJobs from '@/Data/featuredJobs';
 const FeaturedJobs = () => {
     // console.log(dataOfFeaturedJobs);
    const topFeaturedJobs  = dataOfFeaturedJobs.filter(i => i.rating >= 5)
-   console.log(topFeaturedJobs);
+//    console.log(topFeaturedJobs);
     return (
         <div>
             <h2>feature job: {dataOfFeaturedJobs.length}</h2>
