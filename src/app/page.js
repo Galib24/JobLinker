@@ -1,4 +1,5 @@
 import HomeBanner from "@/components/HomePage/Banner/HomeBanner";
+import Blog from "@/components/HomePage/Blog/Blog";
 import JobCategories from "@/components/HomePage/JobCategories/JobCategories";
 import JobsBanner from "@/components/HomePage/JobsBanner/JobsBanner";
 import Image from "next/image";
@@ -14,6 +15,9 @@ export default function Home() {
 
       {/* Jobs Banner section */}
       <JobsBanner></JobsBanner>
+
+       {/* Jobs Banner section */}
+       <Blog></Blog>
     </div>
   );
 }
