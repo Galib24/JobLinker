@@ -49,16 +49,16 @@ const TestimonialSection = () => {
                             <BsFillChatRightQuoteFill className="text-6xl text-gray-400" />
                         </div>
                         <p
-                            className="text-center font-bold text-xl">
+                            className="text-center font-bold">
                             {item?.review}
                         </p>
                         <div
                             className="flex gap-5 mt-10">
                             <div>
                                 <Image
-                                    width={100}
-                                    height={100}
-                                    className="rounded-full"
+                                    width={90}
+                                    height={90}
+                                    className="rounded-lg shadow-xl"
                                     src={item?.img}
                                     alt="Picture of who give the review">
                                 </Image>

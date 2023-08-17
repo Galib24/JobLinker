@@ -29,33 +29,33 @@ const SingleFeaturedJobs = ({ item }) => {
                     <div className="card-body">
                         <h2 className="card-title my-1 text-xl hover:text-blue-500 duration-300 cursor-pointer">{jobTitle}</h2>
 
-                        <div className="flex gap-5 text-lg">
+                        <div className="lg:flex gap-5 text-lg">
                             {/* icon 1 */}
-                            <div> <CiLocationOn></CiLocationOn> <span className="pl-1">{location}
+                            <div className="my-2"> <CiLocationOn></CiLocationOn> <span className="pl-1">{location}
                             </span>
                             </div>
 
                             {/* icon 1 */}
 
                             {/* icon 2 */}
-                            <div>
+                            <div className="my-2">
                                 <CiClock2></CiClock2> <span className="pl-1">{jobPostingTime}</span>
                             </div>
 
                             {/* icon 2 */}
 
                             {/* icon 3 */}
-                            <div>
+                            <div className="my-2">
                                 <CiStar></CiStar> <span className="pl-1" >{rating}</span>
                             </div>
                             {/* icon 3 */}
 
                         </div>
 
-                        <div className="text-lg flex items-center gap-2 mt-3">
+                        <div className="text-lg lg:flex items-center gap-2 mt-3 my-2">
                             <RiMoneyPoundBoxLine></RiMoneyPoundBoxLine> {salaryRange}
 
-                            <div className="ml-20 text-base">
+                            <div className="lg:ml-20 text-base my-2">
                             <span className="badge badge-info text-white badge-lg">{jobType}</span>
                             </div>
                         </div>
