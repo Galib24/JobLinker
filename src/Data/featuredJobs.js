@@ -47,7 +47,7 @@ const dataOfFeaturedJobs = [
         jobPostingTime: "5 days ago",
         salaryRange: "20k - 25k",
         jobType: "Full Time",
-        rating: 4.5
+        rating: 5
     },
     {
         _id: "6",
@@ -77,7 +77,7 @@ const dataOfFeaturedJobs = [
         jobPostingTime: "22 hours ago",
         salaryRange: "75k - 90k",
         jobType: "Full Time",
-        rating: 3.5
+        rating: 5
     },
     {
         _id: "9",
