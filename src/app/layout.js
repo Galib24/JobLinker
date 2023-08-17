@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
+import AuthProvider from "@/provider/AuthProvider";
+import Toaster from "@/components/ToasterComponent/ToasterComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar></Navbar>
-        <div className="container mx-auto">{children}</div>
-        <Footer></Footer>
+        <AuthProvider>
+          <Navbar></Navbar>
+          <div className="container mx-auto">{children}</div>
+          <Footer></Footer>
+        </AuthProvider>
+        <Toaster />
       </body>
     </html>
   );
