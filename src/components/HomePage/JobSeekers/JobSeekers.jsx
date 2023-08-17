@@ -8,7 +8,7 @@ const JobSeekers = () => {
     <div
       className="w-[95%] mx-auto pb-12">
       <div
-      className="my-10">
+        className="my-10">
         <h2
           className="text-3xl font-bold text-center">
           Find Seekers
@@ -26,6 +26,12 @@ const JobSeekers = () => {
             data={data}
           ></SingleJobSeekers>)
         }
+      </div>
+      <div className='flex justify-center my-8 mb-20'>
+        {/* <button className="btn bg-[#1b81d4] hover:bg-[#1670ba] py-8 text-white">
+                    <span className='text-center items-center font-semibold'>Load More Listing</span>
+                </button> */}
+        <button className='btn  bg-[#40e1f9] px-10  p-3 rounded-lg text-white hover:bg-black hover:text-[#F68519] ease-out duration-300 mt-3'>Load More</button>
       </div>
     </div>
   );

@@ -21,10 +21,11 @@ const FeaturedJobs = () => {
                 }
             </div>
             {/* button */}
-            <div className='flex justify-center my-14'>
-                <button className="btn bg-[#1b81d4] hover:bg-[#1670ba] py-8 text-white">
+            <div className='flex justify-center my-6 mb-20'>
+                {/* <button className="btn bg-[#1b81d4] hover:bg-[#1670ba] py-8 text-white">
                     <span className='text-center items-center font-semibold'>Load More Listing</span>
-                </button>
+                </button> */}
+                 <button className='btn  bg-[#40e1f9] px-10  p-3 rounded-lg text-white hover:bg-black hover:text-[#F68519] ease-out duration-300 mt-3'>Load More</button>
             </div>
             {/* button */}
            

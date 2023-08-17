@@ -8,7 +8,7 @@ const SingleJobSeekers = ({ data }) => {
 
     return (
         <div
-            className="card border border-gray-200 bg-base-100 shadow-sm mx-3 my-2">
+            className="card border  border-gray-200 bg-base-100 shadow-sm mx-3 my-2">
             <div
                 className="mt-5 mx-3 flex justify-end">
                 <h2

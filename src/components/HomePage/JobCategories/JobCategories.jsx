@@ -59,7 +59,7 @@ const JobCategories = () => {
         }
       </div>
 
-      <h2>feature job: {dataOffCategory.length}</h2>
+      {/* <h2>feature job: {dataOffCategory.length}</h2> */}
     </div>
   );
 };
