@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { BsFillChatRightQuoteFill } from "react-icons/bs";
+import { BsFillChatRightQuoteFill, BsFillStarFill } from "react-icons/bs";
 import Image from "next/image";
 
 const TestimonialSection = () => {
@@ -49,29 +49,42 @@ const TestimonialSection = () => {
                             <BsFillChatRightQuoteFill className="text-6xl text-gray-400" />
                         </div>
                         <p
-                            className="text-center font-bold">
+                            className="text-center font-semibold">
                             {item?.review}
                         </p>
                         <div
-                            className="flex gap-5 mt-10">
-                            <div>
-                                <Image
-                                    width={90}
-                                    height={90}
-                                    className="rounded-lg shadow-xl"
-                                    src={item?.img}
-                                    alt="Picture of who give the review">
-                                </Image>
+                            className="mt-10 grid lg:grid-cols-2">
+                            <div
+                                className="flex gap-5">
+                                <div>
+                                    <Image
+                                        width={100}
+                                        height={100}
+                                        className="rounded-full"
+                                        src={item?.img}
+                                        alt="Picture of who give the review">
+                                    </Image>
+                                </div>
+                                <div>
+                                    <h2
+                                        className="text-2xl font-semibold">
+                                        {item?.name}
+                                    </h2>
+                                    <div
+                                        className="flex items-center justify-center">
+                                        <p
+                                            className="text-sm font-medium text-center bg-black text-white py-1 rounded-full w-fit px-5">
+                                            {item?.jobRole}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h2
-                                    className="text-2xl font-semibold">
-                                    {item?.name}
-                                </h2>
-                                <p
-                                    className="text-sm font-medium">
-                                    {item?.jobRole}
-                                </p>
+                            <div
+                                className="flex items-center justify-end">
+                                <div
+                                    className="w-[50%] h-[50%] text-center items-center justify-center font-semibold flex">
+                                    <BsFillStarFill className="text-xl items-center justify-center text-yellow-400 mr-1" />Customer Rating: {item?.rating}
+                                </div>
                             </div>
                         </div>
                     </SwiperSlide>)
