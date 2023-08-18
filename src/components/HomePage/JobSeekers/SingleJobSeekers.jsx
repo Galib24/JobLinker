@@ -21,12 +21,11 @@ const SingleJobSeekers = ({ data }) => {
                     width={160}
                     height={160}
                     src={image}
-                    className="rounded-full"
+                    className="rounded-full my-3"
                     alt="Seekers Image"
                 />
             </figure>
-            <div
-                className="mb-2">
+            <div>
                 <h2
                     className="text-center font-bold my-1 text-xl">
                     {seekerName}
@@ -50,7 +49,7 @@ const SingleJobSeekers = ({ data }) => {
             </div>
             {/* skill show section */}
             <div
-                className="text-xs text-center font-bold mt-3 mb-5 px-4">
+                className="text-xs text-center font-bold mt-3 mb-8 px-4">
                 <div
                     className="flex items-center justify-center mb-3">
                     <p
