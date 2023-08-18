@@ -1,8 +1,8 @@
 const dataOfJobSeekers = [
   {
     _id: "1",
-    seekerName: "John Smith",
-    image: "https://i.ibb.co/b6KNZqY/avater1.png",
+    seekerName: "Emma Olivia",
+    image: "https://i.ibb.co/sPmkPc7/image.png",
     jobExperience: 4,
     education: "BSc in Computer Science",
     skills: {
@@ -58,7 +58,7 @@ const dataOfJobSeekers = [
   {
     _id: "5",
     seekerName: "William Jackson",
-    image: "https://i.ibb.co/b6KNZqY/avater1.png",
+    image: "https://i.ibb.co/HHDLcx4/image1.png",
     jobExperience: 6,
     education: "BSc in CSE",
     skills: "Expertise in circuit design, PCB layout",
@@ -100,8 +100,8 @@ const dataOfJobSeekers = [
   },
   {
     _id: "8",
-    seekerName: "Ava Wilson",
-    image: "https://i.ibb.co/Z2PfrJb/avater2.png",
+    seekerName: "Noah Wilson",
+    image: "https://i.ibb.co/QFFsj0k/image3.png",
     jobExperience: 4,
     education: "BA in English Literature",
     skills: {
@@ -128,8 +128,8 @@ const dataOfJobSeekers = [
   },
   {
     _id: "10",
-    seekerName: "Emma Adams",
-    image: "https://i.ibb.co/HptpN9T/avater4.png",
+    seekerName: "Adams Smith",
+    image: "https://i.ibb.co/2gqTqcm/image4.png",
     jobExperience: 5,
     education: "BA in Graphic Design",
     skills: {
@@ -143,7 +143,7 @@ const dataOfJobSeekers = [
   {
     _id: "11",
     seekerName: "Mason Hernandez",
-    image: "https://i.ibb.co/KW5YG8k/avater3.png",
+    image: "https://i.ibb.co/THyF1VY/image5.png",
     jobExperience: 5,
     education: "BSc in Civil Engineering",
     skills: {
@@ -157,7 +157,7 @@ const dataOfJobSeekers = [
   {
     _id: "12",
     seekerName: "Isabella Martinez",
-    image: "https://i.ibb.co/KW5YG8k/avater3.png",
+    image: "https://i.ibb.co/tKFNf4P/image6.png",
     jobExperience: 4,
     education: "BA in Sociology",
     skills: {
