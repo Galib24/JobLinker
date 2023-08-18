@@ -7,7 +7,7 @@ const dataOfJobSeekers = [
     education: "BSc in Computer Science",
     skills: {
       "skillOne": "Javascript",
-      "skillTwo": "React",
+      "skillTwo": "React. JS",
       "skillThree": "Node.JS",
     },
     findingJobTitle: "Full Stack Developer",

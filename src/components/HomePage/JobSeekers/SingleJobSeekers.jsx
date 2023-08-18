@@ -50,19 +50,25 @@ const SingleJobSeekers = ({ data }) => {
             </div>
             {/* skill show section */}
             <div
-                className="flex justify-between text-xs text-center font-semibold mt-3 mb-4 text-white">
-                <p
-                    className="bg-red-300 rounded-full mx-1 py-1 items-center justify-center flex w-full">
-                    {skills?.skillOne}
-                </p>
-                <p
-                    className="bg-red-300 rounded-full mx-1 py-1 items-center justify-center flex w-full">
-                    {skills?.skillTwo}
-                </p>
-                <p
-                    className="bg-red-300 rounded-full mx-1 py-1 items-center justify-center flex w-full">
-                    {skills?.skillThree}
-                </p>
+                className="text-xs text-center font-bold mt-3 mb-5 px-4">
+                <div
+                    className="flex items-center justify-center mb-3">
+                    <p
+                        className="bg-zinc-200 rounded-full mx-1 items-center justify-center flex w-fit px-7 py-3">
+                        {skills?.skillOne}<GiTrophy className="text-yellow-500 text-base ms-1" />
+                    </p>
+                    <p
+                        className="bg-zinc-200 rounded-full mx-1 py-3 items-center justify-center flex w-fit px-7">
+                        {skills?.skillTwo}
+                    </p>
+                </div>
+                <div
+                    className="flex items-center justify-center">
+                    <p
+                        className="bg-zinc-200 rounded-full  mx-1 py-3 items-center justify-center flex w-fit px-7">
+                        {skills?.skillThree}
+                    </p>
+                </div>
             </div>
         </div>
     );
