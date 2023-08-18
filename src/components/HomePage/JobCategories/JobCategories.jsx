@@ -42,11 +42,11 @@ const JobCategories = () => {
         ))}
       </div> */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 ml-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mt-10 lg:ml-14">
         {
           dataOffCategory.map(data => <div 
           key={data.id}
-          className="card w-96 bg-base-100 shadow-xl hover:bg-[#40e1f9] hover:text-[white] ease-out duration-300 cursor-pointer">
+          className="card w-96 bg-base-100 shadow-xl hover:bg-[#98e1ec] hover:text-[white] ease-out duration-300 cursor-pointer">
           <div className="card-body">
             <h2 className="card-title">{data.title}</h2>
             <p>{data.position}</p>

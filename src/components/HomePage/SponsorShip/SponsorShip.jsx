@@ -10,7 +10,9 @@ import Image from "next/image";
 
 const SponsorShip = () => {
     return (
-        <div className="px-8 mt-10">
+      <>
+      <h1 className="text-4xl font-semibold text-center my-16">Sponsored By</h1>
+      <div className="px-8 mt-10">
             <Marquee Gradient width={200}>
             <Image className="mr-10" src={Img1} alt=""></Image>
             <Image className="mr-10" src={Img2} alt=""></Image>
@@ -20,6 +22,7 @@ const SponsorShip = () => {
             <Image src={Img6} alt=""></Image>
             </Marquee>
         </div>
+      </>
     );
 };
 

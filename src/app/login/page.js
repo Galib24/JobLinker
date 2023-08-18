@@ -172,14 +172,14 @@ const LoginPage = () => {
           {/* google sigIn */}
           <div
             onClick={handleGoogleLogin}
-            className="hover:bg-black hover:text-[#F68519] ease-out duration-300 border-2 rounded-full flex items-center cursor-pointer"
+            className="hover:shadow-md border-2 rounded-full flex items-center cursor-pointer"
           >
             <Image className="w-[7%] m-2" src={googleLogo} alt="" />
             <p className="mx-auto pr-6 text-lg">Continue with Google</p>
           </div>
 
           {/* github signIn */}
-          <div className="hover:bg-[#40e1f9] hover:text-[white] ease-out duration-300 border-2 rounded-full flex items-center my-4 cursor-pointer">
+          <div className=" hover:shadow-md border-2 rounded-full flex items-center my-4 cursor-pointer">
             <Image className="w-[7%] m-2" src={gitHub} alt="" />
             <p className="mx-auto pr-6 text-lg">Continue with Git Hub</p>
           </div>
