@@ -5,8 +5,9 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/MDG5xCV/1.png",
         location: "San Francisco, USA",
         jobPostingTime: "12 hours ago",
-        salaryRange: "40k - 42k",
+        salaryRange: "$400 - $420 / month",
         jobType: "Full Time",
+        jobNeed: "Urgent",
         rating: 5
     },
     {
@@ -15,8 +16,9 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/DWqTY7m/2.png",
         location: "London, UK",
         jobPostingTime: "5 days ago",
-        salaryRange: "25k - 27k",
+        salaryRange: "$620 - $650 / month",
         jobType: "Full Time",
+        jobNeed: "Urgent",
         rating: 5
     },
     {
@@ -25,7 +27,7 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/SdK0PSn/3.png",
         location: "New York, USA",
         jobPostingTime: "22 hours ago",
-        salaryRange: "50k - 54k",
+        salaryRange: "$610 - $640 / month",
         jobType: "Full Time",
         rating: 5
     },
@@ -35,8 +37,9 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/QKZbnFH/4.png",
         location: "Los Angeles, USA",
         jobPostingTime: "12 hours ago",
-        salaryRange: "60k - 66k",
+        salaryRange: "$600 - $630 / month",
         jobType: "Full Time",
+        jobNeed: "Urgent",
         rating: 5
     },
     {
@@ -45,8 +48,9 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/vQLT1dF/5.png",
         location: "Toronto, Canada",
         jobPostingTime: "5 days ago",
-        salaryRange: "20k - 25k",
+        salaryRange: "$580 - $600 / month",
         jobType: "Full Time",
+        jobNeed: "Urgent",
         rating: 5
     },
     {
@@ -55,7 +59,7 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/z6076bZ/6.png",
         location: "Seattle, USA",
         jobPostingTime: "12 hours ago",
-        salaryRange: "70k - 80k",
+        salaryRange: "$590 - $610 / month",
         jobType: "Full Time",
         rating: 4.2
     },
@@ -65,7 +69,7 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/C1SJmFb/7.png",
         location: "Sydney, Australia",
         jobPostingTime: "5 days ago",
-        salaryRange: "40k - 45k",
+        salaryRange: "$610 - $630 / month",
         jobType: "Full Time",
         rating: 3.9
     },
@@ -75,8 +79,9 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/HBcWvnh/8.png",
         location: "Berlin, Germany",
         jobPostingTime: "22 hours ago",
-        salaryRange: "75k - 90k",
+        salaryRange: "$605 - $625 / month",
         jobType: "Full Time",
+        jobNeed: "Urgent",
         rating: 5
     },
     {
@@ -85,8 +90,9 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/R3XgFmk/9.png",
         location: "Paris, France",
         jobPostingTime: "12 hours ago",
-        salaryRange: "60k - 65k",
+        salaryRange: "$610 - $615 / month",
         jobType: "Full Time",
+        jobNeed: "Urgent",
         rating: 3.7
     },
     {
@@ -95,7 +101,7 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/XJ5c1b5/10.png",
         location: "Bangalore, India",
         jobPostingTime: "5 days ago",
-        salaryRange: "75k - 78k",
+        salaryRange: "$400 - $405 / month",
         jobType: "Full Time",
         rating: 4.7
     },
@@ -105,8 +111,9 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/ZBbVfqZ/11.png",
         location: "Chicago, USA",
         jobPostingTime: "22 hours ago",
-        salaryRange: "18k - 22k",
+        salaryRange: "$505 - $530 / month",
         jobType: "Part Time",
+        jobNeed: "Urgent",
         rating: 3.1
     },
     {
@@ -115,7 +122,7 @@ const dataOfFeaturedJobs = [
         companyLogo: "https://i.ibb.co/HnR7vJY/12.png",
         location: "London, UK",
         jobPostingTime: "12 hours ago",
-        salaryRange: "32k - 34k",
+        salaryRange: "$630 - $640 / month",
         jobType: "Temporary",
         rating: 4.4
     },
