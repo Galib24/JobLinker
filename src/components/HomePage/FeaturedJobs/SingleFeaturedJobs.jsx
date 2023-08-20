@@ -3,7 +3,7 @@ import { CiClock2, CiLocationOn, CiStar } from "react-icons/ci";
 import { PiCurrencyCircleDollarDuotone } from "react-icons/pi";
 
 const SingleFeaturedJobs = ({ item }) => {
-    const { companyLogo, location, jobTitle, jobPostingTime, salaryRange, jobType, rating } = item
+    const { companyLogo, location, jobTitle, jobPostingTime, salaryRange, jobType, rating,jobPlace,jobNeed } = item
     return (
         <div
             className="px-3 py-3">
@@ -28,8 +28,8 @@ const SingleFeaturedJobs = ({ item }) => {
                         <h2
                             className="text-base font-semibold hover:text-blue-500 duration-300 cursor-pointer">
                             {jobTitle} <span
-                                className="text-xs font-semibold text-green-500 pt-1 mx-1">
-                                Feature
+                                className="text-sm font-semibold text-green-600 pt-1 mx-1">
+                               {jobPlace}
                             </span>
                         </h2>
                         <div

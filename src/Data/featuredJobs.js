@@ -8,7 +8,8 @@ const dataOfFeaturedJobs = [
         salaryRange: "$400 - $420 / month",
         jobType: "Full Time",
         jobNeed: "Urgent",
-        rating: 5
+        rating: 5,
+        jobPlace:'Remote',
     },
     {
         _id: "2",
@@ -17,9 +18,10 @@ const dataOfFeaturedJobs = [
         location: "London, UK",
         jobPostingTime: "5 days ago",
         salaryRange: "$620 - $650 / month",
-        jobType: "Full Time",
+        jobType: "Part Time",
         jobNeed: "Urgent",
-        rating: 5
+        rating: 5,
+        jobPlace:'Onsite',
     },
     {
         _id: "3",
@@ -29,7 +31,8 @@ const dataOfFeaturedJobs = [
         jobPostingTime: "22 hours ago",
         salaryRange: "$610 - $640 / month",
         jobType: "Full Time",
-        rating: 5
+        rating: 5,
+        jobPlace:'Remote',
     },
     {
         _id: "4",
@@ -38,9 +41,10 @@ const dataOfFeaturedJobs = [
         location: "Los Angeles, USA",
         jobPostingTime: "12 hours ago",
         salaryRange: "$600 - $630 / month",
-        jobType: "Full Time",
+        jobType: "Part Time",
         jobNeed: "Urgent",
-        rating: 5
+        rating: 5,
+        jobPlace:'Hybrid',
     },
     {
         _id: "5",
@@ -51,7 +55,8 @@ const dataOfFeaturedJobs = [
         salaryRange: "$580 - $600 / month",
         jobType: "Full Time",
         jobNeed: "Urgent",
-        rating: 5
+        rating: 5,
+        jobPlace:'Onsite',
     },
     {
         _id: "6",
@@ -60,8 +65,9 @@ const dataOfFeaturedJobs = [
         location: "Seattle, USA",
         jobPostingTime: "12 hours ago",
         salaryRange: "$590 - $610 / month",
-        jobType: "Full Time",
-        rating: 4.2
+        jobType: "Temporary",
+        rating: 4.2,
+        jobPlace:'Hybrid',
     },
     {
         _id: "7",
@@ -71,7 +77,8 @@ const dataOfFeaturedJobs = [
         jobPostingTime: "5 days ago",
         salaryRange: "$610 - $630 / month",
         jobType: "Full Time",
-        rating: 3.9
+        rating: 3.9,
+        jobPlace:'Remote',
     },
     {
         _id: "8",
@@ -80,9 +87,10 @@ const dataOfFeaturedJobs = [
         location: "Berlin, Germany",
         jobPostingTime: "22 hours ago",
         salaryRange: "$605 - $625 / month",
-        jobType: "Full Time",
+        jobType: "Temporary",
         jobNeed: "Urgent",
-        rating: 5
+        rating: 5,
+        jobPlace:'Remote',
     },
     {
         _id: "9",
@@ -93,7 +101,8 @@ const dataOfFeaturedJobs = [
         salaryRange: "$610 - $615 / month",
         jobType: "Full Time",
         jobNeed: "Urgent",
-        rating: 3.7
+        rating: 3.7,
+        jobPlace:'Onsite',
     },
     {
         _id: "10",
@@ -103,7 +112,8 @@ const dataOfFeaturedJobs = [
         jobPostingTime: "5 days ago",
         salaryRange: "$400 - $405 / month",
         jobType: "Full Time",
-        rating: 4.7
+        rating: 4.7,
+        jobPlace:'Onsite',
     },
     {
         _id: "11",
@@ -114,7 +124,8 @@ const dataOfFeaturedJobs = [
         salaryRange: "$505 - $530 / month",
         jobType: "Part Time",
         jobNeed: "Urgent",
-        rating: 3.1
+        rating: 3.1,
+        jobPlace:'Onsite',       
     },
     {
         _id: "12",
@@ -124,7 +135,8 @@ const dataOfFeaturedJobs = [
         jobPostingTime: "12 hours ago",
         salaryRange: "$630 - $640 / month",
         jobType: "Temporary",
-        rating: 4.4
+        rating: 4.4,
+        jobPlace:'Remote',
     },
 ];
 
