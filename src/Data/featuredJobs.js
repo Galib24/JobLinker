@@ -343,7 +343,7 @@ const dataOfFeaturedJobs = [
             "queOne":"Enrollment in a degree program in Computer Science, Software Engineering, or related field.",
             "queTwo":"Basic knowledge of programming languages such as Python, Java, C++, etc.",
             "queThree":"Strong willingness to learn, adapt, and take on new challenges.",
-            "queFour":"Good problem-solving skills and attention to detail.",
+            "queFour":"Good problem solving skills and attention to detail.",
             "queFive":"Familiarity with version control systems (e.g., Git) is a plus.",
             "queSix":"Previous coursework or personal projects related to programming is beneficial.",
 
