@@ -39,7 +39,7 @@ const TestimonialSection = () => {
                 }}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper max-w-6xl bg-white shadow-sm rounded-xl">
-                {/* TestimonialSection map review section */}
+                {/* TestimonialSection map review section start */}
                 {
                     dataArray.map(item => <SwiperSlide
                         className="px-10 py-14"
