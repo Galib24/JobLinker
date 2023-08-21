@@ -3,7 +3,7 @@ import { CiClock2, CiLocationOn, CiStar } from "react-icons/ci";
 import { PiCurrencyCircleDollarDuotone } from "react-icons/pi";
 
 const SingleFeaturedJobs = ({ item }) => {
-    const { companyLogo, location, jobTitle, jobPostingTime, salaryRange, jobType, rating, jobNeed, jobPlace } = item;
+    const { companyLogo, location, jobTitle, jobPostingTime, salaryRange, jobType, rating, jobPlace } = item;
     return (
         <div
             className="px-3 py-3">
@@ -26,13 +26,16 @@ const SingleFeaturedJobs = ({ item }) => {
                     {/* text div */}
                     <div
                         className="w-full">
-                        <h2
-                            className="text-base font-semibold hover:text-blue-500 duration-300 cursor-pointer mt-4 lg:mt-0">
-                            {jobTitle} <span
-                                className="text-sm font-semibold text-green-600 pt-1 mx-1">
-                                {jobPlace}
-                            </span>
-                        </h2>
+                        <div
+                            className="flex justify-between">
+                            <h2
+                                className="text-base font-semibold hover:text-blue-500 duration-300 cursor-pointer mt-4 lg:mt-0">
+                                {jobTitle} <span
+                                    className="text-sm font-semibold text-green-600 pt-1 mx-1">
+                                    {jobPlace}
+                                </span>
+                            </h2>
+                        </div>
                         <div
                             className="grid lg:grid-cols-5 text-sm text-[#5c646a] my-2 font-medium">
                             <div
@@ -73,10 +76,6 @@ const SingleFeaturedJobs = ({ item }) => {
                                     className="bg-[#40e1f9] rounded-full py-1 px-4 text-white">
                                     {jobType}
                                 </span>
-                            </div>
-                            <div
-                                className="rotate-45 relative lg:bottom-14 bottom-52 right-1 lg:left-40 bg-yellow-400 lg:w-[60%] text-center rounded-full text-white px-2">
-                                {jobNeed}
                             </div>
                         </div>
                     </div>
