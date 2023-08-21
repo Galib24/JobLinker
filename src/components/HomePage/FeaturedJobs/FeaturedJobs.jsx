@@ -37,7 +37,7 @@ const FeaturedJobs = () => {
         <Link
           href="/hrjobs">
           <button
-            className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-black hover:text-[#F68519] ease-out duration-300 mt-3">
+            className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-3">
             Load More
           </button>
         </Link>
