@@ -102,7 +102,7 @@ const Navbar = () => {
                           height={45}
                           width={45}
                           className="rounded-full mr-3"
-                          src={user?.photoURL}
+                          src={user?.photoURL || ''}
                           alt=""
                         ></Image>
                         <ul
