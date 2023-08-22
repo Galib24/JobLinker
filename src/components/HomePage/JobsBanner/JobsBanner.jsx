@@ -41,13 +41,16 @@ const JobsBanner = () => {
                         className='mr-2'>
                     </FaCheck> But I must explain to you how all this
                 </p>
-                <button
-                    className='btn bg-[#40e1f9] rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 w-[100%] md:w-[25%] text-center mt-3'>
-                    <Link
-                        href={`/login`}>
-                        Get Started
-                    </Link>
-                </button>
+                <div
+                    className='flex lg:justify-start justify-center'>
+                    <button
+                        className='btn bg-[#40e1f9] rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-5'>
+                        <Link
+                            href={`/login`}>
+                            Get Started
+                        </Link>
+                    </button>
+                </div>
             </div>
         </div>
     );
