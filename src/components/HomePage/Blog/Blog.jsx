@@ -29,7 +29,7 @@ const Blog = () => {
                     }}
                     modules={[Pagination]}
                     className="mySwiper"
-                    // responsive breakpoint
+                    responsive breakpoint
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
@@ -44,7 +44,8 @@ const Blog = () => {
                             slidesPerView: 3,
                             spaceBetween: 20,
                         }
-                    }}>
+                    }}
+                >
                     {
                         dataOfBlog.map(item => <SwiperSlide
                             key={item.id}>
