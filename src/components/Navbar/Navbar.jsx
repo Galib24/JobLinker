@@ -96,7 +96,6 @@ const Navbar = () => {
                 {
                   user ?
                     (
-                      // onClick={handleLogout}
                       <div
                         className="dropdown dropdown-end dropdown-hover">
                         <Image
@@ -120,6 +119,13 @@ const Navbar = () => {
                               href="/">
                               Applied Jobs
                             </Link>
+                          </li>
+                          <li>
+                            <h3
+                              onClick={handleLogout}
+                              className="cursor-pointer ease-out duration-300 text-sm font-semibold flex items-center bg-[#40e1f9] text-white px-3 py-2 rounded-xl">
+                              Logout <FiLogIn className="text-xl ms-1" />
+                            </h3>
                           </li>
                         </ul>
                       </div>
