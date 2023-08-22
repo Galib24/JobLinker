@@ -158,7 +158,7 @@ const LoginPage = () => {
             </button> */}
 
             <input
-              className="hover:bg-black hover:text-[#F68519] ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4"
+              className="hover:bg-black  hover:text-[#F68519] ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4"
               type="submit"
               value="Login"
             />
