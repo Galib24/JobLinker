@@ -1,147 +1,282 @@
-"use client";
-
-import SingleCard from "@/components/SeekersPage/SingleCard";
-import BannerComponent from "@/components/Shared/BannerComponent/BannerComponent";
 import dataOfJobSeekers from "@/Data/jobSeekers";
-import { useState } from "react";
-import { RxCross2 } from "react-icons/rx";
+import SingleCard from "@/components/SeekersPage/SingleCard";
+import { BiSearch } from "react-icons/bi";
+import { GoFilter } from "react-icons/go";
 
 const JobSeekersPage = () => {
-  const [navToggle, setNavToggle] = useState(false);
+  const featureJobData = dataOfJobSeekers;
+  // console.log(featureJobData);
 
   return (
-    <div>
-      {/* import banner component for displaying just something, it can be imported from another page */}
-      <BannerComponent
-        headingTitle="Posted Jobs"
-        pageName="Seekers"
-      ></BannerComponent>
-
-      {/* seekers post part start */}
-      <div className="my-20 md:flex">
-        {/* filter by job experience and category */}
-        <div className="md:w-1/3">
+      <div>
           <div
-            className={` absolute ${
-              navToggle ? "left-0 top-36" : "left-[-120%]"
-            } top-[4.5rem] w-full bg-slate-200 pb-3 pt-2 transition-all duration-300 dark:bg-slate-900 lg:static lg:w-[unset] lg:flex-row lg:bg-transparent lg:pb-0 lg:pt-0 dark:lg:bg-transparent`}
-          >
-            <div className="form-control w-1/2">
-              <label className="label">
-                <span className="label-text font-semibold text-xl">
-                  Experience Level
-                </span>
-              </label>
-              <select
-                defaultValue="Pick One"
-                className="select focus:outline-[#0B0016]"
-              >
-                <option disabled>Pick One</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-
-            <div className="form-control w-1/2 mt-14">
-              <label className="label">
-                <span className="label-text font-semibold text-xl">
-                  Job Type
-                </span>
-              </label>
-              <select
-                defaultValue="Pick One"
-                className="select focus:outline-[#0B0016]"
-              >
-                <option disabled>Pick One</option>
-                <option>Part Time</option>
-                <option>Full Time</option>
-                <option>Hybrid</option>
-              </select>
-            </div>
+              className="bg-indigo-50 lg:pt-36 pt-32 lg:mb-10 mb-4">
+              <h2
+                  className="text-3xl font-bold text-center">
+                  Find Seekers
+              </h2>
+              <p
+                  className="font-semibold text-center py-4">
+                  Home / Job
+              </p>
           </div>
-        </div>
-
-        {/* all post here */}
-        <div className="md:w-2/3">
-          {/* filter Toggle */}
-          <div className="my-4 text-center lg:hidden">
-            <div
-              className="swap-rotate swap btn-ghost btn-circle btn ml-2 bg-white dark:bg-slate-800  inline-block"
-              onClick={() => setNavToggle(!navToggle)}
-            >
-              {navToggle ? (
-                // <svg
-                //   className="swap-on fill-current"
-                //   xmlns="http://www.w3.org/2000/svg"
-                //   width="32"
-                //   height="32"
-                //   viewBox="0 0 512 512"
-                // >
-                //   <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
-                // </svg>
-                <RxCross2 className="text-3xl font-semibold" />
-              ) : (
-                <svg
-                  className="swap-off fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 512 512"
-                >
-                  <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-                </svg>
-              )}
-              <span>Filter</span>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between px-2">
-            <h4 className="">
-              Show{" "}
-              <span className="font-semibold">{dataOfJobSeekers.length}</span>{" "}
-              jobs
-            </h4>
-
-            {/* search field */}
-            <div className="">
-              <div className="input-group">
-                <input
-                  type="text"
-                  placeholder="Search by title"
-                  className="input input-bordered rounded-md border-gray-300 focus:outline-[#0B0016] bg-gray-200 text-gray-900"
-                />
-                <button className="btn btn-square">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </button>
+          {/* for small device start */}
+          <div
+              className="drawer lg:hidden">
+              <input
+                  id="my-drawer"
+                  type="checkbox"
+                  className="drawer-toggle" />
+              <div
+                  className="drawer-content">
+                  {/* Page content here */}
+                  <div
+                      className="flex items-center justify-center mb-4">
+                      <label
+                          htmlFor="my-drawer"
+                          className="btn drawer-button bg-blue-100 text-blue-500 font-bold">
+                          <GoFilter className="text-xl" />  Filter
+                      </label>
+                  </div>
               </div>
-            </div>
+              <div
+                  className="drawer-side">
+                  <label
+                      htmlFor="my-drawer"
+                      className="drawer-overlay">
+                  </label>
+                  <ul
+                      className="menu w-80 h-full bg-indigo-50 text-base-content py-20 mt-4">
+                      {/* Sidebar content here */}
+                      <div>
+                          {/* Job type section */}
+                          <div>
+                              <h2
+                                  className="text-lg font-semibold text-center text-gray-600 pb-4 pt-6">
+                                  Job Experience
+                              </h2>
+                              {/* main grid section */}
+                              <div
+                                  className="grid grid-rows-3">
+                                  <div
+                                      className="flex px-6 pb-3">
+                                      <input
+                                          type="checkbox"
+                                          className="toggle toggle-info  toggle-md" />
+                                      <p
+                                          className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                          Fresher
+                                      </p>
+                                  </div>
+                                  <div
+                                      className="flex px-6 pb-3">
+                                      <input
+                                          type="checkbox"
+                                          className="toggle toggle-info  toggle-md" />
+                                      <p
+                                          className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                          1 Year
+                                      </p>
+                                  </div>
+                                  <div
+                                      className="flex px-6 pb-3">
+                                      <input
+                                          type="checkbox"
+                                          className="toggle toggle-info  toggle-md" />
+                                      <p
+                                          className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                          2 Year
+                                      </p>
+                                  </div>
+                                  <div
+                                      className="flex px-6 pb-3">
+                                      <input
+                                          type="checkbox"
+                                          className="toggle toggle-info  toggle-md" />
+                                      <p
+                                          className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                          3 Year
+                                      </p>
+                                  </div>
+                                  <div
+                                      className="flex px-6 pb-3">
+                                      <input
+                                          type="checkbox"
+                                          className="toggle toggle-info  toggle-md" />
+                                      <p
+                                          className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                          4 Year
+                                      </p>
+                                  </div>
+                                  <div
+                                      className="flex px-6 pb-3">
+                                      <input
+                                          type="checkbox"
+                                          className="toggle toggle-info  toggle-md" />
+                                      <p
+                                          className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                         5+ Year
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          {/* divider */}
+                        
+                          {/* salary section */}
+                          
+                      </div>
+                  </ul>
+              </div>
           </div>
-
-          {/* Card for showing job post */}
-          <div>
-            {dataOfJobSeekers.map((jobPost) => (
-              <SingleCard key={jobPost._id} jobPost={jobPost}></SingleCard>
-            ))}
+          {/* for small device end */}
+          {/* main grid */}
+          <div
+              className="grid grid-cols-4">
+              {/* right div section */}
+              <div
+                  className="mr-1 ml-10 mb-10 hidden lg:block">
+                  <div
+                      className="bg-indigo-50 w-full rounded-2xl pb-8 pt-4">
+                      {/* Job type section */}
+                      <div>
+                          <h2
+                              className="text-lg font-semibold text-center text-gray-600 pb-4 pt-6">
+                              Job Experience
+                          </h2>
+                          {/* main grid section */}
+                          <div
+                              className="grid grid-rows-3">
+                              <div
+                                  className="flex px-6 pb-3">
+                                  <input
+                                      type="checkbox"
+                                      className="toggle toggle-info  toggle-md" />
+                                  <p
+                                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                      Fresher
+                                  </p>
+                              </div>
+                              <div
+                                  className="flex px-6 pb-3">
+                                  <input
+                                      type="checkbox"
+                                      className="toggle toggle-info  toggle-md" />
+                                  <p
+                                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                     1 Year
+                                  </p>
+                              </div>
+                              <div
+                                  className="flex px-6 pb-3">
+                                  <input
+                                      type="checkbox"
+                                      className="toggle toggle-info  toggle-md" />
+                                  <p
+                                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                      2 Year
+                                  </p>
+                              </div>
+                              <div
+                                  className="flex px-6 pb-3">
+                                  <input
+                                      type="checkbox"
+                                      className="toggle toggle-info  toggle-md" />
+                                  <p
+                                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                     3 Year
+                                  </p>
+                              </div>
+                              <div
+                                  className="flex px-6 pb-3">
+                                  <input
+                                      type="checkbox"
+                                      className="toggle toggle-info  toggle-md" />
+                                  <p
+                                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                     4 Year
+                                  </p>
+                              </div>
+                              <div
+                                  className="flex px-6 pb-3">
+                                  <input
+                                      type="checkbox"
+                                      className="toggle toggle-info  toggle-md" />
+                                  <p
+                                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                                      5+ Year
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                     
+                     
+                  </div>
+              </div>
+              {/* left div section */}
+              <div
+                  className="col-span-4 lg:col-span-3 lg:px-8">
+                  <div
+                      className="w-full">
+                      {/* heading search and short  */}
+                      <div
+                          className="lg:flex justify-between mx-3">
+                          {/* search bar start */}
+                          <div>
+                              <div
+                                  className="flex items-end justify-end w-full bg-blue-50 rounded-lg px-4 py-2 shadow">
+                                  <input
+                                      type="text"
+                                      placeholder="Search..."
+                                      className="w-full h-10 border rounded-md px-3 lg:pr-96 focus:outline-none focus:ring focus:border-blue-300" />
+                                  <button
+                                      className="ml-2 px-4 py-2 font-bold rounded-md focus:outline-none bg-blue-400 text-white">
+                                      <BiSearch className="text-2xl" />
+                                  </button>
+                              </div>
+                          </div>
+                          {/* search bar end */}
+                          {/* short by btn start */}
+                          <div
+                              className="flex items-center justify-center">
+                              <div
+                                  className="w-fit font-medium my-4 lg:my-0">
+                                  <select
+                                      className="select select-bordered">
+                                      <option>
+                                          Short By (Default)
+                                      </option>
+                                      <option>
+                                          Newest
+                                      </option>
+                                      <option>
+                                          Oldest
+                                      </option>
+                                  </select>
+                              </div>
+                          </div>
+                          {/* short by btn end */}
+                      </div>
+                      {/* all card section start */}
+                      <div>
+                          <small
+                              className="flex justify-end items-end mx-4 font-semibold my-1">
+                              Total Jobs Show: {featureJobData.length}
+                          </small>
+                      </div>
+                      <div
+                          className="mt-1 mb-16">
+                          {
+                              featureJobData.map(jobPost => <SingleCard
+                                  key={jobPost._id}
+                                  jobPost={jobPost}>
+                              </SingleCard>)
+                          }
+                      </div>
+                      {/* all card section end */}
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
   );
 };
 

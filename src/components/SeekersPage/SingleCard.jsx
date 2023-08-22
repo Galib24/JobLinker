@@ -13,7 +13,7 @@ const SingleCard = ({ jobPost }) => {
   } = jobPost;
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mt-12">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 mt-12 cursor-pointer">
       <div className="">
         <div className=" flex items-center mb-4">
           <div className="w-14 h-14 ">
@@ -32,7 +32,7 @@ const SingleCard = ({ jobPost }) => {
                 {seekerJobTime}
               </span>
             </h2>
-            <p className="text-gray-600 text-[18px]">
+            <p className="text-gray-600 text-[18px] mt-2">
               {findingJobTitle}-{" "}
               <span className="text-[16px]">
                 <span className="font-semibold">{jobExperience}</span>{" "}

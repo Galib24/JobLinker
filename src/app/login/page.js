@@ -2,11 +2,7 @@
 
 import Lottie from "lottie-react";
 import loginLottie from "../../../public/login.json";
-import {
-  BsFillEyeFill,
-  BsFillEyeSlashFill,
-  BsFillPersonFill,
-} from "react-icons/bs";
+import { BsFillEyeFill, BsFillEyeSlashFill, BsFillPersonFill, } from "react-icons/bs";
 import { BiLinkExternal, BiSolidLock } from "react-icons/bi";
 import { useContext, useRef, useState } from "react";
 import Link from "next/link";
@@ -15,6 +11,7 @@ import googleLogo from "@/asserts/icons/google.png";
 import Image from "next/image";
 import { AuthContext } from "@/provider/AuthProvider";
 import { toast } from "react-hot-toast";
+
 
 const LoginPage = () => {
   const [show, setShow] = useState(false);
@@ -79,7 +76,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="grid md:grid-cols-2 max-w-7xl mx-auto mt-32 items-center">
+    <div
+      className="grid md:grid-cols-2 max-w-7xl mx-auto mt-32 items-center mb-6">
       {/* lottie */}
       <div>
         <Lottie
@@ -158,7 +156,7 @@ const LoginPage = () => {
             </button> */}
 
             <input
-              className="hover:bg-black  hover:text-[#F68519] ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4"
+              className="hover:bg-black hover:text-[#F68519] ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4"
               type="submit"
               value="Login"
             />

@@ -6,11 +6,11 @@ const HomeBanner = () => {
     <div className="md:flex mt-24 justify-center">
       <div className="md:w-1/3">
         <Image
-          src={BannerImg}
-          alt="picture of JOb Category"
           width={390}
           height={100}
-          className=""
+          className="hidden lg:block"
+          src={BannerImg}
+          alt="picture of JOb Category"
         ></Image>
       </div>
       <div className="md:w-2/3 my-14 md:ml-8 p-8 flex  items-center">

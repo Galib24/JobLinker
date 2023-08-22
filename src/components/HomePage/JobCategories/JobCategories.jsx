@@ -1,66 +1,349 @@
-// import Image from "next/image";
-// import img1 from "@/asserts/job-category-img/1.PNG";
-// import img2 from "@/asserts/job-category-img/2.PNG";
-// import img3 from "@/asserts/job-category-img/3.PNG";
-// import img4 from "@/asserts/job-category-img/4.PNG";
-// import img5 from "@/asserts/job-category-img/5.PNG";
-// import img6 from "@/asserts/job-category-img/6.PNG";
-// import img7 from "@/asserts/job-category-img/7.PNG";
-// import img8 from "@/asserts/job-category-img/8.PNG";
-// import img9 from "@/asserts/job-category-img/9.PNG";
-
-import dataOffCategory from "@/Data/jobCategory";
+import Link from "next/link";
+import { TbCoins } from "react-icons/tb";
+import { BsFillArrowRightCircleFill, BsGear } from "react-icons/bs";
+import { HiOutlinePhotograph } from "react-icons/hi";
+import { IoMegaphoneOutline } from "react-icons/io5";
+import { PiCode, PiNewspaperClippingLight } from "react-icons/pi";
+import { MdRocketLaunch } from "react-icons/md";
+import { CiMedicalCase } from "react-icons/ci";
+import { RiCustomerService2Line } from "react-icons/ri";
 
 const JobCategories = () => {
-  // const images = [
-  //   { url: img1 },
-  //   { url: img2 },
-  //   { url: img3 },
-  //   { url: img4 },
-  //   { url: img5 },
-  //   { url: img6 },
-  //   { url: img7 },
-  //   { url: img8 },
-  //   { url: img9 },
-  // ];
   return (
-    <div>
-      <div className="text-center mt-12">
-        <h2 className="text-3xl font-semibold mb-3">Popular Job Categories</h2>
-        <p>2020 jobs live - 293 added today</p>
-      </div>
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-        {images.map((image, index) => (
-          <div key={index} className="text-center">
-            <Image
-              src={image.url}
-              alt="picture of JOb Category"
-              width={390}
-              height={100}
-            ></Image>
-          </div>
-        ))}
-      </div> */}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mt-10 lg:ml-14">
-        {
-          dataOffCategory.map(data => <div 
-          key={data.id}
-          className="card w-96 bg-base-100 shadow-xl hover:bg-[#98e1ec] hover:text-[white] ease-out duration-300 cursor-pointer">
-          <div className="card-body">
-            <h2 className="card-title">{data.title}</h2>
-            <p>{data.position}</p>
-            {/* <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div> */}
-          
-          </div>
-        </div>)
-        }
+    <div
+      className="w-[95%] mx-auto">
+      <div
+        className="text-center mt-20">
+        <h2
+          className="text-3xl font-bold mb-3">
+          Popular Job Categories
+        </h2>
+        <p>
+          2020 jobs live - 293 added today
+        </p>
       </div>
 
-      {/* <h2>feature job: {dataOffCategory.length}</h2> */}
-    </div>
+      {/* main card section */}
+      <div
+        className="grid lg:grid-cols-3 mt-10 mb-20">
+
+        {/* card 1 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <TbCoins className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Accounting / Finance
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (2 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 1 end */}
+
+        {/* card 2 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <IoMegaphoneOutline className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Marketing
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (86 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 2 end */}
+
+        {/* card 3 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <HiOutlinePhotograph className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Design
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (43 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 3 end */}
+
+        {/* card 4 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <PiCode className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Development
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (12 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 4 end */}
+
+        {/* card 5 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <PiNewspaperClippingLight className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Human Resource
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (55 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 5 end */}
+
+        {/* card 6 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <MdRocketLaunch className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Automotive Jobs
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (2 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 6 end */}
+
+        {/* card 7 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <RiCustomerService2Line className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Customer Service
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (2 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 7 end */}
+
+        {/* card 8 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <CiMedicalCase className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Health and Care
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (25 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 8 end */}
+
+        {/* card 9 start */}
+        <div
+          className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
+          <div
+            className="flex">
+            {/* icon start */}
+            <div
+              className="bg-indigo-100 px-3 py-3 rounded-xl group-hover:bg-blue-500 duration-300">
+              <BsGear className="text-5xl text-blue-500 group-hover:text-white duration-300" />
+            </div>
+            {/* icon end */}
+            <div
+              className="mx-4">
+              <Link
+                href="/hrjobs"
+                className="text-lg font-semibold pt-1 pb-2 hover:text-blue-500 duration-300">
+                Project Management
+              </Link>
+              <p
+                className="font-medium text-gray-500 text-sm">
+                (92 open positions)
+              </p>
+            </div>
+          </div>
+          {/* Link section start */}
+          <Link
+            href="/hrjobs"
+            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
+            <BsFillArrowRightCircleFill
+              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
+          </Link>
+          {/* Link section end */}
+        </div>
+        {/* card 9 end */}
+
+      </div>
+    </div >
   );
 };
 
