@@ -28,7 +28,7 @@ const JobCategories = () => {
         className="grid lg:grid-cols-3 mt-10 mb-20">
 
         {/* card 1 start */}
-        <div
+        <div data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">
@@ -39,6 +39,7 @@ const JobCategories = () => {
             </div>
             {/* icon end */}
             <div
+
               className="mx-4">
               <Link
                 href="/hrjobs"
@@ -64,6 +65,7 @@ const JobCategories = () => {
 
         {/* card 2 start */}
         <div
+          data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">
@@ -99,6 +101,7 @@ const JobCategories = () => {
 
         {/* card 3 start */}
         <div
+          data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">
@@ -134,6 +137,7 @@ const JobCategories = () => {
 
         {/* card 4 start */}
         <div
+          data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">
@@ -169,6 +173,7 @@ const JobCategories = () => {
 
         {/* card 5 start */}
         <div
+          data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">
@@ -204,6 +209,7 @@ const JobCategories = () => {
 
         {/* card 6 start */}
         <div
+          data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">
@@ -239,6 +245,7 @@ const JobCategories = () => {
 
         {/* card 7 start */}
         <div
+          data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">
@@ -274,6 +281,7 @@ const JobCategories = () => {
 
         {/* card 8 start */}
         <div
+          data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">
@@ -309,6 +317,7 @@ const JobCategories = () => {
 
         {/* card 9 start */}
         <div
+          data-aos="fade-up"
           className="group group/item flex items-center justify-between border border-gray-200 py-5 px-6 rounded-xl shadow-sm hover:cursor-pointer duration-300 lg:mx-4 mx-2  my-2 lg:my-4">
           <div
             className="flex">

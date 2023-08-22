@@ -1,3 +1,4 @@
+"use client"
 import HomeBanner from "@/components/HomePage/Banner/HomeBanner";
 import Blog from "@/components/HomePage/Blog/Blog";
 import FeaturedJobs from "@/components/HomePage/FeaturedJobs/FeaturedJobs";
@@ -8,9 +9,25 @@ import SponsorShip from "@/components/HomePage/SponsorShip/SponsorShip";
 import Image from "next/image";
 import TestimonialSection from "@/components/HomePage/TestimonialSection/TestimonialSection";
 
+
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+         duration: 800,
+         once: false,
+       })
+ }, [])
+
+
   return (
     <div>
+    
       {/* Banner Section */}
       <HomeBanner></HomeBanner>
 
@@ -26,13 +43,14 @@ export default function Home() {
       {/* Jobs Banner section */}
       <JobsBanner></JobsBanner>
 
-       {/*SponsorShip section */}
+      {/*SponsorShip section */}
       <SponsorShip></SponsorShip>
 
-       {/* Jobs Blog section */}
-       <Blog></Blog>
+      {/* Jobs Blog section */}
+      <Blog></Blog>
       {/* Testimonial section */}
       <TestimonialSection></TestimonialSection>
+     
     </div>
   );
 }

@@ -28,6 +28,7 @@ const TestimonialSection = () => {
                 </p>
             </div>
             <Swiper
+                 data-aos="flip-down"
                 spaceBetween={20}
                 centeredSlides={true}
                 autoplay={{
