@@ -46,7 +46,7 @@ const RegisterPage = () => {
     <>
       <div
         className="max-w-7xl mx-auto mt-32 grid md:grid-cols-2">
-        <div data-aos="fade-right">
+        <div>
           <div>
             <h2
               className="text-5xl font-semibold mb-14 px-4">
@@ -153,7 +153,7 @@ const RegisterPage = () => {
         </div>
         {/* signup form end */}
         {/* lottie file start */}
-        <div data-aos="fade-left">
+        <div>
           <div>
             <Lottie
               className="w-[85%] mx-auto hidden md:block"

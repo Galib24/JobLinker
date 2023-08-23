@@ -13,7 +13,7 @@ const SingleCard = ({ jobPost }) => {
   } = jobPost;
 
   return (
-    <div data-aos="zoom-in" className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 mt-12 cursor-pointer">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 mt-12 cursor-pointer">
       <div className="">
         <div className=" flex items-center mb-4">
           <div className="w-14 h-14 ">
