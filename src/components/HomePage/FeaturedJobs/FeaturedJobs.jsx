@@ -21,7 +21,6 @@ const FeaturedJobs = () => {
         </p>
       </div>
       <div
-        data-aos="zoom-in"
         className="grid md:grid-cols-2">
         {
           topFeaturedJobs.map((item) => (

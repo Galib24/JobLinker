@@ -20,7 +20,6 @@ const JobSeekers = () => {
         </p>
       </div>
       <div
-        data-aos="zoom-in"
         className="grid md:grid-cols-3">
         {
           topSeekers.map((data) => (

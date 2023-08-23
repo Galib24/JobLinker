@@ -3,7 +3,7 @@ import BannerImg from "@/asserts/banner-img.png";
 
 const HomeBanner = () => {
   return (
-    <div data-aos="fade-up" className="md:flex mt-24 justify-center ">
+    <div className="md:flex mt-24 justify-center ">
       <div className="md:w-1/3">
         <Image
           width={390}
