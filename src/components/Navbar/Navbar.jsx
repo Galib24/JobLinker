@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useContext, useState } from "react";
-import { BsList, BsX, BsYoutube } from "react-icons/bs";
+import { BsYoutube } from "react-icons/bs";
 import { AuthContext } from "@/provider/AuthProvider";
 import { FiLogIn } from "react-icons/fi";
+import { BiMenuAltRight } from "react-icons/bi";
+import { IconName, IoMdCloseCircleOutline } from "react-icons/io";
 
 const styles = {
   navLinks:
@@ -107,23 +109,25 @@ const Navbar = () => {
                         ></Image>
                         <ul
                           tabIndex={0}
-                          className="dropdown-content z-[1] menu p-2 shadow  rounded-box w-52 text-[#40e1f9] font-bold">
+                          className="dropdown-content z-[1] menu py-3 px-4 shadow rounded-box w-52 text-[#40e1f9] font-bold bg-white">
                           <li>
                             <Link
-                              href="/">
+                              href="/"
+                              className="flex items-center justify-center">
                               My Profile
                             </Link>
                           </li>
                           <li>
                             <Link
-                              href="/">
+                              href="/"
+                              className="flex items-center justify-center">
                               Applied Jobs
                             </Link>
                           </li>
                           <li>
                             <h3
                               onClick={handleLogout}
-                              className="cursor-pointer ease-out duration-300 text-sm font-semibold flex items-center bg-[#40e1f9] text-white px-3 py-2 rounded-xl">
+                              className="cursor-pointer ease-out duration-300 text-sm font-semibold flex items-center bg-[#40e1f9] text-white px-3 py-2 rounded-xl justify-center hover:text-white hover:bg-black">
                               Logout <FiLogIn className="text-xl ms-1" />
                             </h3>
                           </li>
@@ -144,14 +148,61 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          {/* Mobile Menu */}
 
+          {/* sm */}
           <div
-            onClick={toggleMenu}
-            className="sm:hidden cursor-pointer pl-24">
-            <BsList
-              className="w-8 h-8 
-            text-[#F68519]" />
+            className="sm:hidden cursor-pointer pl-24 flex">
+            {
+              user ?
+                (
+                  <div
+                    className="dropdown dropdown-end">
+                    <Image
+                      tabIndex={0}
+                      height={45}
+                      width={45}
+                      className="rounded-full mr-3"
+                      src={user?.photoURL || ''}
+                      alt=""
+                    ></Image>
+                    <ul
+                      tabIndex={0}
+                      className="dropdown-content z-[1] menu py-3 px-4 shadow rounded-box w-52  font-bold bg-white">
+                      <li>
+                        <Link
+                          href="/"
+                          className="flex items-center justify-center">
+                          My Profile
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/"
+                          className="flex items-center justify-center">
+                          Applied Jobs
+                        </Link>
+                      </li>
+                      <li>
+                        <h3
+                          onClick={handleLogout}
+                          className="cursor-pointer ease-out duration-300 text-sm font-semibold flex items-center bg-[#40e1f9] text-white px-3 py-2 rounded-xl justify-center hover:text-white hover:bg-black">
+                          Logout <FiLogIn className="text-xl ms-1" />
+                        </h3>
+                      </li>
+                    </ul>
+                  </div>
+                )
+                :
+                (
+                  ""
+                )
+            }
+            <div
+              onClick={toggleMenu}
+              className="flex items-center justify-center">
+              <BiMenuAltRight
+                className="w-9 h-9 text-black ms-1" />
+            </div>
           </div>
         </div>
 
@@ -160,23 +211,30 @@ const Navbar = () => {
           className=
           {
             menuOpen ?
-              "fixed top-0 left-0 w-[75%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500"
+              "fixed top-0 left-0 w-[75%] sm:hidden h-screen bg-indigo-50 p-10 ease-in-out duration-500"
               :
               "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"
-          } >
+          }>
           {/* cross sine */}
           <div
-            className="flex w-full items-center justify-end">
+            className="flex w-full items-center justify-between">
+            <div>
+              <h2
+                className="text-3xl font-extrabold text-black px-2 py-1 rounded-xl">
+                Job Linker<span
+                  className="text-xs">@</span>
+              </h2>
+            </div>
             <div
               onClick={toggleMenu}
               className="cursor-pointer">
-              <BsX className="h-8 w-8 text-[#F68519]" />
+              <IoMdCloseCircleOutline className="h-8 w-8 text-black" />
             </div>
           </div>
 
           {/* mobile device menu */}
           <div
-            className="flex-col py-4">
+            className="flex-col py-4 font-semibold text-gray-500">
             <ul>
               <li
                 className="py-4 hover:underline hover:duration-[#F68519]">
@@ -220,38 +278,36 @@ const Navbar = () => {
                   About
                 </Link>
               </li>
-              <li
-                className="flex items-center py-4 text-[#F68519]">
-                <Link
-                  href="/login">
-                  <p
-                    className="cursor-pointer px-4 py-1 rounded-full bg-[#40e1f9] block text-black hover:bg-black hover:text-[#F68519] ease-in-out duration-300">
-                    Login
-                  </p>
-                </Link>
-              </li>
+              {/* mobile device options */}
+              <div
+                className="flex items-center py-4">
+                {
+                  user ?
+                    (
+                      <li>
+                        <h3
+                          onClick={handleLogout}
+                          className="cursor-pointer ease-out duration-300 text-sm font-semibold flex items-center bg-[#40e1f9] text-white px-20 py-2 rounded-xl">
+                          Logout <FiLogIn className="text-xl ms-1" />
+                        </h3>
+                      </li>
+                    )
+                    :
+                    (
+                      <li>
+                        <Link
+                          href="/login">
+                          <h3
+                            className="cursor-pointer ease-out duration-300 text-sm font-semibold flex items-center bg-[#40e1f9] text-white px-20 py-2 rounded-xl">
+                            Login <FiLogIn className="text-xl ms-1" />
+                          </h3>
+                        </Link>
+                      </li>
+                    )
+                }
+              </div>
             </ul>
           </div>
-          {/* Social media links */}
-          <div
-            className="flex flex-row justify-around pt-10 items-center">
-            <Link
-              href="">
-              <BsYoutube
-                size={30}
-                className="cursor-pointer hover:text-[#F68519] ease-in-out duration-300" />
-            </Link>
-          </div>
-
-          {/* small device pictures */}
-          <Image
-            src="https://i.ibb.co/jzBmL7w/jhkf.png"
-            alt="picture of author"
-            width={135}
-            height={75}
-            style={{ borderRadius: "100px 0 100px 0" }}
-            className="cursor-pointer pt-10 mx-auto"
-          ></Image>
         </div>
       </nav>
     </header>

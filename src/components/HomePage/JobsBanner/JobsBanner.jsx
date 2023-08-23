@@ -9,13 +9,11 @@ const JobsBanner = () => {
         <div
             className='grid lg:grid-cols-2 mt-14 gap-10 m:4 lg:ml-10 justify-center'>
             <Image
-                data-aos="fade-right"
                 className='px-2 rounded-xl'
                 src={jobBanner}
                 alt=''>
             </Image>
             <div
-                data-aos="fade-left"
                 className='lg:w-3/4 px-2'>
                 <h2
                     className='text-3xl font-bold mb-4'>

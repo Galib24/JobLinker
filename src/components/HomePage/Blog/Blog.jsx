@@ -22,7 +22,6 @@ const Blog = () => {
             <div
                 className='mt-8'>
                 <Swiper
-                    data-aos="zoom-in"
                     slidesPerView={3}
                     spaceBetween={30}
                     pagination={{

@@ -79,7 +79,7 @@ const LoginPage = () => {
     <div
       className="grid md:grid-cols-2 max-w-7xl mx-auto mt-32 items-center mb-6">
       {/* lottie */}
-      <div data-aos="fade-right">
+      <div>
         <Lottie
           animationData={loginLottie}
           loop={true}
@@ -97,7 +97,7 @@ const LoginPage = () => {
       {/* lottie */}
 
       {/* form */}
-      <div data-aos="fade-left" className="px-4">
+      <div className="px-4">
         <div>
           <h2 className="text-5xl font-semibold my-10">Login In</h2>
         </div>
