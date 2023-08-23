@@ -2,7 +2,11 @@
 
 import Lottie from "lottie-react";
 import loginLottie from "../../../public/login.json";
-import { BsFillEyeFill, BsFillEyeSlashFill, BsFillPersonFill, } from "react-icons/bs";
+import {
+  BsFillEyeFill,
+  BsFillEyeSlashFill,
+  BsFillPersonFill,
+} from "react-icons/bs";
 import { BiLinkExternal, BiSolidLock } from "react-icons/bi";
 import { useContext, useRef, useState } from "react";
 import Link from "next/link";
@@ -11,7 +15,7 @@ import googleLogo from "@/asserts/icons/google.png";
 import Image from "next/image";
 import { AuthContext } from "@/provider/AuthProvider";
 import { toast } from "react-hot-toast";
-
+import { useRouter, useSearchParams } from "next/navigation";
 
 const LoginPage = () => {
   const [show, setShow] = useState(false);
@@ -20,6 +24,11 @@ const LoginPage = () => {
   const emailRef = useRef();
 
   const { signInUser, googleSignIn, resetPassword } = useContext(AuthContext);
+
+  // for redirect user after login
+  const search = useSearchParams();
+  const from = search.get("redirectUrl") || "/";
+  const { replace } = useRouter();
 
   //  handle Login functionality
   const handleLogin = (event) => {
@@ -37,6 +46,7 @@ const LoginPage = () => {
         // console.log(loggedUser);
         if (loggedUser?.email) {
           toast.success("Login successfully");
+          replace(from);
         }
       })
       .catch((error) => {
@@ -52,6 +62,8 @@ const LoginPage = () => {
     googleSignIn()
       .then(() => {
         // TODO: navigate here
+        toast.success("Login successfully");
+        replace(from);
       })
       .catch((err) => toast.error(err.message));
   };
@@ -76,8 +88,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div
-      className="grid md:grid-cols-2 max-w-7xl mx-auto mt-32 items-center mb-6">
+    <div className="grid md:grid-cols-2 max-w-7xl mx-auto mt-32 items-center mb-6">
       {/* lottie */}
       <div>
         <Lottie

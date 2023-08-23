@@ -4,15 +4,20 @@ import registerLottie from "../../../public/register.json";
 import { BsFillPersonFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { BiLinkExternal, BiSolidLock } from "react-icons/bi";
-import { SlLock } from "react-icons/sl";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "@/provider/AuthProvider";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const RegisterPage = () => {
   const { createUser } = useContext(AuthContext);
+
+    // for redirect user after register
+    const search = useSearchParams();
+    const from = search.get("redirectUrl") || "/";
+    const { replace } = useRouter();
 
 
   // using react hook form
@@ -36,7 +41,7 @@ const RegisterPage = () => {
         console.log(loggedUser);
         if (loggedUser.email) {
           toast.success("Successfully sign up");
-          //   navigate("/");
+          replace(from);
         }
       })
       .catch((err) => console.log(err));
