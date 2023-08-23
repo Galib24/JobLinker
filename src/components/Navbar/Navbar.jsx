@@ -3,11 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useContext, useState } from "react";
-import { BsYoutube } from "react-icons/bs";
 import { AuthContext } from "@/provider/AuthProvider";
 import { FiLogIn } from "react-icons/fi";
 import { BiMenuAltRight } from "react-icons/bi";
-import { IconName, IoMdCloseCircleOutline } from "react-icons/io";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+import defaultImg from "@/asserts/profile.png";
 
 const styles = {
   navLinks:
@@ -34,14 +34,14 @@ const Navbar = () => {
         {/* Desktop part */}
         <div
           className="flex items-center justify-between h-full px-4 w-full">
-          <Link href="/">
+          <Link
+            href="/">
             <Image
               width={140}
               height={40}
               className="cursor-pointer rounded-md"
               src="https://i.ibb.co/d79G4T9/crop-logo.png"
-              alt="picture of author"
-            ></Image>
+              alt="picture of author" />
           </Link>
           <div
             className="text-white hidden sm:flex">
@@ -52,7 +52,7 @@ const Navbar = () => {
                 className={styles.navLinks}>
                 <Link
                   href="/"
-                  className="text-sm font-semibold">
+                  className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold">
                   Home
                 </Link>
               </li>
@@ -61,7 +61,7 @@ const Navbar = () => {
                 className={styles.navLinks}>
                 <Link
                   href="/employers"
-                  className="text-sm font-semibold">
+                  className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold">
                   Employers
                 </Link>
               </li>
@@ -70,7 +70,7 @@ const Navbar = () => {
                 className={styles.navLinks}>
                 <Link
                   href="/candidates"
-                  className="text-sm font-semibold">
+                  className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold">
                   Candidates
                 </Link>
               </li>
@@ -79,7 +79,7 @@ const Navbar = () => {
                 className={styles.navLinks}>
                 <Link
                   href="/blogs"
-                  className="text-sm font-semibold">
+                  className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold">
                   Blogs
                 </Link>
               </li>
@@ -88,11 +88,11 @@ const Navbar = () => {
                 className={styles.navLinks}>
                 <Link
                   href="/about"
-                  className="text-sm font-semibold">
+                  className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold">
                   About
                 </Link>
               </li>
-
+              {/* lg */}
               <li
                 className="flex items-center space-x-5 text-[#F68519]ml-10">
                 {
@@ -104,9 +104,8 @@ const Navbar = () => {
                           height={45}
                           width={45}
                           className="rounded-full mr-3"
-                          src={user?.photoURL || ''}
-                          alt=""
-                        ></Image>
+                          src={user?.photoURL || defaultImg}
+                          alt="" />
                         <ul
                           tabIndex={0}
                           className="dropdown-content z-[1] menu py-3 px-4 shadow rounded-box w-52 text-[#40e1f9] font-bold bg-white">
@@ -139,8 +138,8 @@ const Navbar = () => {
                       <Link
                         href="/login">
                         <h3
-                          className="cursor-pointer ease-out duration-300 text-sm font-semibold flex items-center bg-[#40e1f9] text-white px-3 py-2 rounded-xl">
-                          Login <FiLogIn className="text-xl ms-1" />
+                          className="cursor-pointer ease-out duration-300 text-sm font-semibold flex items-center bg-[#40e1f9] text-white px-3 py-2 rounded-xl  text-center hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] hover:text-lg">
+                          Login <FiLogIn className="text-xl ms-1 hover:text-2xl" />
                         </h3>
                       </Link>
                     )
@@ -162,12 +161,11 @@ const Navbar = () => {
                       height={45}
                       width={45}
                       className="rounded-full mr-3"
-                      src={user?.photoURL || ''}
-                      alt=""
-                    ></Image>
+                      src={user?.photoURL || defaultImg}
+                      alt="" />
                     <ul
                       tabIndex={0}
-                      className="dropdown-content z-[1] menu py-3 px-4 shadow rounded-box w-52  font-bold bg-white">
+                      className="dropdown-content z-[1] menu py-3 px-4 shadow rounded-box w-52 font-bold bg-white">
                       <li>
                         <Link
                           href="/"
@@ -237,42 +235,42 @@ const Navbar = () => {
             className="flex-col py-4 font-semibold text-gray-500">
             <ul>
               <li
-                className="py-4 hover:underline hover:duration-[#F68519]">
+                className="py-4 hover:underline">
                 <Link
                   href="/">
                   Home
                 </Link>
               </li>
               <li
-                className="py-4 hover:underline hover:duration-[#F68519]">
+                className="py-4 hover:underline">
                 <Link
                   href="">
                   Dashboard
                 </Link>
               </li>
               <li
-                className="py-4 hover:underline hover:duration-[#F68519]">
+                className="py-4 hover:underline">
                 <Link
                   href="/employers">
                   Employers
                 </Link>
               </li>
               <li
-                className="py-4 hover:underline hover:duration-[#F68519]">
+                className="py-4 hover:underline">
                 <Link
                   href="/candidates">
                   Candidates
                 </Link>
               </li>
               <li
-                className="py-4 hover:underline hover:duration-[#F68519]">
+                className="py-4 hover:underline">
                 <Link
                   href="/blogs">
                   Blogs
                 </Link>
               </li>
               <li
-                className="py-4 hover:underline hover:duration-[#F68519]">
+                className="py-4 hover:underline">
                 <Link
                   href="/about">
                   About
