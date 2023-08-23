@@ -1,4 +1,5 @@
 "use client";
+
 import Lottie from "lottie-react";
 import registerLottie from "../../../public/register.json";
 import { BsFillPersonFill } from "react-icons/bs";
@@ -14,25 +15,21 @@ import { useRouter, useSearchParams } from "next/navigation";
 const RegisterPage = () => {
   const { createUser } = useContext(AuthContext);
 
-    // for redirect user after register
-    const search = useSearchParams();
-    const from = search.get("redirectUrl") || "/";
-    const { replace } = useRouter();
-
+  // for redirect user after register
+  const search = useSearchParams();
+  const from = search.get("redirectUrl") || "/";
+  const { replace } = useRouter();
 
   // using react hook form
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors }, } = useForm();
+
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
 
     const name = data.name;
     const email = data.email;
     const password = data.password;
-    console.log(name, email, password);
+    // console.log(name, email, password);
 
     // sign up functionalities
     createUser(email, password)
@@ -40,7 +37,7 @@ const RegisterPage = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         if (loggedUser.email) {
-          toast.success("Successfully sign up");
+          toast.success("Successfully Sign Up");
           replace(from);
         }
       })
@@ -62,7 +59,8 @@ const RegisterPage = () => {
           {/* signup form start */}
           <form
             onSubmit={handleSubmit(onSubmit)}>
-            <div className="px-4">
+            <div
+              className="px-4">
               {/* Name field */}
               <div
                 className="my-10 flex items-center border border-x-0 border-t-0 border-b-2 border-black rounded-none">
@@ -110,23 +108,27 @@ const RegisterPage = () => {
                   type="password"
                   placeholder="*******"
                   {
-                  ...register("password", {
-                    required: true,
-                    minLength: 6,
-                    pattern: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-])/,
-                  })
+                  ...register("password",
+                    {
+                      required: true,
+                      minLength: 6,
+                      pattern: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-])/,
+                    })
                   }
                   className="input w-full focus-within:border-none focus:border-none font-semibold" />
                 {
-                  errors.password?.type === "required" &&
+                  errors.password?.type === "required"
+                  &&
                   toast.error("Provide your Password")
                 }
                 {
-                  errors.password?.type === "minLength" &&
+                  errors.password?.type === "minLength"
+                  &&
                   toast.error("Password must be 6 characters")
                 }
                 {
-                  errors.password?.type === "pattern" &&
+                  errors.password?.type === "pattern"
+                  &&
                   toast.error(
                     "Password must have one uppercase, lowercase & symbol"
                   )
@@ -140,18 +142,19 @@ const RegisterPage = () => {
                   className="checkbox mr-3" />
                 <h2>
                   I Agree all statement In{" "}
-                  <span className="link hover:text-blue-600">
+                  <span className="link hover:text-blue-500 hover:font-bold duration-300 ease-out">
                     Terms of services
                   </span>
                 </h2>
               </div>
 
-              <div className="my-6" type="submit">
+              <div
+                className="my-6"
+                type="submit">
                 <input
-                  className="hover:bg-black hover:text-[#F68519] ease-out duration-300 bg-[#40e1f9] btn text-white w-[100%] md:w-[25%]"
+                  className="ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4 rounded-lg hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] my-5"
                   type="submit"
-                  value="Register"
-                />
+                  value="Register" />
               </div>
             </div>
           </form>

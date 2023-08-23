@@ -88,16 +88,19 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="grid md:grid-cols-2 max-w-7xl mx-auto mt-32 items-center mb-6">
+    <div
+      className="grid md:grid-cols-2 max-w-7xl mx-auto mt-32 items-center mb-6">
       {/* lottie */}
       <div>
         <Lottie
           animationData={loginLottie}
           loop={true}
-          className="w-[85%] mx-auto hidden md:block"
-        />
-        <Link className="hidden md:block" href="/register">
-          <div className="flex justify-center items-center mt-10 underline font-semibold hover:text-blue-600">
+          className="w-[85%] mx-auto hidden md:block" />
+        <Link
+          href="/register"
+          className="hidden md:block">
+          <div
+            className="flex justify-center items-center mt-10 underline font-semibold hover:text-blue-600">
             New To JobLinker? Create an Account
             <span className="ml-1">
               <BiLinkExternal />
@@ -108,13 +111,20 @@ const LoginPage = () => {
       {/* lottie */}
 
       {/* form */}
-      <div className="px-4">
+      <div
+        className="px-4">
         <div>
-          <h2 className="text-5xl font-semibold my-10">Login In</h2>
+          <h2
+            className="text-5xl font-semibold my-10">
+            Login In
+          </h2>
         </div>
 
-        <form onSubmit={handleLogin}>
-          <div className="flex items-center border border-x-0 border-t-0 border-b-2 border-black rounded-none">
+        {/* form section start */}
+        <form
+          onSubmit={handleLogin}>
+          <div
+            className="flex items-center border border-x-0 border-t-0 border-b-2 border-black rounded-none">
             <BsFillPersonFill className="text-3xl mr-3 text-black" />
             <input
               name="email"
@@ -122,81 +132,98 @@ const LoginPage = () => {
               placeholder="Enter Email"
               ref={emailRef}
               className="input w-full font-semibold"
-              required
-            />
+              required />
           </div>
 
-          <div className="mt-10 flex items-center border border-x-0 border-t-0 border-b-2 border-black rounded-none">
+          <div
+            className="mt-10 flex items-center border border-x-0 border-t-0 border-b-2 border-black rounded-none">
             <BiSolidLock className="text-3xl mr-3 text-black" />
             <input
               name="password"
               type={show ? "text" : "password"}
               placeholder="Enter Password"
               className="input w-full font-semibold"
-              required
-            />
+              required />
           </div>
 
           <p
             className="relative font-semibold bottom-10 left-56 lg:left-96 w-[25%] p-0"
-            onClick={() => setShow(!show)}
-          >
-            <small className="font-medium flex justify-end cursor-pointer">
-              {show ? (
-                <span>
-                  <BsFillEyeSlashFill className="text-black text-3xl" />
-                </span>
-              ) : (
-                <span>
-                  <BsFillEyeFill className="text-black text-3xl" />
-                </span>
-              )}
+            onClick={() => setShow(!show)}>
+            <small
+              className="font-medium flex justify-end cursor-pointer">
+              {
+                show ?
+                  (
+                    <span>
+                      <BsFillEyeSlashFill className="text-black text-3xl" />
+                    </span>
+                  )
+                  :
+                  (
+                    <span>
+                      <BsFillEyeFill className="text-black text-3xl" />
+                    </span>
+                  )
+              }
             </small>
           </p>
-          <label className="label mb-4 relative bottom-4">
+          <label
+            className="label mb-4 relative bottom-4">
             <button
               onClick={handleResetPassword}
-              className="label-text-alt link link-hover font-semibold text-sm"
-            >
+              className="label-text-alt link link-hover font-semibold text-sm">
               Forgot password?
             </button>
           </label>
           <div>
-            {/* <button className="hover:bg-black hover:text-[#F68519] ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4">
-              Login
-            </button> */}
-
             <input
-              className="hover:bg-black hover:text-[#F68519] ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4"
+              className="ease-out duration-300 btn bg-[#40e1f9] w-[100%] md:w-[25%] text-white text-center relative bottom-4 rounded-lg hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9]"
               type="submit"
-              value="Login"
-            />
+              value="Login" />
           </div>
         </form>
 
         {/* social login section start */}
-        <div className="w-[100%] max-w-2xl mx-auto mt-7">
+        <div
+          className="w-[100%] max-w-2xl mx-auto mt-7">
           {/* divider */}
-          <div className="divider mb-4">Or</div>
+          <div
+            className="divider mb-4">
+            Or
+          </div>
           {/* google sigIn */}
           <div
             onClick={handleGoogleLogin}
-            className="hover:shadow-md border-2 rounded-full flex items-center cursor-pointer"
-          >
-            <Image className="w-[7%] m-2" src={googleLogo} alt="" />
-            <p className="mx-auto pr-6 text-lg">Continue with Google</p>
+            className="hover:shadow-md border-2 rounded-full flex items-center cursor-pointer">
+            <Image
+              className="w-[7%] m-2"
+              src={googleLogo}
+              alt="" />
+            <p
+              className="mx-auto pr-6 text-lg">
+              Continue with Google
+            </p>
           </div>
 
           {/* github signIn */}
-          <div className=" hover:shadow-md border-2 rounded-full flex items-center my-4 cursor-pointer">
-            <Image className="w-[7%] m-2" src={gitHub} alt="" />
-            <p className="mx-auto pr-6 text-lg">Continue with Git Hub</p>
+          <div
+            className=" hover:shadow-md border-2 rounded-full flex items-center my-4 cursor-pointer">
+            <Image
+              className="w-[7%] m-2"
+              src={gitHub}
+              alt="" />
+            <p
+              className="mx-auto pr-6 text-lg">
+              Continue with Git Hub
+            </p>
           </div>
         </div>
         {/* social sigIn end */}
 
-        <Link href="/register">
-          <div className="md:hidden flex justify-center items-center mt-10 underline font-semibold hover:text-blue-600">
+        <Link
+          href="/register">
+          <div
+            className="md:hidden flex justify-center items-center mt-10 underline font-semibold hover:text-blue-600">
             New To JobLinker? Create an Account
             <span className="ml-1">
               <BiLinkExternal />
