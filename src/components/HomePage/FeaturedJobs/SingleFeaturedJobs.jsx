@@ -11,6 +11,7 @@ const SingleFeaturedJobs = ({ item }) => {
                 className="w-full h-full rounded-lg border border-gray-200">
                 {/* container */}
                 <div
+                    data-aos="zoom-in"
                     className="lg:flex block mt-5 mb-3 mx-2">
                     {/* img div */}
                     <div>
