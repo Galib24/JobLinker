@@ -201,7 +201,7 @@ const Navbar = () => {
               onClick={toggleMenu}
               className="flex items-center justify-center">
               <BiMenuAltRight
-                className="w-9 h-9 text-black ms-1" />
+                className="w-9 h-9 text-black ms-1 " />
             </div>
           </div>
         </div>
