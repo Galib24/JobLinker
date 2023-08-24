@@ -5,7 +5,7 @@ const dataOfBlog = [
       authorImage: "https://i.ibb.co/2krh2m4/author1.jpg",
       name: "Addison Kobe",
       jobRole: "Web developer",
-      jobDescription: "The success of every websites now depends on search engine optimisation and digital marketing strategy..."
+      jobDescription: "The success of every websites now depends on search engine optimisation and digital marketing strategy."
     },
     {
       id: "2",
@@ -13,7 +13,7 @@ const dataOfBlog = [
       authorImage: "https://i.ibb.co/NF54Zjv/author2.jpg",
       name: "Mathias Henry",
       jobRole: "Graphic Designer",
-      jobDescription: "Creative graphic designer with a keen eye for detail and a love for visual storytelling."
+      jobDescription: "Creative graphic designer with a keen eye for detail and a love for visual storytelling. It is a very good thing."
     },
     {
       id: "3",
