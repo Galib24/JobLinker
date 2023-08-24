@@ -41,7 +41,7 @@ const Navbar = () => {
               height={40}
               className="cursor-pointer rounded-md"
               src="https://i.ibb.co/d79G4T9/crop-logo.png"
-              alt="picture of author" />
+              alt="" />
           </Link>
           <div
             className="text-white hidden sm:flex">
