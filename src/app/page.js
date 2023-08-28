@@ -50,7 +50,7 @@ export default function Home() {
 
       <Blog></Blog>
 
-      {/* {/ Testimonial section */}
+      {/* Testimonial section */}
       <TestimonialSection></TestimonialSection>
 
     </div>

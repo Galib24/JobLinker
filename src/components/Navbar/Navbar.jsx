@@ -92,6 +92,13 @@ const Navbar = () => {
                   About
                 </Link>
               </li>
+              <li
+                className="py-4 hover:underline">
+                <Link
+                  href="/hr">
+                  HR
+                </Link>
+              </li>
               {/* lg */}
               <li
                 className="flex items-center space-x-5 text-[#F68519]ml-10">
@@ -120,7 +127,7 @@ const Navbar = () => {
                             <Link
                               href="/dashboard"
                               className="flex items-center justify-center">
-                             Dashboard
+                              Dashboard
                             </Link>
                           </li>
                           <li>
@@ -281,6 +288,13 @@ const Navbar = () => {
                 <Link
                   href="/about">
                   About
+                </Link>
+              </li>
+              <li
+                className="py-4 hover:underline">
+                <Link
+                  href="/hr">
+                  HR
                 </Link>
               </li>
               {/* mobile device options */}
