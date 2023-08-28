@@ -45,7 +45,7 @@ const Dashboard = () => {
                         className="drawer-overlay">
                     </label>
                     <ul
-                        className="menu w-80 h-full bg-indigo-50 text-base-content py-20 mt-4">
+                        className="menu w-80 h-fit bg-indigo-50 text-base-content py-20 mt-4">
                         {/* Sidebar content here */}
                         <div>
                             <div>
