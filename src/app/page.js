@@ -47,6 +47,7 @@ export default function Home() {
 
       {/* Jobs Blog section */}
       <Blog></Blog>
+
       {/* Testimonial section */}
       <TestimonialSection></TestimonialSection>
      
