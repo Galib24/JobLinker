@@ -81,6 +81,14 @@ const Navbar = () => {
                   About
                 </Link>
               </li>
+              <li
+                onClick={() => setMenuOpen(false)}
+                className={styles.navLinks}
+              >
+                <Link href="/hr" className="text-sm font-semibold">
+                  HR
+                </Link>
+              </li>
 
               <li className="flex items-center space-x-5 text-[#F68519]ml-10">
                 {user ? (
