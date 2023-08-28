@@ -118,6 +118,13 @@ const Navbar = () => {
                           </li>
                           <li>
                             <Link
+                              href="/dashboard"
+                              className="flex items-center justify-center">
+                             Dashboard
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
                               href="/"
                               className="flex items-center justify-center">
                               Applied Jobs
