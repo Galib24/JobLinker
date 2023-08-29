@@ -26,10 +26,10 @@ const HRFormPage = () => {
     const {
       jobTitle,
       HrEmail,
+      jobPlace,
+      location,
+      salaryRange,
       jobType,
-      jobLocation,
-      jobSalary,
-      jobTime,
       rating,
       jobDescription,
       companyDetails,
@@ -53,19 +53,54 @@ const HRFormPage = () => {
             jobTitle,
             companyLogo,
             HrEmail,
+            jobPlace,
+            location,
+            salaryRange: `$${parseFloat(salaryRange) - 40} - $${
+              parseFloat(salaryRange) + 40
+            } / month`,
             jobType,
-            jobLocation,
-            jobSalary: `$${parseFloat(jobSalary) - 40} - $${parseFloat(jobSalary) + 40
-              } / month`,
-            jobTime,
+            jobNeed: "Urgent",
             rating: parseFloat(rating),
             jobDescription,
             companyDetails,
           };
-          console.log(newJobPost);
+          // console.log(newJobPost);
           // send job post to the db
+
+          // const response = await fetch("/api/product", {
+          //   method: "POST",
+          //   headers: {
+          //     "content-type": "application/json",
+          //   },
+          //   body: JSON.stringify(productData),
+          // });
+
+          // if (response.ok) {
+          //   toast.success("Product added to DB");
+          // }
+
+          hrJobPost(newJobPost);
         }
       });
+
+    const hrJobPost = async (newJobPost) => {
+      try {
+        const response = await fetch("/api/hr", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(newJobPost),
+        });
+        console.log(response);
+
+        if (response.ok) {
+          toast.success("Product added to DB");
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
   };
 
   return (
@@ -122,14 +157,14 @@ const HRFormPage = () => {
               toast.error("Provide your email")}
           </div>
 
-          {/* Jobtype Field */}
+          {/* jobPlace Field */}
           <div className="form-control">
             <label className="label">
               <span className="label-text font-semibold">Job Type*</span>
             </label>
             <select
               className="w-full p-2 rounded border-[1px] border-black"
-              {...register("jobType", { required: true })}
+              {...register("jobPlace", { required: true })}
             >
               {/* <option disabled selected>
                 Pick one
@@ -138,7 +173,7 @@ const HRFormPage = () => {
               <option>Onside</option>
               <option>Hybrid</option>
             </select>
-            {errors.jobType?.type === "required" &&
+            {errors.jobPlace?.type === "required" &&
               toast.error("Provide job type")}
           </div>
 
@@ -150,10 +185,10 @@ const HRFormPage = () => {
             <input
               type="text"
               placeholder="job location"
-              {...register("jobLocation", { required: true })}
+              {...register("location", { required: true })}
               className="w-full p-2 rounded border-[1px] border-black"
             />
-            {errors.jobLocation?.type === "required" &&
+            {errors.location?.type === "required" &&
               toast.error("Provide job location")}
           </div>
 
@@ -165,10 +200,10 @@ const HRFormPage = () => {
             <input
               type="number"
               placeholder="$ monthly salary"
-              {...register("jobSalary", { required: true })}
+              {...register("salaryRange", { required: true })}
               className="w-full p-2 rounded border-[1px] border-black"
             />
-            {errors.jobSalary?.type === "required" &&
+            {errors.salaryRange?.type === "required" &&
               toast.error("Provide job salary")}
           </div>
 
@@ -179,7 +214,7 @@ const HRFormPage = () => {
             </label>
             <select
               className="w-full p-2 rounded border-[1px] border-black"
-              {...register("jobTime", { required: true })}
+              {...register("jobType", { required: true })}
             >
               {/* <option disabled selected>
                 Pick one
@@ -187,7 +222,7 @@ const HRFormPage = () => {
               <option>Full Time</option>
               <option>Part Time</option>
             </select>
-            {errors.jobTime?.type === "required" &&
+            {errors.jobType?.type === "required" &&
               toast.error("Provide job duration")}
           </div>
 
