@@ -1,11 +1,11 @@
+import BannerComponent from "@/components/Shared/BannerComponent/BannerComponent";
+
 const seekersForm = () => {
     return (
-        <div className="my-28">
-            <div className="py-5">
-                <h2 className="text-4xl text-center font-semibold my-5 ">Seekers Job Post Form</h2>
-                <p className="text-center my-2 font-semibold text-base px-2">Ready to get hired?</p>
-
-                <form  className="mx-2 lg:mx-5">
+        <div>
+            <div>
+            <BannerComponent headingTitle="Seekers Form" pageName="Get Ready to Hired!" />
+                <form className="mx-2 lg:mx-5 mt-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div className="form-control">
                             <label className="label">
@@ -52,6 +52,14 @@ const seekersForm = () => {
                             <input type="text" name="jobType" className="input input-bordered" required />
 
                         </div>
+                        
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">About Yourself</span>
+                            </label>
+                            <textarea name="about" className="textarea textarea-bordered h-24" placeholder="About"></textarea>
+                        </div>
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
@@ -96,7 +104,7 @@ const seekersForm = () => {
                     </div>
                     <div className="form-control mt-6">
 
-                        <input type="submit" className="btn btn-info btn-block text-white " value="Submit Post"/>
+                        <input type="submit" className="btn btn-info btn-block text-white " value="Submit Post" />
                     </div>
                 </form>
                 <div className="card-body">
