@@ -93,10 +93,21 @@ const Navbar = () => {
                 </Link>
               </li>
               <li
-                className="py-4 hover:underline">
+                onClick={() => setMenuOpen(false)}
+                className={styles.navLinks}>
                 <Link
-                  href="/hr">
-                  HR
+                  href="/hr"
+                  className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold">
+                 HR
+                </Link>
+              </li>
+              <li
+                onClick={() => setMenuOpen(false)}
+                className={styles.navLinks}>
+                <Link
+                  href="/seekersForm"
+                  className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold">
+                  Seekers
                 </Link>
               </li>
               {/* lg */}
@@ -295,6 +306,13 @@ const Navbar = () => {
                 <Link
                   href="/hr">
                   HR
+                </Link>
+              </li>
+              <li
+                className="py-4 hover:underline">
+                <Link
+                  href="/seekersForm">
+                 Seekers
                 </Link>
               </li>
               {/* mobile device options */}
