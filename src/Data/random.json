@@ -1,0 +1,182 @@
+[
+  {
+    "seekerName": "Emma Olivia",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/sPmkPc7/image.png",
+    "jobExperience": 4,
+    "education": "BSc in Computer Science",
+    "skills": {
+      "skillOne": "Javascript",
+      "skillTwo": "React. JS",
+      "skillThree": "Node.JS"
+    },
+    "findingJobTitle": "Full Stack Developer",
+    "seekerJobTime": "Full Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Emily Johnson",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/Z2PfrJb/avater2.png",
+    "jobExperience": 1,
+    "education": "BBA in Marketing",
+    "skills": {
+      "skillOne": "Social Media Marketing",
+      "skillTwo": "Content Creation",
+      "skillThree": "Territory Officer"
+    },
+    "findingJobTitle": "Marketing Specialist",
+    "seekerJobTime": "Part Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Michael Williams",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/b6KNZqY/avater1.png",
+    "jobExperience": 2,
+    "education": "CSE Engineer",
+    "skills": {
+      "skillOne": "JavaScript",
+      "skillTwo": "React",
+      "skillThree": "Next.JS"
+    },
+    "findingJobTitle": "Front-end Developer",
+    "seekerJobTime": "Full Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Olivia Davis",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/HptpN9T/avater4.png",
+    "jobExperience": 3,
+    "education": "Nursing Degree",
+    "skills": {
+      "skillOne": "Compassionate Patient Care",
+      "skillTwo": "Clinical Skill",
+      "skillThree": "Good Assessment Abilities"
+    },
+    "findingJobTitle": "Registered Nurse",
+    "seekerJobTime": "Part Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "William Jackson",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/HHDLcx4/image1.png",
+    "jobExperience": 6,
+    "education": "BSc in CSE",
+    "skills": {
+      "skillOne": "PCB Designer",
+      "skillTwo": "PCB Layout",
+      "skillThree": "Circuit Board Design"
+    },
+    "findingJobTitle": "Web Development",
+    "seekerJobTime": "Part Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Sophia Anderson",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/Z2PfrJb/avater2.png",
+    "jobExperience": 2,
+    "education": "BSc in Psychology",
+    "skills": {
+      "skillOne": "Counseling",
+      "skillTwo": "Interpersonal Communication",
+      "skillThree": "Circuit Board Design"
+    },
+    "findingJobTitle": "Psychologist",
+    "seekerJobTime": "Full Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Liam Martinez",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/b6KNZqY/avater1.png",
+    "jobExperience": 3,
+    "education": "BSc in Mechanical Engineering",
+    "skills": {
+      "skillOne": "CAD modeling",
+      "skillTwo": "Mechanical Design",
+      "skillThree": "Circuit Board Design"
+    },
+    "findingJobTitle": "Mechanical Engineer",
+    "seekerJobTime": "Part Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Noah Wilson",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/QFFsj0k/image3.png",
+    "jobExperience": 4,
+    "education": "BA in English Literature",
+    "skills": {
+      "skillOne": "Content Writing",
+      "skillTwo": "Content Editing",
+      "skillThree": "Circuit Board Design"
+    },
+    "findingJobTitle": "Content Writer",
+    "seekerJobTime": "Part Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Noah Taylor",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/KW5YG8k/avater3.png",
+    "jobExperience": 2,
+    "education": "BSc in Environmental Science",
+    "skills": {
+      "skillOne": "Environmental impact assessment",
+      "skillTwo": "Data Analysis",
+      "skillThree": "Research skills"
+    },
+    "findingJobTitle": "Environmental Scientist",
+    "seekerJobTime": "Full Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Adams Smith",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/2gqTqcm/image4.png",
+    "jobExperience": 5,
+    "education": "BA in Graphic Design",
+    "skills": {
+      "skillOne": "Adobe Creative Suite",
+      "skillTwo": "UI/UX design",
+      "skillThree": "Motion Graphics"
+    },
+    "findingJobTitle": "Graphic Designer",
+    "seekerJobTime": "Part Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Mason Hernandez",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/THyF1VY/image5.png",
+    "jobExperience": 5,
+    "education": "BSc in Civil Engineering",
+    "skills": {
+      "skillOne": "Structural Design",
+      "skillTwo": "Project Plan",
+      "skillThree": "Project Management"
+    },
+    "findingJobTitle": "Civil Engineer",
+    "seekerJobTime": "Full Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  },
+  {
+    "seekerName": "Isabella Martinez",
+    "seekerEmail": "example@gmail.com",
+    "image": "https://i.ibb.co/tKFNf4P/image6.png",
+    "jobExperience": 4,
+    "education": "BA in Sociology",
+    "skills": {
+      "skillOne": "Social Analysis",
+      "skillTwo": "Research",
+      "skillThree": "Solving Problems"
+    },
+    "findingJobTitle": "Social Researcher",
+    "seekerJobTime": "Part Time",
+    "aboutMyself": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  }
+]
