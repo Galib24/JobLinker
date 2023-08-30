@@ -65,10 +65,12 @@ const HRFormPage = () => {
             companyDetails,
           };
 
+          // send hr job to db
           hrJobPost(newJobPost);
         }
       });
 
+    // function to post data to database
     const hrJobPost = async (newJobPost) => {
       try {
         const response = await fetch("/api/hr", {
@@ -78,10 +80,9 @@ const HRFormPage = () => {
           },
           body: JSON.stringify(newJobPost),
         });
-        console.log(response);
 
         if (response.ok) {
-          toast.success("Product added to DB");
+          toast.success("HR Job added to DB");
         }
       } catch (error) {
         console.log(error.message);
