@@ -50,7 +50,7 @@ const SingleFeaturedJobs = ({ item }) => {
                                 <CiClock2
                                     className="text-lg" /><span
                                         className="pl-1">
-                                    {jobPostingTime}
+                                    12 hours ago
                                 </span>
                             </div>
                             <div
