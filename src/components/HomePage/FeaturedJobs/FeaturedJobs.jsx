@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import dataOfFeaturedJobs from "@/Data/featuredJobs";
 import SingleFeaturedJobs from "./SingleFeaturedJobs";
 import Link from "next/link";
-import getHrDataFromDb from "@/utilities/hr/getHrDataFromDb";
 
-const FeaturedJobs = async () => {
+const FeaturedJobs = () => {
+  const [dataOfFeaturedJobs, setDataOfFeaturedJobs] = useState([]);
   // console.log(dataOfFeaturedJobs);
-  const dataOfFeaturedJobs = await getHrDataFromDb();
-  const topFeaturedJobs = dataOfFeaturedJobs.filter((i) => i.rating >= 5);
+  // const dataOfFeaturedJobs = await getHrDataFromDb();
+  const topFeaturedJobs = dataOfFeaturedJobs?.filter((i) => i.rating >= 5);
   //    console.log(topFeaturedJobs);
+
+  useEffect(() => {
+    const fetchHrData = async () => {
+      const response = await fetch("/api/hr");
+      const data = await response.json();
+      console.log(data);
+      setDataOfFeaturedJobs(data);
+    };
+
+    fetchHrData();
+  }, []);
+
   return (
     <div className="mt-20 w-[95%] mx-auto">
       <div>
@@ -18,7 +30,7 @@ const FeaturedJobs = async () => {
         </p>
       </div>
       <div className="grid md:grid-cols-2">
-        {topFeaturedJobs.slice(0, 6).map((item) => (
+        {topFeaturedJobs?.slice(0, 6)?.map((item) => (
           <SingleFeaturedJobs key={item._id} item={item}></SingleFeaturedJobs>
         ))}
       </div>

@@ -64,20 +64,6 @@ const HRFormPage = () => {
             jobDescription,
             companyDetails,
           };
-          // console.log(newJobPost);
-          // send job post to the db
-
-          // const response = await fetch("/api/product", {
-          //   method: "POST",
-          //   headers: {
-          //     "content-type": "application/json",
-          //   },
-          //   body: JSON.stringify(productData),
-          // });
-
-          // if (response.ok) {
-          //   toast.success("Product added to DB");
-          // }
 
           hrJobPost(newJobPost);
         }

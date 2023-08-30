@@ -1,16 +1,26 @@
-// import dataOfFeaturedJobs from "@/Data/featuredJobs";
+"use client";
+
 import SingleFeaturedJobs from "@/components/HomePage/FeaturedJobs/SingleFeaturedJobs";
 import BannerComponent from "@/components/Shared/BannerComponent/BannerComponent";
-import getHrDataFromDb from "@/utilities/hr/getHrDataFromDb";
+import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { GoFilter } from "react-icons/go";
 import { PiCurrencyCircleDollarDuotone } from "react-icons/pi";
 
-const HRJobsPage = async () => {
+const HRJobsPage = () => {
+  const [featureJobData, setFeatureJobData] = useState([]);
+
   // get the data
-  const featureJobData = await getHrDataFromDb();
-  // const featureJobData = dataOfFeaturedJobs;
-  // console.log(featureJobData);
+  useEffect(() => {
+    const fetchHrData = async () => {
+      const response = await fetch("/api/hr");
+      const data = await response.json();
+      console.log(data);
+      setFeatureJobData(data);
+    };
+
+    fetchHrData();
+  }, []);
 
   return (
     <div>
@@ -312,11 +322,11 @@ const HRJobsPage = async () => {
             {/* all card section start */}
             <div>
               <small className="flex justify-end items-end mx-4 font-semibold my-1">
-                Total Jobs Show: {featureJobData.length}
+                Total Jobs Show: {featureJobData?.length}
               </small>
             </div>
             <div className="mt-1 mb-16">
-              {featureJobData.map((item) => (
+              {featureJobData?.map((item) => (
                 <SingleFeaturedJobs
                   key={item._id}
                   item={item}
