@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <header
-      className="container max-w-full fixed z-30 top-0 ">
+      className="container max-w-screen-xl fixed z-30 top-0 ">
       <nav
         className="w-full py-1 bg-blue-50">
         {/* Desktop part */}

@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
-import registerLottie from "../../../public/register.json";
+import registerLottie from "../../../../public/register.json";
 import { BsFillPersonFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { BiLinkExternal, BiSolidLock } from "react-icons/bi";
