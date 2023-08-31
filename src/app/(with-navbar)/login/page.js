@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
-import loginLottie from "../../../public/login.json";
+import loginLottie from "../../../../public/login.json";
 import {
   BsFillEyeFill,
   BsFillEyeSlashFill,
@@ -10,7 +10,7 @@ import {
 import { BiLinkExternal, BiSolidLock } from "react-icons/bi";
 import { useContext, useRef, useState } from "react";
 import Link from "next/link";
-import gitHub from "@/asserts/icons/github.png";
+import facebook from "@/asserts/icons/facebook.png";
 import googleLogo from "@/asserts/icons/google.png";
 import Image from "next/image";
 import { AuthContext } from "@/provider/AuthProvider";
@@ -75,7 +75,6 @@ const LoginPage = () => {
 
         // send user data to db
         userDataPost(userData);
-
       })
       .catch((err) => toast.error(err.message));
 
@@ -215,13 +214,13 @@ const LoginPage = () => {
             <p className="mx-auto pr-6 text-lg">Continue with Google</p>
           </div>
 
-          {/* github signIn */}
+          {/* Facebook signIn */}
           <div className=" hover:shadow-md border-2 rounded-full flex items-center my-4 cursor-pointer">
-            <Image className="w-[7%] m-2" src={gitHub} alt="" />
-            <p className="mx-auto pr-6 text-lg">Continue with Git Hub</p>
+            <Image className="w-[7%] m-2" src={facebook} alt="" />
+            <p className="mx-auto pr-6 text-lg">Continue with Facebook</p>
           </div>
         </div>
-        {/* social sigIn end */}
+        {/* Facebook sigIn end */}
 
         <Link href="/register">
           <div className="md:hidden flex justify-center items-center mt-10 underline font-semibold hover:text-blue-600">
