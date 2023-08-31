@@ -40,7 +40,7 @@ const Navbar = () => {
               width={140}
               height={40}
               className="cursor-pointer rounded-md"
-              src="https://i.ibb.co/d79G4T9/crop-logo.png"
+              src="https://i.ibb.co/ZMxRfGL/job-Linker-Logo.png"
               alt="" />
           </Link>
           <div
@@ -98,7 +98,7 @@ const Navbar = () => {
                 <Link
                   href="/hr"
                   className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold">
-                 HR
+                  HR
                 </Link>
               </li>
               <li
@@ -242,11 +242,15 @@ const Navbar = () => {
           <div
             className="flex w-full items-center justify-between">
             <div>
-              <h2
-                className="text-3xl font-extrabold text-black px-2 py-1 rounded-xl">
-                Job Linker<span
-                  className="text-xs">@</span>
-              </h2>
+              <Link
+                href="/">
+                <Image
+                  width={140}
+                  height={40}
+                  className="cursor-pointer rounded-md"
+                  src="https://i.ibb.co/ZMxRfGL/job-Linker-Logo.png"
+                  alt="" />
+              </Link>
             </div>
             <div
               onClick={toggleMenu}
@@ -312,7 +316,7 @@ const Navbar = () => {
                 className="py-4 hover:underline">
                 <Link
                   href="/seekersForm">
-                 Seekers
+                  Seekers
                 </Link>
               </li>
               {/* mobile device options */}
