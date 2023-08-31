@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
            <AuthProvider>
-              <Navbar></Navbar>
+              
               <div className="container mx-auto">{children}</div>
-              <Footer></Footer>
+              
             </AuthProvider> 
         <Toaster />
       </body>
