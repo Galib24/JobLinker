@@ -15,13 +15,13 @@ const Footer = () => {
             <div
               className='text-[#6c757d] text-end'>
               <small>
-                Chef Taylor Bondsman, working in
+                We do care for our client and this site 
                 <br />
-                collaboration with Head Chef Marguerite
+               is for those who want hire anyone or
                 <br />
-                Keogh, offer elegant & playful modern
+               any seeker who can find their desire job
                 <br />
-                British cooking. . .
+                Get your Goal. . .
               </small>
               <br />
               <small
