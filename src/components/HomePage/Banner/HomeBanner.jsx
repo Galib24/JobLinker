@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BiMailSend } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { FaGraduationCap } from "react-icons/fa6";
-import { PiNewspaperDuotone } from "react-icons/pi";
+import { PiGraduationCap, PiGraduationCapThin, PiNewspaperClippingLight, PiNewspaperDuotone } from "react-icons/pi";
 
 const HomeBanner = () => {
   return (
@@ -24,7 +24,7 @@ const HomeBanner = () => {
 
       {/* text filed */}
       <div
-        className="col-span-3">
+        className="col-span-12 lg:col-span-3">
         <div
           className="text-center lg:text-end">
           <h1
@@ -55,7 +55,7 @@ const HomeBanner = () => {
           <div
             className="col-span-10 lg:col-span-8 flex items-center justify-center">
             <input
-              className="w-full px-4 lg:px-6 lg:py-4 rounded-full"
+              className="w-full px-4 lg:px-6 lg:py-4 border rounded-lg outline-none focus:border-transparent focus:ring-2 focus:ring-gray-50"
               type="text"
               name="text"
               id=""
@@ -88,7 +88,7 @@ const HomeBanner = () => {
 
         {/* sub title */}
         <p
-          className="cursor-pointer mb-10 text-center lg:text-end text-gray-500 mt-6 text-sm">
+          className="cursor-pointer lg:mb-10 text-center lg:text-end text-gray-500 mt-6 text-sm">
           Popular Searches: <span
             className="font-semibold text-gray-600">
             Designer, Developer, Web, IOS, PHP, Senior, Engineer
@@ -101,7 +101,7 @@ const HomeBanner = () => {
 
       {/* small content div */}
       <div
-        className="col-span-12 mt-12">
+        className="col-span-12 mt-6 lg:mt-12 pb-20 lg:pb-10">
 
         <div
           className="grid lg:grid-cols-3">
@@ -113,8 +113,8 @@ const HomeBanner = () => {
               className="flex">
               {/* icon start */}
               <div
-                className="bg-yellow-100 px-3 py-3 rounded-xl group-hover:bg-yellow-300 duration-300">
-                <BiMailSend className="text-5xl text-yellow-400 group-hover:text-white duration-300" />
+                className="bg-red-100 px-3 py-3 rounded-xl group-hover:bg-red-300 duration-300">
+                <BiMailSend className="text-5xl text-red-400 group-hover:text-white duration-300" />
               </div>
               {/* icon end */}
               <div
@@ -140,8 +140,8 @@ const HomeBanner = () => {
               className="flex">
               {/* icon start */}
               <div
-                className="bg-yellow-100 px-3 py-3 rounded-xl group-hover:bg-yellow-300 duration-300">
-                <PiNewspaperDuotone className="text-5xl text-yellow-400 group-hover:text-white duration-300" />
+                className="bg-orange-100 px-3 py-3 rounded-xl group-hover:bg-orange-400 duration-300">
+                <PiNewspaperClippingLight className="text-5xl text-orange-400 group-hover:text-white duration-300" />
               </div>
               {/* icon end */}
               <div
@@ -168,7 +168,7 @@ const HomeBanner = () => {
               {/* icon start */}
               <div
                 className="bg-yellow-100 px-3 py-3 rounded-xl group-hover:bg-yellow-300 duration-300">
-                <FaGraduationCap className="text-5xl text-yellow-400 group-hover:text-white duration-300" />
+                <PiGraduationCap className="text-5xl text-yellow-400 group-hover:text-white duration-300" />
               </div>
               {/* icon end */}
               <div
