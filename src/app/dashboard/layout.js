@@ -15,12 +15,12 @@ const DashboardLayout = ({ children }) => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
-          <li><a>Sidebar Item 1</a></li>
           <li><Link href={`/`}>Home</Link></li>
+          <li><a>To do 1 for admin</a></li>
           {
             isAdmin && <>
-              <li><Link href={`/dashboard/users`}>Sidebar Item admin item 1</Link></li>
-              <li><a>Sidebar Item admin item 2</a></li>
+              <li><Link href={`/dashboard/users`}>User Management</Link></li>
+              <li><a>To do 2 for admin</a></li>
             </>
           }
           {
