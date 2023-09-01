@@ -55,9 +55,8 @@ const HRFormPage = () => {
             HrEmail,
             jobPlace,
             location,
-            salaryRange: `$${parseFloat(salaryRange) - 40} - $${
-              parseFloat(salaryRange) + 40
-            } / month`,
+            salaryRange: `$${parseFloat(salaryRange) - 40} - $${parseFloat(salaryRange) + 40
+              } / month`,
             jobType,
             jobNeed: "Urgent",
             rating: parseFloat(rating),
@@ -96,7 +95,9 @@ const HRFormPage = () => {
       <BannerComponent headingTitle="Post Your Jobs" pageName="HR" />
 
       {/* Form For HR Jobs Post */}
-      <form onSubmit={handleSubmit(onSubmit)} className="px-20 mt-10">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="px-20 mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Job Title Field */}
           <div className="form-control">
