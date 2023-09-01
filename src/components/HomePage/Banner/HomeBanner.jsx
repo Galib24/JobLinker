@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiMailSend } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
-import { FaGraduationCap } from "react-icons/fa6";
-import { PiGraduationCap, PiGraduationCapThin, PiNewspaperClippingLight, PiNewspaperDuotone } from "react-icons/pi";
+import { PiGraduationCap, PiNewspaperClippingLight } from "react-icons/pi";
 
 const HomeBanner = () => {
   return (
@@ -113,7 +112,7 @@ const HomeBanner = () => {
               className="flex">
               {/* icon start */}
               <div
-                className="bg-red-100 px-3 py-3 rounded-xl group-hover:bg-red-300 duration-300">
+                className="bg-red-100 px-3 py-3 rounded-xl group-hover:bg-red-400 duration-300">
                 <BiMailSend className="text-5xl text-red-400 group-hover:text-white duration-300" />
               </div>
               {/* icon end */}
