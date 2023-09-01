@@ -43,7 +43,7 @@ const UsersPage = () => {
                                 <td>{user.email}</td>
                                 <td> <button className="btn text-blue-500 btn-ghost btn-md">Admin</button></td>
 
-                                <td><button className="btn text-blue-500 btn-ghost btn-md">Instructor</button></td>
+                                <td><button className="btn text-blue-500 btn-ghost btn-md">user</button></td>
                                 <td>
 
                                     <button className="btn text-red-500 btn-ghost btn-md"><FaTrashAlt></FaTrashAlt></button>
