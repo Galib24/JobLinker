@@ -1,34 +1,34 @@
+import Image from "next/image";
 import React from "react";
 import { FaFacebookF, FaInstagram, FaSnapchatSquare, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div
-      className="bg-black text-white">
+      className="bg-gradient-to-r from-cyan-50 to-blue-100">
       {/* footer section */}
       <div
-        className='w-[95%] mx-auto py-20'>
+        className='w-[95%] mx-auto pt-20 pb-10'>
         <div
           className='font-bold'>
           <div
             className='grid lg:grid-cols-4 px-16'>
             <div
               className='text-[#6c757d] text-end'>
+              <Image
+                width={140}
+                height={40}
+                className="cursor-pointer rounded-md flex items-start justify-start mb-2"
+                src="https://i.ibb.co/ZMxRfGL/job-Linker-Logo.png"
+                alt="" />
               <small>
-                We do care for our client and this site 
+                We do care for our client and this site
                 <br />
-               is for those who want hire anyone or
+                is for those who want hire anyone or
                 <br />
-               any seeker who can find their desire job
+                any seeker who can find their desire job
                 <br />
                 Get your Goal. . .
-              </small>
-              <br />
-              <small
-                className='flex items-center mt-24'>
-                {/* @ ALL RIGHTS RESERVED BY <span className='text-yellow-500 ms-1'> */}
-                @ ALL RIGHTS RESERVED BY <span className='text-[#40e1f9] ms-1'>
-                  JOB LINKER</span>
               </small>
             </div>
 
@@ -64,7 +64,7 @@ const Footer = () => {
               className='text-end'>
               <p
                 // className='text-yellow-500 mb-4'>
-                className='text-[#40e1f9] mb-4'>
+                className='text-black font-bold mb-4'>
                 ONLINE RESERVATION
               </p>
               <p
@@ -87,7 +87,7 @@ const Footer = () => {
                 className='text-[#6c757d]'>
                 <small
                   // className='text-yellow-500'>
-                  className='text-[#40e1f9]'>
+                  className='font-extrabold text-black'>
                   + 1 2345 6789 1234
                 </small>
                 <br />
@@ -113,6 +113,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          <small
+            className='flex justify-center mt-14'>
+            {/* @ ALL RIGHTS RESERVED BY <span className='text-yellow-500 ms-1'> */}
+            @ ALL RIGHTS RESERVED BY <span className='font-extrabold ms-1'>
+              JOB LINKER</span>
+          </small>
         </div>
       </div>
     </div>
