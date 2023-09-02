@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const SingleCard = ({ jobPost }) => {
   const {
+    _id,
     seekerName,
     image,
     jobExperience,
@@ -13,7 +15,10 @@ const SingleCard = ({ jobPost }) => {
   } = jobPost;
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 mt-12 cursor-pointer">
+    <Link
+      href={`/seekers/${_id}`}
+      className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 mt-12 cursor-pointer"
+    >
       <div className="">
         <div className=" flex items-center mb-4">
           <div className="w-14 h-14 ">
@@ -57,7 +62,7 @@ const SingleCard = ({ jobPost }) => {
           <p className="text-gray-700">{education}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
