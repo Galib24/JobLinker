@@ -2,13 +2,15 @@
 
 import SingleFeaturedJobs from "@/components/HomePage/FeaturedJobs/SingleFeaturedJobs";
 import BannerComponent from "@/components/Shared/BannerComponent/BannerComponent";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { GoFilter } from "react-icons/go";
 import { PiCurrencyCircleDollarDuotone } from "react-icons/pi";
 
 const HRJobsPage = () => {
   const [featureJobData, setFeatureJobData] = useState([]);
+  // const [query, setQuery] = useState("");
+  // const searchRef = useRef(null)
 
   // get the data
   useEffect(() => {
@@ -21,6 +23,16 @@ const HRJobsPage = () => {
 
     fetchHrData();
   }, []);
+
+
+  // const handleSearch = async (e) =>{
+  //   console.log(searchRef.current.value);
+  //   setQuery(searchRef.current.value);
+  //   const response = await fetch("/api/searchHr?query=" + query);
+  //     const SearchData = await response.json();
+  //     setFeatureJobData(SearchData);
+
+  // }
 
   return (
     <div>
@@ -297,6 +309,8 @@ const HRJobsPage = () => {
               <div>
                 <div className="flex items-end justify-end w-full bg-blue-50 rounded-lg px-4 py-2 shadow">
                   <input
+                 
+                  name="searchHr"
                     type="text"
                     placeholder="Search..."
                     className="w-full h-10 border rounded-md px-3 lg:pr-96 focus:outline-none focus:ring focus:border-blue-300"
