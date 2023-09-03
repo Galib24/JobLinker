@@ -310,7 +310,7 @@ const HRJobsPage = () => {
                 <div className="flex items-end justify-end w-full bg-blue-50 rounded-lg px-4 py-2 shadow">
                   <input
                  
-                  name="searchHr"
+                  // name="searchHr"
                     type="text"
                     placeholder="Search..."
                     className="w-full h-10 border rounded-md px-3 lg:pr-96 focus:outline-none focus:ring focus:border-blue-300"
