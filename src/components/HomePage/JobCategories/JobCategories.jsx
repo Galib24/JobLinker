@@ -11,7 +11,7 @@ import { RiCustomerService2Line } from "react-icons/ri";
 const JobCategories = () => {
   return (
     <div
-      className="w-[95%] mx-auto">
+      className="w-[95%] mx-auto container">
       <div
         className="text-center mt-20">
         <h2

@@ -24,29 +24,43 @@ const HRJobsPage = () => {
 
   return (
     <div>
-      <BannerComponent headingTitle="Find Jobs" pageName="Job" />
+      <div
+        className="bg-indigo-50">
+        <BannerComponent headingTitle="Find Jobs" pageName="Job" />
+      </div>
       {/* for small device start */}
-      <div className="drawer lg:hidden">
-        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
+      <div
+        className="drawer lg:hidden">
+        <input
+          id="my-drawer"
+          type="checkbox"
+          className="drawer-toggle" />
+        <div
+          className="drawer-content">
           {/* Page content here */}
-          <div className="flex items-center justify-center mb-4">
+          <div
+            className="flex items-center justify-center mt-6">
             <label
               htmlFor="my-drawer"
-              className="btn drawer-button bg-blue-100 text-blue-500 font-bold"
-            >
+              className="btn drawer-button bg-blue-100 text-blue-500 font-bold">
               <GoFilter className="text-xl" /> Filter
             </label>
           </div>
         </div>
-        <div className="drawer-side">
-          <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu w-80 h-full bg-indigo-50 text-base-content py-20 mt-4">
+        <div
+          className="drawer-side">
+          <label
+            htmlFor="my-drawer"
+            className="drawer-overlay">
+          </label>
+          <ul
+            className="menu w-80 h-full bg-indigo-50 text-base-content py-20 mt-4">
             {/* Sidebar content here */}
             <div>
               {/* Job type section */}
               <div>
-                <h2 className="text-lg font-semibold text-center text-gray-600 pb-4 pt-6">
+                <h2
+                  className="text-lg font-semibold text-center text-gray-600 pb-4 pt-6">
                   Job type
                 </h2>
                 {/* main grid section */}
@@ -54,106 +68,137 @@ const HRJobsPage = () => {
                   <div className="flex px-6 pb-3">
                     <input
                       type="checkbox"
-                      className="toggle toggle-info  toggle-md"
-                    />
-                    <p className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                      className="toggle toggle-info  toggle-md" />
+                    <p
+                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
                       Full Time
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
+                  <div
+                    className="flex px-6 pb-3">
                     <input
                       type="checkbox"
-                      className="toggle toggle-info  toggle-md"
-                    />
-                    <p className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                      className="toggle toggle-info  toggle-md" />
+                    <p
+                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
                       Part Time
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
+                  <div
+                    className="flex px-6 pb-3">
                     <input
                       type="checkbox"
-                      className="toggle toggle-info  toggle-md"
-                    />
-                    <p className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                      className="toggle toggle-info  toggle-md" />
+                    <p
+                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
                       Temporary
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
+                  <div
+                    className="flex px-6 pb-3">
                     <input
                       type="checkbox"
-                      className="toggle toggle-info  toggle-md"
-                    />
-                    <p className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                      className="toggle toggle-info  toggle-md" />
+                    <p
+                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
                       On Site
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
+                  <div
+                    className="flex px-6 pb-3">
                     <input
                       type="checkbox"
-                      className="toggle toggle-info  toggle-md"
-                    />
-                    <p className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                      className="toggle toggle-info  toggle-md" />
+                    <p
+                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
                       Remote
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
+                  <div
+                    className="flex px-6 pb-3">
                     <input
                       type="checkbox"
-                      className="toggle toggle-info  toggle-md"
-                    />
-                    <p className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
+                      className="toggle toggle-info  toggle-md" />
+                    <p
+                      className="font-semibold px-2 text-sm text-gray-500 flex items-center justify-center">
                       Hybrid
                     </p>
                   </div>
                 </div>
               </div>
               {/* divider */}
-              <hr className="border border-gray-300 rounded-full mx-6 my-6" />
+              <hr
+                className="border border-gray-300 rounded-full mx-6 my-6" />
               {/* salary section */}
               <div>
-                <h2 className="text-lg font-semibold text-center text-gray-600 pb-4">
+                <h2
+                  className="text-lg font-semibold text-center text-gray-600 pb-4">
                   Salary Select
                 </h2>
                 {/* main grid section */}
-                <div className="grid grid-rows-3">
-                  <div className="flex px-6 pb-3">
-                    <input type="checkbox" className="checkbox checkbox-info" />
-                    <p className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
+                <div
+                  className="grid grid-rows-3">
+                  <div
+                    className="flex px-6 pb-3">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-info" />
+                    <p
+                      className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
                       <PiCurrencyCircleDollarDuotone className="text-xl mr-1" />{" "}
                       $400 - $449 / month
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
-                    <input type="checkbox" className="checkbox checkbox-info" />
-                    <p className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
+                  <div
+                    className="flex px-6 pb-3">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-info" />
+                    <p
+                      className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
                       <PiCurrencyCircleDollarDuotone className="text-xl mr-1" />
                       $450 - $499 / month
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
-                    <input type="checkbox" className="checkbox checkbox-info" />
-                    <p className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
+                  <div
+                    className="flex px-6 pb-3">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-info" />
+                    <p
+                      className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
                       <PiCurrencyCircleDollarDuotone className="text-xl mr-1" />{" "}
                       $500 - $549 / month
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
-                    <input type="checkbox" className="checkbox checkbox-info" />
-                    <p className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
+                  <div
+                    className="flex px-6 pb-3">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-info" />
+                    <p
+                      className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
                       <PiCurrencyCircleDollarDuotone className="text-xl mr-1" />
                       $550 - $599 / month
                     </p>
                   </div>
-                  <div className="flex px-6 pb-3">
-                    <input type="checkbox" className="checkbox checkbox-info" />
-                    <p className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
+                  <div
+                    className="flex px-6 pb-3">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-info" />
+                    <p
+                      className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
                       <PiCurrencyCircleDollarDuotone className="text-xl mr-1" />
                       $600 - $649 / month
                     </p>
                   </div>
-                  <div className="flex px-6 lg:pb-3">
-                    <input type="checkbox" className="checkbox checkbox-info" />
-                    <p className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
+                  <div
+                    className="flex px-6 lg:pb-3">
+                    <input
+                      type="checkbox" className="checkbox checkbox-info" />
+                    <p
+                      className="font-semibold px-4 text-sm text-gray-500 flex items-center justify-center">
                       <PiCurrencyCircleDollarDuotone className="text-xl mr-1" />
                       $650 - $699 / month
                     </p>
@@ -166,18 +211,24 @@ const HRJobsPage = () => {
       </div>
       {/* for small device end */}
       {/* main grid */}
-      <div className="grid grid-cols-4 mt-6">
+      <div
+        className="grid grid-cols-4 mt-6 container mx-auto">
         {/* right div section */}
-        <div className="mr-1 ml-10 mb-10 hidden lg:block">
-          <div className="bg-indigo-50 w-full rounded-2xl pb-8 pt-4">
+        <div
+          className="mr-1 ml-10 mb-10 hidden lg:block">
+          <div
+            className="bg-indigo-50 w-full rounded-2xl pb-8 pt-4">
             {/* Job type section */}
             <div>
-              <h2 className="text-lg font-semibold text-center text-gray-600 pb-4 pt-6">
+              <h2
+                className="text-lg font-semibold text-center text-gray-600 pb-4 pt-6">
                 Job type
               </h2>
               {/* main grid section */}
-              <div className="grid grid-rows-3">
-                <div className="flex px-6 pb-3">
+              <div
+                className="grid grid-rows-3">
+                <div
+                  className="flex px-6 pb-3">
                   <input
                     type="checkbox"
                     className="toggle toggle-info  toggle-md"

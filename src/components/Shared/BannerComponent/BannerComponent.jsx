@@ -3,7 +3,7 @@ import Link from "next/link";
 const BannerComponent = ({ headingTitle, pageName }) => {
     return (
         <div
-            className='bg-[#E4EBFA] h-[200px] flex flex-col justify-center items-center pt-32'>
+            className='h-[200px] flex flex-col justify-center items-center pt-32 pb-14'>
             <h2
                 className="text-2xl font-semibold">
                 {headingTitle}

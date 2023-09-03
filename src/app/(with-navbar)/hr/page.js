@@ -91,13 +91,16 @@ const HRFormPage = () => {
 
   return (
     <div>
-      {/* using a banner in the top of the page */}
-      <BannerComponent headingTitle="Post Your Jobs" pageName="HR" />
+      <div
+        className="bg-indigo-50">
+        {/* using a banner in the top of the page */}
+        <BannerComponent headingTitle="Post Your Jobs" pageName="HR" />
+      </div>
 
       {/* Form For HR Jobs Post */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="px-20 mt-10">
+        className="px-20 mt-10 container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Job Title Field */}
           <div className="form-control">
