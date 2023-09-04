@@ -22,9 +22,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ReactQueryProvider>
           <AuthProvider>
-
             <div>{children}</div>
-
           </AuthProvider>
         </ReactQueryProvider>
         <Toaster />
