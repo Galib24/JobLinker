@@ -32,6 +32,7 @@ const SingleHRPage = ({ params }) => {
 
   { /* please use optional chaining ? when required, otherwise throw error */ }
 
+  
   return <div>
     {/* Header */}
     <div
