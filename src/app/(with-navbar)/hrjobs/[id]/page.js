@@ -13,7 +13,6 @@ import Link from "next/link";
 
 const SingleHRPage = ({ params }) => {
   const [singleHrData, setSingleHrData] = useState([]);
-  //   use console log to see what data have singleHrData, then continue design
 
   const { id } = params;
 
@@ -39,7 +38,7 @@ const SingleHRPage = ({ params }) => {
       className="bg-indigo-50">
       <div
         className="container mx-auto lg:grid grid-cols-12 pt-20 lg:pt-32 lg:px-16 lg:pb-20 pb-8 items-center">
-        {/* img */}
+        {/* img start */}
         <div className="col-span-1 mt-2">
           <Image
             className="rounded-lg hidden lg:block"
@@ -59,7 +58,7 @@ const SingleHRPage = ({ params }) => {
             </Image>
           </div>
         </div>
-        {/* img */}
+        {/* img end */}
 
         {/* text */}
         <div
