@@ -2,19 +2,20 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { AiOutlineCalendar } from "react-icons/ai";
-import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin, BiLogoTwitter, BiSolidCoinStack, BiTime } from "react-icons/bi";
-import { BsBookmark, BsClock, BsDot, BsFillBagPlusFill, BsFillBookmarkFill, BsFillPersonFill, BsFillStarFill, BsHourglass } from "react-icons/bs";
+import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin, BiLogoTwitter, BiStar } from "react-icons/bi";
+import { BsClock, BsCoin, BsDot, BsHourglass } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
-import { GiMoneyStack } from "react-icons/gi";
-import { IoLocationSharp } from "react-icons/io5";
+import { IoBagCheckOutline, IoCalendarOutline } from "react-icons/io5";
+import { PiBookmarkSimple, PiClockClockwise, PiCurrencyCircleDollarDuotone } from "react-icons/pi";
+import { FaLinkedin, FaMoneyBill1Wave, FaSquareFacebook, FaTwitter } from "react-icons/fa6";
+import { GoPerson } from "react-icons/go";
+import Link from "next/link";
 
 const SingleHRPage = ({ params }) => {
   const [singleHrData, setSingleHrData] = useState([]);
   //   use console log to see what data have singleHrData, then continue design
 
   const { id } = params;
-
 
   const { HrEmail, companyDetails, companyLogo, jobDescription, jobNeed, jobPlace, jobTitle, jobType, location, rating, salaryRange } = singleHrData
 
@@ -25,249 +26,436 @@ const SingleHRPage = ({ params }) => {
       const data = await response.json();
       setSingleHrData(data);
     };
-
     fetchSingleHrData();
   }, [id]);
 
-  console.log(singleHrData);
+  // console.log(singleHrData);
 
-  {
-    /* please use optional chaining ? when required, otherwise throw error */
-  }
+  { /* please use optional chaining ? when required, otherwise throw error */ }
 
   return <div>
-
     {/* Header */}
-
-    <div className="lg:grid grid-cols-12 bg-indigo-50 pt-32 px-16 pb-20 items-center">
-
-      {/* img */}
-      <div className="col-span-1 mt-2">
-        <Image
-          className="rounded-lg"
-          width={500}
-          height={500}
-          src={companyLogo}
-          alt="company logo"
-        />
-
-      </div>
-      {/* img */}
-
-
-      {/* text */}
-      <div className="col-span-8 ml-5 mt-5">
-
-        <h1 className="mt-5 lg:mt-0 my-2 lg:text-2xl font-semibold">{jobTitle}</h1>
-        {/* icon */}
-        <div className="lg:flex gap-4 my-4">
-          <div className="flex items-center gap-1 my-3 lg:my-0">
-            <BsFillBagPlusFill></BsFillBagPlusFill>
-            <p>{jobPlace}</p>
-          </div>
-          <div className="flex items-center gap-1 my-3 lg:my-0">
-            <IoLocationSharp></IoLocationSharp>
-            <p>{location}</p>
-          </div>
-          <div className="flex items-center gap-1 my-3 lg:my-0">
-            <BsClock></BsClock>
-            <p>11 hours ago</p>
-          </div>
-          <div className="flex items-center gap-1 my-3 lg:my-0"><GiMoneyStack></GiMoneyStack>
-            <p>{salaryRange}</p></div>
-          <div className="flex items-center gap-1 my-3 lg:my-0">
-            <BsFillStarFill></BsFillStarFill>
-            {rating}
-          </div>
-
-        </div>
-        {/* icon */}
-
-        {/* badge */}
-        <div className="flex gap-5 mt-5 my-8 lg:my-0">
-          <div className="text-xs">
-            <span className="bg-blue-200 rounded-full py-1 px-4 text-blue-600 font-semibold">
-              {jobType}
-            </span>
-          </div>
-          <div className="text-xs">
-            <span className="bg-yellow-100 text-yellow-600 font-semibold rounded-full py-1 px-4">
-              {singleHrData?.jobNeed}
-            </span>
+    <div
+      className="bg-indigo-50">
+      <div
+        className="container mx-auto lg:grid grid-cols-12 pt-20 lg:pt-32 lg:px-16 lg:pb-20 pb-8 items-center">
+        {/* img */}
+        <div className="col-span-1 mt-2">
+          <Image
+            className="rounded-lg hidden lg:block"
+            width={500}
+            height={500}
+            src={companyLogo}
+            alt="company logo">
+          </Image>
+          <div
+            className="flex items-center justify-center">
+            <Image
+              className="rounded-lg lg:hidden block"
+              width={100}
+              height={100}
+              src={companyLogo}
+              alt="company logo">
+            </Image>
           </div>
         </div>
-        {/* badge */}
+        {/* img */}
 
-      </div>
-      {/* text */}
-
-      {/* apply button */}
-      <div className="col-span-3 flex mt-5">
-        <button onClick={() => window.my_modal_3.showModal()} className="bg-blue-600 py-4 px-12 flex items-center justify-center text-white rounded-lg">Apply For Job</button>
-        <dialog id="my_modal_3" className="modal">
-          <form method="dialog" className="modal-box  max-w-xl">
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-            <h3 className="font-bold text-lg text-center my-5">Apply for this job</h3>
-
-            {/* file input */}
-            <input type="file" className="file-input file-input-bordered file-input-info w-full" />
-            {/* file input */}
-
-            {/* text area */}
-            <textarea className="w-full bg-indigo-50 my-5 py-10 px-5 rounded-lg font-semibold" placeholder="Cover Letter"></textarea>
-            {/* text area */}
-
-            {/* checkbox */}
-            <div className="flex gap-2 items-center">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-info" />
-              <p>You accept our Terms and Conditions and Privacy Policy</p>
+        {/* text */}
+        <div
+          className="col-span-8 lg:ml-7">
+          <h1
+            className="mt-5 lg:mt-0 my-2 text-xl lg:text-3xl font-bold lg:font-semibold text-center lg:text-start">
+            {jobTitle}
+          </h1>
+          {/* icon */}
+          <div
+            className="lg:flex lg:gap-4 lg:my-4 grid grid-cols-2">
+            <div
+              className="flex items-center justify-center gap-1 my-2 lg:my-0">
+              <IoBagCheckOutline className="text-xl flex items-center justify-center text-gray-500" />
+              <p
+                className="font-medium text-gray-500 flex items-center justify-center text-sm">
+                {jobPlace}
+              </p>
             </div>
-            {/* checkbox */}
+            <div
+              className="flex items-center justify-center gap-1 my-2 lg:my-0">
+              <CiLocationOn className="text-xl flex items-center justify-center text-gray-500" />
+              <p
+                className="font-medium text-gray-500 flex items-center justify-center text-sm">
+                {location}
+              </p>
+            </div>
+            <div
+              className="flex items-center justify-center gap-1 my-2 lg:my-0">
+              <BsClock className="text-xl flex items-center justify-center text-gray-500" />
+              <p
+                className="font-medium text-gray-500 flex items-center justify-center text-sm">
+                11 hours ago
+              </p>
+            </div>
+            <div
+              className="flex items-center justify-center gap-1 my-2 lg:my-0">
+              <PiCurrencyCircleDollarDuotone className="text-xl flex items-center justify-center text-gray-500" />
+              <p
+                className="font-medium text-gray-500 flex items-center justify-center text-sm">
+                {salaryRange}
+              </p>
+            </div>
+            <div
+              className="flex items-center justify-center gap-1 my-2 lg:my-0 col-span-2">
+              <BiStar className="text-xl flex items-center justify-center text-gray-500" />
+              <p
+                className="font-medium text-gray-500 flex items-center justify-center text-sm">
+                {rating}
+              </p>
+            </div>
 
-            <button className="w-full mt-8 mb-2 bg-blue-600 py-4 px-12 flex items-center justify-center text-white rounded-lg">Apply Job</button>
+          </div>
+          {/* icon */}
 
-          </form>
-        </dialog>
-        <button className="bg-blue-50 px-4 py-4 flex items-center justify-center rounded-lg shadow-xl text-blue-500 hover:bg-blue-600 hover:text-white ml-3 duration-500" ><BsBookmark className="text-xl"></BsBookmark></button>
+          {/* badge */}
+          <div
+            className="lg:flex lg:gap-5 mt-2 mb-3 lg:my-0 grid grid-cols-3">
+            <div
+              className="text-xs mt-2 flex justify-center items-center">
+              <span
+                className="bg-blue-100 rounded-full py-1 px-5 text-blue-600">
+                {jobType}
+              </span>
+            </div>
+            <div
+              className="text-xs mt-2  flex justify-center items-center">
+              <span
+                className="bg-green-200 text-green-600 rounded-full py-1 px-5">
+                Privet
+              </span>
+            </div>
+            <div
+              className="text-xs mt-2 flex justify-center items-center">
+              <span
+                className="bg-orange-100 text-orange-600 rounded-full py-1 px-5">
+                {singleHrData?.jobNeed}
+              </span>
+            </div>
+          </div>
+          {/* badge */}
 
+        </div>
+        {/* text */}
+
+        {/* apply button */}
+        <div
+          className="col-span-3 mt-6 grid grid-rows-2 mx-6 lg:mx-0">
+          <button
+            onClick={() => window.my_modal_3.showModal()}
+            className="bg-blue-600 py-4 flex items-center justify-center text-white rounded-lg hover:bg-blue-700 mb-4 font-semibold">
+            Apply For Job
+          </button>
+          <dialog
+            id="my_modal_3"
+            className="modal">
+            <form
+              method="dialog"
+              className="modal-box  max-w-xl">
+              <button
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                ✕
+              </button>
+              <h3
+                className="font-bold text-lg text-center my-5">
+                Apply For This Job
+              </h3>
+
+              {/* file input */}
+              <input
+                type="file"
+                className="file-input file-input-bordered file-input-info  w-full font-semibold" />
+              {/* file input */}
+
+              {/* text area */}
+              <textarea
+                className="w-full bg-indigo-50 rounded-lg font-medium text-sm pb-16 pt-4 px-5 mt-6 mb-2 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-300"
+                placeholder="Write Your Message Here...">
+              </textarea>
+              {/* text area */}
+
+              {/* checkbox */}
+              <div
+                className="flex gap-2 items-center">
+                <input
+                  type="checkbox"
+                  className="checkbox checkbox-info checkbox-sm" />
+                <p
+                  className="text-xs font-medium text-gray-400">
+                  You accept our Terms and Conditions and Privacy Policy
+                </p>
+              </div>
+              {/* checkbox */}
+
+              <button
+                className="w-full mt-6 mb-2 bg-blue-600 py-4 flex items-center justify-center text-white rounded-lg hover:bg-blue-700">
+                Apply To This Job
+              </button>
+            </form>
+          </dialog>
+
+          <button
+            className="bg-blue-100 py-4 flex items-center justify-center rounded-lg text-blue-600 hover:bg-blue-700 hover:text-white duration-500 w-full mb-4" >
+            <PiBookmarkSimple className="text-3xl" />
+          </button>
+        </div>
+        {/* apply button */}
       </div>
-      {/* apply button */}
     </div>
+
     {/* Header */}
 
     {/* body part */}
-    <div className="lg:grid grid-cols-12 mt-20 px-10 lg:gap-20">
-
+    <div
+      className="container mx-auto lg:grid grid-cols-12 mt-14 px-4 lg:px-10 lg:gap-20">
       {/* left-side */}
-      <div className="col-span-8">
+      <div
+        className="col-span-8">
         {/* job description */}
         <div>
-          <h1 className="text-xl font-semibold">Job Description</h1>
-          <p className="my-5 text-gray-600">{jobDescription}</p>
-
+          <h1
+            className="text-2xl lg:text-xl font-bold mb-3 text-center lg:text-left">
+            Job Description
+          </h1>
+          <p
+            className="text-gray-500 font-medium text-center lg:text-left">
+            {jobDescription}
+          </p>
         </div>
         {/* job description */}
 
         {/* Skill & Experience */}
-        <div className="mt-5 lg:mt-20 mb-10">
-          <h1 className="text-xl font-semibold">Skill & Experience</h1>
+        <div
+          className="mt-5 lg:mt-10 mb-3">
+          <h1
+            className="text-2xl lg:text-xl font-bold mb-3 text-center lg:text-left mt-10">
+            Skill & Experience
+          </h1>
 
-          <div className="flex gap-5 items-center">
-            <BsDot className="text-3xl font-bold"></BsDot>
-            <p className="mt-8 mb-5">You have at least 3 years’ experience working as a Product Designer.</p>
+          <div
+            className="flex items-center mt-5 my-2">
+            <BsDot className="text-3xl font-bold flex items-center justify-center mr-4" />
+            <p
+              className="text-gray-500 font-medium">
+              You have at least 3 years’ experience working as a Product Designer.
+            </p>
           </div>
 
-          <div className="flex gap-5 items-center">
-            <BsDot className="text-3xl font-bold"></BsDot>
-            <p className="my-5">You have experience using Sketch and InVision or Framer X.</p>
+          <div
+            className="flex items-center my-2">
+            <BsDot className="text-3xl font-bold flex items-center justify-center mr-4" />
+            <p
+              className="text-gray-500 font-medium">
+              You have experience using Sketch and InVision or Framer X.
+            </p>
           </div>
 
-          <div className="flex gap-5 items-center">
-            <BsDot className="text-3xl font-bold"></BsDot>
-            <p className="my-5">You have some previous experience working in an agile environment – Think two-week sprints.</p>
+          <div
+            className="flex items-center my-2">
+            <BsDot className="text-3xl font-bold flex items-center justify-center mr-4" />
+            <p
+              className="text-gray-500 font-medium">
+              You have some previous experience working in an agile environment – Think two-week sprints.
+            </p>
           </div>
 
-          <div className="flex gap-2 items-center">
-            <BsDot className="text-3xl font-bold"></BsDot>
-            <p className="my-5">You are familiar using Jira and Confluence in your workflow</p>
+          <div
+            className="flex items-center my-2">
+            <BsDot className="text-3xl font-bold flex items-center justify-center mr-4" />
+            <p
+              className="text-gray-500 font-medium">
+              You are familiar using Jira and Confluence in your workflow
+            </p>
           </div>
-
         </div>
         {/* Skill & Experience */}
 
+
         {/* share job icon */}
-        <div>
-          <h1 className="text-xl font-semibold">Share this job</h1>
-          <div className="lg:flex gap-3 mt-4">
-            <button className=" bg-blue-600 py-4 px-12 flex items-center justify-center text-white rounded-lg"><BiLogoFacebook></BiLogoFacebook> <span className="ml-3">FaceBook</span> </button>
+        <div
+          className="grid grid-cols-12 mt-14 font-medium mb-10 lg:mb-0">
+          <h1
+            className="text-lg font-semibold flex items-center justify-center lg:col-span-2 col-span-12 mb-5 lg:mb-0">
+            Share This Job :
+          </h1>
 
-            <button className=" bg-sky-500 py-4 px-12 flex items-center justify-center text-white rounded-lg my-3 lg:my-0"><BiLogoTwitter></BiLogoTwitter> <span className="ml-3">Twitter</span> </button>
-
-            <button className=" bg-blue-500 py-4 px-12 flex items-center justify-center text-white rounded-lg mt-3 lg:my-0 mb-6"><BiLogoLinkedin></BiLogoLinkedin> <span className="ml-3">Linkedin</span> </button>
+          <div
+            className="bg-[#3b5998] hover:bg-[#465e8e] flex items-center justify-center text-white rounded-lg col-span-4 lg:col-span-3 mx-2 text-xs py-3">
+            <p>
+              <FaSquareFacebook className="text-3xl" />
+            </p>
+            <p
+              className="ms-2">
+              Facebook
+            </p>
           </div>
+
+          <div
+            className="bg-[#55acee] hover:bg-[#6eb3e8] flex items-center justify-center text-white rounded-lg col-span-4 lg:col-span-3 mx-2 text-xs py-3">
+            <p>
+              <FaTwitter className="text-3xl" />
+            </p>
+            <p
+              className="ms-2">
+              Twitter
+            </p>
+          </div>
+
+          <div
+            className="bg-[#0072b1] hover:bg-[#0073b1e7] flex items-center justify-center text-white rounded-lg col-span-4 lg:col-span-3 mx-2 text-xs py-3">
+            <p>
+              <FaLinkedin className="text-3xl" />
+            </p>
+            <p
+              className="ms-2">
+              Linkedin
+            </p>
+          </div>
+
         </div>
         {/* share job icon */}
+
       </div>
       {/* left-side */}
 
       {/* right-side */}
-      <div className="col-span-4">
+      <div
+        className="col-span-4">
 
         {/* job details */}
-        <div className="bg-indigo-50 rounded-xl px-7 py-10 mb-10">
-          <h1 className="text-xl font-semibold">Job Overview</h1>
+        <div
+          className="bg-indigo-50 rounded-xl px-7 pt-10 pb-2 mb-10">
+          <h1
+            className="text-xl font-bold">
+            Job Overview
+          </h1>
 
           {/* icons */}
           <div>
 
             {/* calendar */}
-            <div className="flex gap-5 my-6">
-              <AiOutlineCalendar className="text-blue-500 text-2xl"></AiOutlineCalendar>
+            <div
+              className="flex gap-5 my-7">
+              <IoCalendarOutline className="text-blue-500 text-2xl" />
               <div>
-                <p className="font-semibold">Date Posted:</p>
-                <p>Posted 1 hours ago</p>
+                <p
+                  className="font-semibold">
+                  Date Posted:
+                </p>
+                <p
+                  className="text-gray-500 font-medium my-1 text-xs">
+                  Posted 1 hours ago
+                </p>
               </div>
             </div>
             {/* calendar */}
 
             {/* Expiration */}
-            <div className="flex gap-5 my-6">
-              <BsHourglass className="text-blue-500 text-2xl"></BsHourglass>
+            <div
+              className="flex gap-5 my-7">
+              <BsHourglass className="text-blue-500 text-2xl" />
               <div>
-                <p className="font-semibold">Expiration date:</p>
-                <p>April 06, 2024</p>
+                <p
+                  className="font-semibold">
+                  Expiration date:
+                </p>
+                <p
+                  className="text-gray-500 font-medium my-1 text-xs">
+                  April 06, 2024
+                </p>
               </div>
             </div>
             {/* Expiration */}
 
             {/* location */}
-            <div className="flex gap-5 my-6">
-              <CiLocationOn className="text-blue-500 text-2xl"></CiLocationOn>
+            <div
+              className="flex gap-5 my-7">
+              <CiLocationOn className="text-blue-500 text-2xl" />
               <div>
-                <p className="font-semibold">Location:</p>
-                <p>{location}</p>
+                <p
+                  className="font-semibold">
+                  Location:
+                </p>
+                <p
+                  className="text-gray-500 font-medium my-1 text-xs">
+                  {location}
+                </p>
               </div>
             </div>
             {/* location */}
 
             {/* Job Title: */}
-            <div className="flex gap-5 my-6">
-              <BsFillPersonFill className="text-blue-500 text-2xl"></BsFillPersonFill>
+            <div
+              className="flex gap-5 my-7">
+              <GoPerson className="text-blue-500 text-2xl" />
               <div>
-                <p className="font-semibold">Job Title:</p>
-                <p>{jobTitle}</p>
+                <p
+                  className="font-semibold">
+                  Job Title:
+                </p>
+                <p
+                  className="text-gray-500 font-medium my-1 text-xs">
+                  {jobTitle}
+                </p>
               </div>
             </div>
             {/* Job Title: */}
 
             {/* Hours: */}
-            <div className="flex gap-5 my-6">
-              <BiTime className="text-blue-500 text-2xl"></BiTime>
+            <div
+              className="flex gap-5 my-7">
+              <PiClockClockwise className="text-blue-500 text-2xl" />
               <div>
-                <p className="font-semibold">Hours:</p>
-                <p>50h / week</p>
+                <p
+                  className="font-semibold">
+                  Hours:
+                </p>
+                <p
+                  className="text-gray-500 font-medium my-1 text-xs">
+                  50h / week
+                </p>
               </div>
             </div>
             {/* Hours: */}
 
             {/* Rate: */}
-            <div className="flex gap-5 my-6">
-              <BiSolidCoinStack className="text-blue-500 text-2xl"></BiSolidCoinStack>
+            <div
+              className="flex gap-5 my-7">
+              <BsCoin className="text-blue-500 text-2xl" />
               <div>
-                <p className="font-semibold">Rate:</p>
-                <p>$15 - $25 / hour</p>
+                <p
+                  className="font-semibold">
+                  Rate:
+                </p>
+                <p
+                  className="text-gray-500 font-medium my-1 text-xs">
+                  $15 - $25 / hour
+                </p>
               </div>
             </div>
             {/* Rate: */}
 
             {/* Salary: */}
-            <div className="flex gap-5 my-6">
-              <GiMoneyStack className="text-blue-500 text-2xl"></GiMoneyStack>
+            <div
+              className="flex gap-5 my-7">
+              <FaMoneyBill1Wave
+                className="text-blue-500 text-2xl" />
               <div>
-                <p className="font-semibold">Salary:</p>
-                <p>{salaryRange}</p>
+                <p
+                  className="font-semibold">
+                  Salary:
+                </p>
+                <p
+                  className="text-gray-500 font-medium my-1 text-xs">
+                  {salaryRange}
+                </p>
               </div>
             </div>
             {/* Salary: */}
@@ -276,24 +464,51 @@ const SingleHRPage = ({ params }) => {
 
           {/* job skills */}
           <div>
-            <h1 className="text-xl font-semibold mt-4">Job Skills</h1>
+            <h1
+              className="text-xl font-semibold mt-4">
+              Job Skills
+            </h1>
 
-            <div className="grid grid-cols-3 gap-3 my-4">
+            <div
+              className="grid grid-cols-3 gap-3 my-4">
               {/* skillOne */}
-              <div className="bg-white shadow-md  flex items-center justify-center rounded-lg py-2 font-medium">
-                <p>CSS</p>
+              <div
+                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
+                <p>
+                  CSS
+                </p>
               </div>
               {/* skillOne */}
 
               {/* skillTWo */}
-              <div className="bg-white shadow-md flex items-center justify-center rounded-lg py-2 font-medium">
-                <p>React</p>
+              <div
+                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
+                <p>
+                  React
+                </p>
               </div>
               {/* skillTwo */}
 
               {/* skillThree */}
-              <div className="bg-white shadow-md  flex items-center justify-center rounded-lg py-2 font-medium">
-                <p>Next.js</p>
+              <div
+                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
+                <p>
+                  Next.js
+                </p>
+              </div>
+
+              <div
+                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
+                <p>
+                  Wordpress
+                </p>
+              </div>
+
+              <div
+                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
+                <p>
+                  Design
+                </p>
               </div>
               {/* skillThree */}
             </div>
@@ -303,92 +518,143 @@ const SingleHRPage = ({ params }) => {
         </div>
 
         {/* company details */}
-        <div className="bg-indigo-50 rounded-xl px-7 py-10 mb-10">
+        <div
+          className="bg-indigo-50 rounded-xl px-7 pt-10 pb-1 mb-10">
 
           {/* company logo & name */}
-          <div className="flex gap-5 items-center">
-
+          <div
+            className="flex gap-5 items-start justify-start">
             <Image
-              className="rounded-lg"
-              width={100}
-              height={100}
               src={companyLogo}
+              className="rounded-lg"
               alt="company logo"
-            />
+              width={70}
+              height={70}>
+            </Image>
+
             {/* company name */}
-            <p className="font-semibold">Company name</p>
+            <div>
+              <p
+                className="font-medium ms-1 text-lg mb-1">
+                Company Name
+              </p>
+              <Link
+                href="/"
+                className="bg-blue-100 text-blue-600 font-medium text-xs py-1 px-4 rounded-lg">
+                Company Website
+              </Link>
+            </div>
             {/* company name */}
           </div>
           {/* company logo & name */}
 
           {/* industry name */}
-          <div className="mt-10 mb-5 flex justify-between">
-            <p>Primary industry :</p>
-            <p>Software</p>
+          <div
+            className="mt-6 flex justify-between">
+            <p
+              className="font-semibold">
+              Primary industry :
+            </p>
+            <p
+              className="text-gray-500 font-medium">
+              Software
+            </p>
           </div>
           {/* industry name */}
 
           {/* Company size: */}
-          <div className="my-5 flex justify-between">
-            <p>Company size :</p>
-            <p>500-1,000</p>
+          <div
+            className="my-5 flex justify-between">
+            <p
+              className="font-semibold">
+              Company size :
+            </p>
+            <p
+              className="text-gray-500 font-medium">
+              500-1,000
+            </p>
           </div>
           {/* Company size: */}
 
           {/* Founded in: */}
-          <div className="my-5 flex justify-between">
-            <p>Founded in :</p>
-            <p>2011</p>
+          <div
+            className="my-5 flex justify-between">
+            <p
+              className="font-semibold">
+              Founded in :
+            </p>
+            <p
+              className="text-gray-500 font-medium">
+              2011
+            </p>
           </div>
           {/* Founded in: */}
 
           {/* Phone: */}
-          <div className="my-5 flex justify-between">
-            <p>Phone :</p>
-            <p>123 456 7890</p>
+          <div
+            className="my-5 flex justify-between">
+            <p
+              className="font-semibold">
+              Phone :
+            </p>
+            <p
+              className="text-gray-500 font-medium">
+              123 456 7890
+            </p>
           </div>
           {/* Phone: */}
 
           {/* Email: */}
-          <div className="my-5 lg:flex justify-between">
-            <p>Email :</p>
-            <p>{HrEmail}</p>
+          <div
+            className="my-5 lg:flex justify-between">
+            <p
+              className="font-semibold">
+              Email :
+            </p>
+            <p
+              className="text-gray-500 font-medium">
+              {HrEmail}
+            </p>
           </div>
           {/* Email: */}
 
           {/* Location: */}
-          <div className="my-5 flex justify-between">
-            <p>Location :</p>
-            <p>{location}</p>
+          <div
+            className="my-5 flex justify-between">
+            <p
+              className="font-semibold">
+              Location :
+            </p>
+            <p
+              className="text-gray-500 font-medium">
+              {location}
+            </p>
           </div>
           {/* Location: */}
 
           {/* Social media: */}
-          <div className="my-5 flex justify-between">
-            <p>Social media :</p>
-            <p className="flex gap-2 cursor-pointer">
-              <BiLogoFacebook className="hover:text-pink-500 duration-300"></BiLogoFacebook>
-              <BiLogoInstagram className="hover:text-pink-500 duration-300"></BiLogoInstagram>
-              <BiLogoTwitter className="hover:text-pink-500 duration-300"></BiLogoTwitter>
-              <BiLogoLinkedin className="hover:text-pink-500 duration-300"></BiLogoLinkedin>
+          <div
+            className="my-5 flex justify-between">
+            <p
+              className="font-semibold">
+              Social media :
+            </p>
+            <p
+              className="flex gap-2 cursor-pointer">
+              <BiLogoFacebook className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
+              <BiLogoInstagram className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
+              <BiLogoTwitter className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
+              <BiLogoLinkedin className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
             </p>
           </div>
           {/* Social media: */}
-
-
-
         </div>
         {/* company details */}
       </div>
-
-
-
       {/* right-side */}
-
     </div>
     {/* body part */}
-
-  </div>;
+  </div >;
 };
 
 export default SingleHRPage;
