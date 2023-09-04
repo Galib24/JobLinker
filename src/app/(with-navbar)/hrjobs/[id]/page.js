@@ -11,7 +11,6 @@ import { IoLocationSharp } from "react-icons/io5";
 
 const SingleHRPage = ({ params }) => {
   const [singleHrData, setSingleHrData] = useState([]);
-  //   use console log to see what data have singleHrData, then continue design
 
   const { id } = params;
 
@@ -31,9 +30,6 @@ const SingleHRPage = ({ params }) => {
 
   console.log(singleHrData);
 
-  {
-    /* please use optional chaining ? when required, otherwise throw error */
-  }
 
   return <div>
 
@@ -41,7 +37,7 @@ const SingleHRPage = ({ params }) => {
 
     <div className="lg:grid grid-cols-12 bg-indigo-50 pt-32 px-16 pb-20 items-center">
 
-      {/* img */}
+      {/* img start */}
       <div className="col-span-1 mt-2">
         <Image
           className="rounded-lg"
@@ -52,7 +48,7 @@ const SingleHRPage = ({ params }) => {
         />
 
       </div>
-      {/* img */}
+      {/* img end */}
 
 
       {/* text */}

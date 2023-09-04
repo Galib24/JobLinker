@@ -143,16 +143,16 @@ const Footer = () => {
                         gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
                         gradientUnits="userSpaceOnUse">
                         <stop
-                          stop-color="#FD5" />
+                          stopColor="#FD5" />
                         <stop
                           offset=".1"
-                          stop-color="#FD5" />
+                          stopColor="#FD5" />
                         <stop
                           offset=".5"
-                          stop-color="#FF543E" />
+                          stopColor="#FF543E" />
                         <stop
                           offset="1"
-                          stop-color="#C837AB" />
+                          stopColor="#C837AB" />
                       </radialGradient>
                       <radialGradient
                         id="skillIconsInstagram1"
@@ -162,13 +162,13 @@ const Footer = () => {
                         gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
                         gradientUnits="userSpaceOnUse">
                         <stop
-                          stop-color="#3771C8" />
+                          stopColor="#3771C8" />
                         <stop
                           offset=".128"
-                          stop-color="#3771C8" />
+                          stopColor="#3771C8" />
                         <stop
                           offset="1"
-                          stop-color="#60F"
+                          stopColor="#60F"
                           stop-opacity="0" />
                       </radialGradient>
                     </defs>
