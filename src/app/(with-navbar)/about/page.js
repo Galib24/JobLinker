@@ -1,7 +1,8 @@
 
 const AboutPage = () => {
     return (
-        <div>
+        <div
+            className="container mx-auto">
             AboutPage
         </div>
     );

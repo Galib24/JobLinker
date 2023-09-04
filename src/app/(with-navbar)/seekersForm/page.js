@@ -93,15 +93,17 @@ const SeekersForm = () => {
   return (
     <div>
       <div>
-        <BannerComponent
-          headingTitle="Seeking A Job"
-          pageName="Get Ready to Hired!"
-        />
+        <div
+          className="bg-indigo-50">
+          <BannerComponent
+            headingTitle="Seeking A Job"
+            pageName="Get Ready to Hired!" />
+        </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="mx-2 lg:mx-5 mt-10 p-4"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          className="mt-10 p-4 container w-[90%] mx-auto font-semibold">
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-2 lg:mx-5]">
             {/* Name Field */}
             <div className="form-control">
               <label className="label">
@@ -186,12 +188,16 @@ const SeekersForm = () => {
             </div>
 
             {/* Top three skills */}
-            <div className="grid lg:grid-cols-4 gap-5 w-full items-center">
-              <p className="font-semibold">Type Your Top Three Skills:</p>
+            <div
+              className="col-span-2 grid lg:grid-cols-12 gap-5 w-full items-center">
+              <p
+                className="font-semibold col-span-3">
+                Type Your Top Three Skills:
+              </p>
 
-              <div className="form-control">
+              <div className="form-control col-span-2 flex  justify-center">
                 <label className="label">
-                  <span className="label-text">SkillOne*</span>
+                  <span className="label-text">Your First Skill *</span>
                 </label>
                 <input
                   type="text"
@@ -201,9 +207,9 @@ const SeekersForm = () => {
                 />
               </div>
 
-              <div className="form-control">
+              <div className="form-control col-span-2">
                 <label className="label">
-                  <span className="label-text">SkillTwo*</span>
+                  <span className="label-text">Your First Second *</span>
                 </label>
                 <input
                   type="text"
@@ -213,30 +219,31 @@ const SeekersForm = () => {
                 />
               </div>
 
-              <div className="form-control">
+              <div className="form-control col-span-2">
                 <label className="label">
-                  <span className="label-text">SkillThree*</span>
+                  <span className="label-text">Your Third Skill *</span>
                 </label>
                 <input
                   type="text"
                   name="SkillThree"
                   className="input input-bordered"
-                  {...register("skillThree", { required: true })}
+                  {...register("skillThree", { required: true })} />
+              </div>
+              <div className="form-control col-span-3">
+                <label className="label">
+                  <span className="label-text">Your Photo</span>
+                </label>
+                <input
+                  type="file"
+                  className="file-input file-input-bordered w-full max-w-xs"
+                  {...register("image", { required: true })}
                 />
               </div>
             </div>
 
+
             {/* Image Field */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Your Photo</span>
-              </label>
-              <input
-                type="file"
-                className="file-input file-input-bordered w-full max-w-xs"
-                {...register("image", { required: true })}
-              />
-            </div>
+
           </div>
 
           {/* About Myself field */}
@@ -253,10 +260,11 @@ const SeekersForm = () => {
           </div>
 
           {/* submit button */}
-          <div className="form-control mt-6">
+          <div
+            className="form-control mt-6 mx-auto">
             <input
               type="submit"
-              className="btn btn-info btn-block text-white "
+              className="bg-[#40e1f9] rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 my-4 py-2"
               value="Submit Post"
             />
           </div>

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { FaFacebookF, FaInstagram, FaSnapchatSquare, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -8,7 +7,7 @@ const Footer = () => {
       className="bg-gradient-to-r from-cyan-50 to-blue-100">
       {/* footer section */}
       <div
-        className='w-[95%] mx-auto pt-20 pb-10'>
+        className='container mx-auto pt-20 pb-10'>
         <div
           className='font-bold'>
           <div

@@ -116,8 +116,10 @@ const JobSeekersPage = () => {
         </div>
       </div>
       {/* for small device end */}
+
       {/* main grid */}
-      <div className="grid grid-cols-4">
+      <div
+        className="grid grid-cols-4 container mx-auto">
         {/* right div section */}
         <div className="mr-1 ml-10 mb-10 hidden lg:block">
           <div className="bg-indigo-50 w-full rounded-2xl pb-8 pt-4">
@@ -224,9 +226,14 @@ const JobSeekersPage = () => {
               </small>
             </div>
             <div className="mt-1 mb-16">
-              {seekerData?.map((jobPost) => (
-                <SingleCard key={jobPost._id} jobPost={jobPost}></SingleCard>
-              ))}
+              {
+                seekerData?.map((jobPost) => (
+                  <SingleCard
+                    key={jobPost._id}
+                    jobPost={jobPost}>
+                  </SingleCard>
+                ))
+              }
             </div>
             {/* all card section end */}
           </div>

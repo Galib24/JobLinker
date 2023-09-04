@@ -6,7 +6,6 @@ import JobsBanner from "@/components/HomePage/JobsBanner/JobsBanner";
 import SponsorShip from "@/components/HomePage/SponsorShip/SponsorShip";
 import TestimonialSection from "@/components/HomePage/TestimonialSection/TestimonialSection";
 
-
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -21,7 +20,7 @@ export default function Home() {
       duration: 800,
       once: false,
     })
-  }, [])
+  }, []);
 
 
   return (
@@ -29,29 +28,29 @@ export default function Home() {
 
       {/* Banner Section /} */}
 
-      <HomeBanner></HomeBanner>
+      <HomeBanner />
 
       {/* {/ Popular job category section /} */}
-      <JobCategories></JobCategories>
+      <JobCategories />
 
       {/* {/ feature job section /} */}
-      <FeaturedJobs></FeaturedJobs>
+      <FeaturedJobs />
 
       {/* {/ Seeker Post Section /} */}
-      <JobSeekers></JobSeekers>
+      <JobSeekers />
 
       {/* {/ Jobs Banner section /} */}
-      <JobsBanner></JobsBanner>
+      <JobsBanner />
 
       {/* {/SponsorShip section /} */}
-      <SponsorShip></SponsorShip>
+      <SponsorShip />
 
       {/* {/ Jobs Blog section /} */}
 
-      <Blog></Blog>
+      <Blog />
 
       {/* Testimonial section */}
-      <TestimonialSection></TestimonialSection>
+      <TestimonialSection />
 
     </div>
   );
