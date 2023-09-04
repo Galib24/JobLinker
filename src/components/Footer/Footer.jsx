@@ -76,15 +76,12 @@ const Footer = () => {
                 {/* facebook */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  viewBox="0 0 256 256">
+                  width="32"
+                  height="32"
+                  viewBox="0 0 20 20">
                   <path
-                    fill="#1877F2"
-                    d="M256 128C256 57.308 198.692 0 128 0C57.308 0 0 57.307 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.347-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.958 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445" />
-                  <path
-                    fill="#FFF"
-                    d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A128.959 128.959 0 0 0 128 256a128.9 128.9 0 0 0 20-1.555V165h29.825" />
+                    fill="#1877f2"
+                    d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2z" />
                 </svg>
 
                 {/* twitter */}
@@ -143,16 +140,16 @@ const Footer = () => {
                         gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
                         gradientUnits="userSpaceOnUse">
                         <stop
-                          stop-color="#FD5" />
+                          stopColor="#FD5" />
                         <stop
                           offset=".1"
-                          stop-color="#FD5" />
+                          stopColor="#FD5" />
                         <stop
                           offset=".5"
-                          stop-color="#FF543E" />
+                          stopColor="#FF543E" />
                         <stop
                           offset="1"
-                          stop-color="#C837AB" />
+                          stopColor="#C837AB" />
                       </radialGradient>
                       <radialGradient
                         id="skillIconsInstagram1"
@@ -162,14 +159,14 @@ const Footer = () => {
                         gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
                         gradientUnits="userSpaceOnUse">
                         <stop
-                          stop-color="#3771C8" />
+                          stopColor="#3771C8" />
                         <stop
                           offset=".128"
-                          stop-color="#3771C8" />
+                          stopColor="#3771C8" />
                         <stop
                           offset="1"
-                          stop-color="#60F"
-                          stop-opacity="0" />
+                          stopColor="#60F"
+                          stopOpacity="0" />
                       </radialGradient>
                     </defs>
                   </g>
