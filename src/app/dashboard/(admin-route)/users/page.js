@@ -3,27 +3,20 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
-import { useQuery } from "react-query";
+import { focusManager, useQuery } from "react-query";
 
 const UsersPage = () => {
   // const [users, setUsers] = useState([]);
   const [DeleteUsers, setDeleteUsers] = useState([]);
 
-  // get the data
-  // useEffect(() => {
-  //     const fetchUsersData = async () => {
-  //         const response = await fetch("/api/users");
-  //         const data = await response.json();
-  //         console.log(data);
-  //         setUsers(data);
-  //     };
+  // for time 
 
-  //     fetchUsersData();
-  // }, []);
+  
+  // get the data
+
 
   // fix this
 
-  // delete fetching data 
 //   useEffect(() => {
 //     const fetchUsers = async () => {
 //         const response = await fetch("/api/users");
@@ -100,6 +93,8 @@ const UsersPage = () => {
 };
 
 
+
+
   return (
     <>
       <h3 className="text-3xl font-semibold text-center my-4">
@@ -116,6 +111,7 @@ const UsersPage = () => {
               <th>Power</th>
               <th>Instructor</th>
               <th>Action</th>
+              <th>Time</th>
             </tr>
           </thead>
           <tbody>
@@ -146,6 +142,9 @@ const UsersPage = () => {
                   <button   onClick={() => handleDelete(user._id)} className="btn text-red-500 btn-ghost btn-md">
                     <FaTrashAlt></FaTrashAlt>
                   </button>
+                </td>
+                <td>
+                {user.createdAt}
                 </td>
               </tr>
             ))}

@@ -20,16 +20,18 @@ export async function POST(request) {
     const body = await request.json();
     const db = await dbConnect();
 
+    // Add a 'createdAt' timestamp to the 'body' object
+    body.createdAt = new Date();
+
     console.log(body);
     const usersCollection = db.collection("users");
 
     const query = { email: body.email }
     const existingUser = await usersCollection.findOne(query);
-    // console.log(existingUser, 'user exist');
 
     if (existingUser) {
-      return res.send({ message: 'user already exist' })
-  }
+      return res.send({ message: 'user already exists' })
+    }
 
     const result = await usersCollection.insertOne(body);
     return NextResponse.json(result);
