@@ -64,6 +64,9 @@ const DashboardLayout = ({ children }) => {
           {isAdmin && (
             <>
               <li>
+                <Link href={`/dashboard/analysis`}>Admin Analysis</Link>
+              </li>
+              <li>
                 <Link href={`/dashboard/users`}>User Management</Link>
               </li>
               <li>
