@@ -1,12 +1,13 @@
 "use client";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { useQuery } from "react-query";
 
 const UsersPage = () => {
   // const [users, setUsers] = useState([]);
+  const [DeleteUsers, setDeleteUsers] = useState([]);
 
   // get the data
   // useEffect(() => {
@@ -22,6 +23,16 @@ const UsersPage = () => {
 
   // fix this
 
+  // delete fetching data 
+//   useEffect(() => {
+//     const fetchUsers = async () => {
+//         const response = await fetch("/api/users");
+//         const data = await response.json();
+//         setDeleteUsers(data);
+//     };
+//     fetchUsers();
+// }, []);
+
   const {
     data: users = [],
     refetch,
@@ -30,6 +41,7 @@ const UsersPage = () => {
   } = useQuery({
     queryFn: async () => {
       const res = await axios("/api/users");
+      setDeleteUsers(res.data)
       return res.data;
     },
   });
@@ -62,6 +74,31 @@ const UsersPage = () => {
       toast.success(`${user.name} is now Admin`);
     }
   };
+
+
+  const handleDelete = async (userId) => {
+    try {
+        const response = await fetch(`/api/users/${userId}`, {
+            method: "DELETE",
+        });
+        if (response.ok) {
+          refetch();
+          toast.success(`Deleted User`);
+        }
+
+        if (response.status === 200) {
+            // User deleted successfully, update the UI by removing the user
+            setDeleteUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
+        } else {
+            // Handle error here if needed
+            console.error("Failed to delete user.");
+        }
+    } catch (error) {
+        // Handle network or other errors here
+        console.error("An error occurred while deleting user.", error);
+    }
+};
+
 
   return (
     <>
@@ -106,7 +143,7 @@ const UsersPage = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="btn text-red-500 btn-ghost btn-md">
+                  <button   onClick={() => handleDelete(user._id)} className="btn text-red-500 btn-ghost btn-md">
                     <FaTrashAlt></FaTrashAlt>
                   </button>
                 </td>
