@@ -21,7 +21,8 @@ export async function POST(request) {
     const db = await dbConnect();
 
     // Add a 'createdAt' timestamp to the 'body' object
-    body.createdAt = new Date();
+    const currentDate = new Date();
+    body.postDate = currentDate.toISOString().split('T')[0];
 
     console.log(body);
     const usersCollection = db.collection("users");

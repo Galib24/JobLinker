@@ -144,7 +144,7 @@ const UsersPage = () => {
                   </button>
                 </td>
                 <td>
-                {user.createdAt}
+                {user?.postDate}
                 </td>
               </tr>
             ))}
