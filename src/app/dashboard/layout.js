@@ -37,7 +37,7 @@ const DashboardLayout = ({ children }) => {
   const isAdmin = userRole === "admin";
 
   // const isAdmin = true;
-  const isHr = false;
+  const isHr = userRole === "hr";
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -59,10 +59,14 @@ const DashboardLayout = ({ children }) => {
             <Link href={`/`}>Home</Link>
           </li>
           <li>
-            <a>To do 1 for admin</a>
+            <a>To do 1 for all</a>
           </li>
+
           {isAdmin && (
             <>
+              <li>
+                <Link href={`/dashboard/analysis`}>Admin Analysis</Link>
+              </li>
               <li>
                 <Link href={`/dashboard/users`}>User Management</Link>
               </li>
@@ -71,10 +75,11 @@ const DashboardLayout = ({ children }) => {
               </li>
             </>
           )}
+          
           {isHr && (
             <>
               <li>
-                <a>Sidebar Item HR item 1</a>
+                <Link href="/dashboard/hrjobpost">My Job Post</Link>
               </li>
               <li>
                 <a>Sidebar Item Hr item 2</a>
