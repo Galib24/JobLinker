@@ -16,7 +16,7 @@ const SingleHRPage = ({ params }) => {
 
   const { id } = params;
 
-  const { HrEmail, companyDetails, companyLogo, jobDescription, jobNeed, jobPlace, jobTitle, jobType, location, rating, salaryRange } = singleHrData
+  const { HrEmail, companyDetails, companyLogo, jobDescription, jobNeed, jobPlace, jobTitle, jobType, location, rating, salaryRange } = singleHrData;
 
   // get the data
   useEffect(() => {
@@ -27,12 +27,8 @@ const SingleHRPage = ({ params }) => {
     };
     fetchSingleHrData();
   }, [id]);
-
   // console.log(singleHrData);
 
-  { /* please use optional chaining ? when required, otherwise throw error */ }
-
-  
   return <div>
     {/* Header */}
     <div
@@ -40,7 +36,8 @@ const SingleHRPage = ({ params }) => {
       <div
         className="container mx-auto lg:grid grid-cols-12 pt-20 lg:pt-32 lg:px-16 lg:pb-20 pb-8 items-center">
         {/* img start */}
-        <div className="col-span-1 mt-2">
+        <div
+          className="col-span-1 mt-2">
           <Image
             className="rounded-lg hidden lg:block"
             width={500}
@@ -149,12 +146,12 @@ const SingleHRPage = ({ params }) => {
         <div
           className="col-span-3 mt-6 grid grid-rows-2 mx-6 lg:mx-0">
           <button
-            onClick={() => window.my_modal_3.showModal()}
+            onClick={() => window.my_modal_1.showModal()}
             className="bg-blue-600 py-4 flex items-center justify-center text-white rounded-lg hover:bg-blue-700 mb-4 font-semibold">
             Apply For Job
           </button>
           <dialog
-            id="my_modal_3"
+            id="my_modal_1"
             className="modal">
             <form
               method="dialog"
