@@ -24,16 +24,13 @@ const SingleSeekerPage = ({ params }) => {
     const fetchSingleSeekerData = async () => {
       const response = await fetch(`/api/seeker/${id}`);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setSingleSeekerData(data);
     };
 
     fetchSingleSeekerData();
   }, [id]);
 
-  {
-    /* please use optional chaining ? when required, otherwise throw error */
-  }
   return (
     <div>
       {/* Header */}
@@ -196,14 +193,12 @@ const SingleSeekerPage = ({ params }) => {
                 </p>
               </div>
               {/* checkbox */}
-
               <button
                 className="w-full mt-6 mb-2 bg-blue-600 py-4 flex items-center justify-center text-white rounded-lg hover:bg-blue-700">
                 Hire Me
               </button>
             </form>
           </dialog>
-
           <button
             className="bg-blue-100 py-4 flex items-center justify-center rounded-lg text-blue-600 hover:bg-blue-700 hover:text-white duration-500 w-full mb-4" >
             <PiBookmarkSimple className="text-3xl" />
