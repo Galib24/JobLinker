@@ -59,7 +59,7 @@ const DashboardLayout = ({ children }) => {
             <Link href={`/`}>Home</Link>
           </li>
           <li>
-            <a>To do 1 for all</a>
+            <Link href={`/dashboard/hrjobpost`}>HR JOB POST</Link>
           </li>
 
           {isAdmin && (
