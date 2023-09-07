@@ -21,7 +21,7 @@ const HrAllJobPost = () => {
         <div>
             <h2 className="text-4xl font-semibold mt-20 mb-5 text-center">HR Management All Data </h2>
             <div className="overflow-x-auto px-10 py-10">
-                <table className="table">
+                <table className="table sm:w-3/4 md:w-full">
                     {/* head */}
                     <thead>
                         <tr>
