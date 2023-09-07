@@ -107,7 +107,6 @@ const UsersPage = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Power</th>
-              <th>Instructor</th>
               <th>Action</th>
               <th>Time</th>
             </tr>
@@ -131,12 +130,7 @@ const UsersPage = () => {
                   )}
                 </td>
                 <td>
-                  <button className="btn text-blue-500 btn-ghost btn-md">
-                    user
-                  </button>
-                </td>
-                <td>
-                  <button onClick={() => handleDelete(user._id)} className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300"><FaTrash className="text-xl hidden lg:block"></FaTrash> <span>Delete</span></button>
+                  <button onClick={() => handleDelete(user._id)} className="btn  px-10 p-3 rounded-lg text-white bg-red-500 hover:bg-[#40e1f9] ease-out duration-300"><FaTrash className="text-xl hidden lg:block"></FaTrash> <span>Delete</span></button>
                 </td>
                 <td>
                   {user?.postDate}
