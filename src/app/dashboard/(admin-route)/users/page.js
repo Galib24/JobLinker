@@ -93,9 +93,6 @@ const UsersPage = () => {
     }
   };
 
-
-
-
   return (
     <>
       <h3 className="text-3xl font-semibold text-center my-4">
@@ -133,7 +130,6 @@ const UsersPage = () => {
                     </button>
                   )}
                 </td>
-
                 <td>
                   <button className="btn text-blue-500 btn-ghost btn-md">
                     user

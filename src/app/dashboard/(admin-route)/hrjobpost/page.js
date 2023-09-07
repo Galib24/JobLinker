@@ -67,7 +67,7 @@ const HrAllJobPost = () => {
                                 {/* job type / job place */}
                                 <td>{item?.rating}</td>
                                 <td>
-                                    <button className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-3"><FaTrash className="text-xl hidden lg:block"></FaTrash> <span>Delete</span></button>
+                                    <button className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-3"><FaTrash className="text-xl hidden lg:block"></FaTrash><span>Delete</span></button>
                                 </td>
                             </tr>
                             )
