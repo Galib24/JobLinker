@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { BsClock } from "react-icons/bs";
+import { BsClock, BsFillPersonFill, BsHourglass } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
-import { IoBagCheckOutline } from "react-icons/io5";
-import { PiBookmarkSimple, PiCurrencyCircleDollarDuotone } from "react-icons/pi";
-import { FaMedal } from "react-icons/fa6";
+import { IoBagCheckOutline, IoCalendarOutline, IoLanguageOutline } from "react-icons/io5";
+import { PiBookmarkSimple, PiCurrencyCircleDollarDuotone, PiGraduationCapDuotone } from "react-icons/pi";
+import { FaCoins, FaMedal } from "react-icons/fa6";
+import { GiMoneyStack } from "react-icons/gi";
+import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin, BiLogoTwitter } from "react-icons/bi";
 
 const SingleSeekerPage = ({ params }) => {
   const [singleSeekerData, setSingleSeekerData] = useState([]);
@@ -224,10 +226,14 @@ const SingleSeekerPage = ({ params }) => {
             className="col-span-8">
             <h2
               className="text-xl font-bold">
-              About My Self
+              Candidates About
             </h2>
             <p
               className="text-gray-500 font-semibold text-sm mt-3 lg:mr-20">
+              <p>Hello my name is Nicole Wells and web developer from Portland. In pharetra orci dignissim, blandit mi semper, ultricies diam. Suspendisse malesuada suscipit nunc non volutpat. Sed porta nulla id orci laoreet tempor non consequat enim. Sed vitae aliquam velit. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam.
+
+                Mauris nec erat ut libero vulputate pulvinar. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam. Mauris nec erat ut libero vulputate pulvinar.
+                </p>
               {aboutMyself}
             </p>
           </div>
@@ -237,191 +243,238 @@ const SingleSeekerPage = ({ params }) => {
           {/* left side div start */}
           <div
             className="col-span-4 mx-2">
-             <div
-          className="bg-indigo-50 rounded-xl px-7 pt-10 pb-2 mb-10">
-          <h1
-            className="text-xl font-bold">
-            Seekers Overview
-          </h1>
-
-          {/* icons */}
-          <div>
-
-            {/* calendar */}
+            {/* 1st div */}
             <div
-              className="flex gap-5 my-7">
-              {/* <IoCalendarOutline className="text-blue-500 text-2xl" /> */}
+              className="bg-indigo-50 rounded-xl px-7 pt-10 pb-2 mb-10">
+              <h1
+                className="text-xl font-bold">
+                Seekers Overview
+              </h1>
+
+              {/* icons */}
               <div>
-                <p
-                  className="font-semibold">
-                  Date Posted:
-                </p>
-                <p
-                  className="text-gray-500 font-medium my-1 text-xs">
-                  Posted 1 hours ago
-                </p>
+
+                {/* Experience */}
+                <div
+                  className="flex gap-5 my-7">
+                  <IoCalendarOutline className="text-blue-500 text-2xl" />
+                  <div>
+                    <p
+                      className="font-semibold">
+                      Experience:
+                    </p>
+                    <p
+                      className="text-gray-500 font-medium my-1 text-xs">
+                      0-{jobExperience} Years
+                    </p>
+                  </div>
+                </div>
+                {/* Experience */}
+
+                {/* Age: */}
+                <div
+                  className="flex gap-5 my-7">
+                  <BsHourglass className="text-blue-500 text-2xl" />
+                  <div>
+                    <p
+                      className="font-semibold">
+                      Age:
+                    </p>
+                    <p
+                      className="text-gray-500 font-medium my-1 text-xs">
+                      20-24 Years
+                    </p>
+                  </div>
+                </div>
+                {/* Age: */}
+
+                {/* Current Salary: */}
+                <div
+                  className="flex gap-5 my-7">
+                  <FaCoins className="text-blue-500 text-2xl" />
+                  <div>
+                    <p
+                      className="font-semibold">
+                      Current Salary:
+                    </p>
+                    <p
+                      className="text-gray-500 font-medium my-1 text-xs">
+                      11K - 15K
+                    </p>
+                  </div>
+                </div>
+                {/* Current Salary: */}
+
+                {/* Expected Salary: */}
+                <div
+                  className="flex gap-5 my-7">
+                  <GiMoneyStack className="text-blue-500 text-2xl" />
+                  <div>
+                    <p
+                      className="font-semibold">
+                      Expected Salary:
+                    </p>
+                    <p
+                      className="text-gray-500 font-medium my-1 text-xs">
+                      26K - 30K
+                    </p>
+                  </div>
+                </div>
+                {/* Expected Salary: */}
+
+                {/* Gender: */}
+                <div
+                  className="flex gap-5 my-7">
+                  <BsFillPersonFill className="text-blue-500 text-2xl" />
+                  <div>
+                    <p
+                      className="font-semibold">
+                      Gender:
+                    </p>
+                    <p
+                      className="text-gray-500 font-medium my-1 text-xs">
+                      Male
+                    </p>
+                  </div>
+                </div>
+                {/* Gender: */}
+
+                {/* Language: */}
+                <div
+                  className="flex gap-5 my-7">
+                  <IoLanguageOutline className="text-blue-500 text-2xl" />
+                  <div>
+                    <p
+                      className="font-semibold">
+                      Language:
+                    </p>
+                    <p
+                      className="text-gray-500 font-medium my-1 text-xs">
+                      English, German, Spanish
+                    </p>
+                  </div>
+                </div>
+                {/* Language: */}
+
+                {/* Education: */}
+                <div
+                  className="flex gap-5 my-7">
+                  <PiGraduationCapDuotone className="text-blue-500 text-2xl" />
+                  <div>
+                    <p
+                      className="font-semibold">
+                      Salary:
+                    </p>
+                    <p
+                      className="text-gray-500 font-medium my-1 text-xs">
+                      {education}
+                    </p>
+                  </div>
+                </div>
+                {/* Education: */}
               </div>
+              {/* icons */}
+
+
             </div>
-            {/* calendar */}
-
-            {/* Expiration */}
-            <div
-              className="flex gap-5 my-7">
-              {/* <BsHourglass className="text-blue-500 text-2xl" /> */}
-              <div>
-                <p
-                  className="font-semibold">
-                  Expiration date:
-                </p>
-                <p
-                  className="text-gray-500 font-medium my-1 text-xs">
-                  April 06, 2024
-                </p>
-              </div>
-            </div>
-            {/* Expiration */}
-
-            {/* location */}
-            <div
-              className="flex gap-5 my-7">
-              <CiLocationOn className="text-blue-500 text-2xl" />
-              <div>
-                <p
-                  className="font-semibold">
-                  Location:
-                </p>
-                <p
-                  className="text-gray-500 font-medium my-1 text-xs">
-                  {/* {location} */}
-                </p>
-              </div>
-            </div>
-            {/* location */}
-
-            {/* Job Title: */}
-            <div
-              className="flex gap-5 my-7">
-              {/* <GoPerson className="text-blue-500 text-2xl" /> */}
-              <div>
-                <p
-                  className="font-semibold">
-                  Job Title:
-                </p>
-                <p
-                  className="text-gray-500 font-medium my-1 text-xs">
-                  {/* {jobTitle} */}
-                </p>
-              </div>
-            </div>
-            {/* Job Title: */}
-
-            {/* Hours: */}
-            <div
-              className="flex gap-5 my-7">
-              {/* <PiClockClockwise className="text-blue-500 text-2xl" /> */}
-              <div>
-                <p
-                  className="font-semibold">
-                  Hours:
-                </p>
-                <p
-                  className="text-gray-500 font-medium my-1 text-xs">
-                  50h / week
-                </p>
-              </div>
-            </div>
-            {/* Hours: */}
-
-            {/* Rate: */}
-            <div
-              className="flex gap-5 my-7">
-              {/* <BsCoin className="text-blue-500 text-2xl" /> */}
-              <div>
-                <p
-                  className="font-semibold">
-                  Rate:
-                </p>
-                <p
-                  className="text-gray-500 font-medium my-1 text-xs">
-                  $15 - $25 / hour
-                </p>
-              </div>
-            </div>
-            {/* Rate: */}
-
-            {/* Salary: */}
-            <div
-              className="flex gap-5 my-7">
-              {/* <FaMoneyBill1Wave className="text-blue-500 text-2xl" /> */}
-              <div>
-                <p
-                  className="font-semibold">
-                  Salary:
-                </p>
-                <p
-                  className="text-gray-500 font-medium my-1 text-xs">
-                  {/* {salaryRange} */}
-                </p>
-              </div>
-            </div>
-            {/* Salary: */}
-          </div>
-          {/* icons */}
-
-          {/* job skills */}
-          <div>
-            <h1
-              className="text-xl font-semibold mt-4">
-              Job Skills
-            </h1>
-
-            <div
-              className="grid grid-cols-3 gap-3 my-4">
-              {/* skillOne */}
+            {/* 1st div */}
+            {/* social div */}
+            <div className="bg-indigo-50 rounded-xl px-7 py-3  mb-7">
               <div
-                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
-                <p>
-                  CSS
+                className="my-5 flex justify-between">
+                <p
+                  className="font-semibold">
+                  Social media
+                </p>
+                <p
+                  className="flex gap-2 cursor-pointer">
+                  <BiLogoFacebook className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
+                  <BiLogoInstagram className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
+                  <BiLogoTwitter className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
+                  <BiLogoLinkedin className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
                 </p>
               </div>
-              {/* skillOne */}
-
-              {/* skillTWo */}
-              <div
-                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
-                <p>
-                  React
-                </p>
-              </div>
-              {/* skillTwo */}
-
-              {/* skillThree */}
-              <div
-                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
-                <p>
-                  Next.js
-                </p>
-              </div>
-
-              <div
-                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
-                <p>
-                  Wordpress
-                </p>
-              </div>
-
-              <div
-                className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
-                <p>
-                  Design
-                </p>
-              </div>
-              {/* skillThree */}
             </div>
+            {/* social div */}
 
-          </div>
-          {/* job skills */}
-        </div>
+
+            {/* skill div */}
+            <div className="bg-indigo-50 rounded-xl px-7 pt-10 pb-1 mb-10">
+              {/* job skills */}
+              <div>
+                <h1
+                  className="text-xl font-semibold mt-4">
+                  Professional Skills
+                </h1>
+
+                <div
+                  className="grid grid-cols-3 gap-3 my-4">
+                  {/* skillOne */}
+                  <div
+                    className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs text-center">
+                    <p>
+                      {skills?.skillOne}
+                    </p>
+                  </div>
+                  {/* skillOne */}
+
+                  {/* skillTWo */}
+                  <div
+                    className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs text-center">
+                    <p>
+                      {skills?.skillOne}
+                    </p>
+                  </div>
+                  {/* skillTwo */}
+
+                  {/* skillThree */}
+                  <div
+                    className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
+                    <p>
+                      {skills?.skillThree}
+                    </p>
+                  </div>
+
+                  <div
+                    className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
+                    <p>
+                      Wordpress
+                    </p>
+                  </div>
+
+                  <div
+                    className="bg-white flex items-center justify-center rounded-lg py-2 font-semibold text-gray-500 text-xs">
+                    <p>
+                      Design
+                    </p>
+                  </div>
+                  {/* skillThree */}
+                </div>
+
+              </div>
+              {/* job skills */}
+            </div>
+            {/* skill div */}
+
+            {/* contact Div */}
+            <div className="bg-indigo-50 rounded-xl px-7 py-3  mb-7 text-xl">
+              <h2 className="text-xl font-semibold mt-4">Contact Us</h2>
+              {/* form */}
+              <div className="mx-auto mt-5 mb-3 ">
+                {/* name */}
+              <input type="text" placeholder="Your Name" className="input input-bordered w-full py-8" />
+                {/* email */}
+              <input type="email" placeholder="Email Address" className="input input-bordered w-full my-3 py-8" />
+              {/* text area */}
+              <textarea className="textarea textarea-bordered w-full h-40" placeholder="Message"></textarea>
+
+              <button  className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-3 w-full">Send Message</button>
+              </div>
+              {/* form */}
+            </div>
+            {/* contact Div */}
+
+
           </div>
           {/* left side div end */}
         </div>
