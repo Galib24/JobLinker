@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { focusManager, useQuery } from "react-query";
+import { FaTrash } from "react-icons/fa6";
 
 const UsersPage = () => {
   // const [users, setUsers] = useState([]);
@@ -11,20 +12,20 @@ const UsersPage = () => {
 
   // for time 
 
-  
+
   // get the data
 
 
   // fix this
 
-//   useEffect(() => {
-//     const fetchUsers = async () => {
-//         const response = await fetch("/api/users");
-//         const data = await response.json();
-//         setDeleteUsers(data);
-//     };
-//     fetchUsers();
-// }, []);
+  //   useEffect(() => {
+  //     const fetchUsers = async () => {
+  //         const response = await fetch("/api/users");
+  //         const data = await response.json();
+  //         setDeleteUsers(data);
+  //     };
+  //     fetchUsers();
+  // }, []);
 
   const {
     data: users = [],
@@ -71,29 +72,26 @@ const UsersPage = () => {
 
   const handleDelete = async (userId) => {
     try {
-        const response = await fetch(`/api/users/${userId}`, {
-            method: "DELETE",
-        });
-        if (response.ok) {
-          refetch();
-          toast.success(`Deleted User`);
-        }
+      const response = await fetch(`/api/users/${userId}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        refetch();
+        toast.success(`Deleted User`);
+      }
 
-        if (response.status === 200) {
-            // User deleted successfully, update the UI by removing the user
-            setDeleteUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
-        } else {
-            // Handle error here if needed
-            console.error("Failed to delete user.");
-        }
+      if (response.status === 200) {
+        // User deleted successfully, update the UI by removing the user
+        setDeleteUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
+      } else {
+        // Handle error here if needed
+        console.error("Failed to delete user.");
+      }
     } catch (error) {
-        // Handle network or other errors here
-        console.error("An error occurred while deleting user.", error);
+      // Handle network or other errors here
+      console.error("An error occurred while deleting user.", error);
     }
-};
-
-
-
+  };
 
   return (
     <>
@@ -132,19 +130,16 @@ const UsersPage = () => {
                     </button>
                   )}
                 </td>
-
                 <td>
                   <button className="btn text-blue-500 btn-ghost btn-md">
                     user
                   </button>
                 </td>
                 <td>
-                  <button   onClick={() => handleDelete(user._id)} className="btn text-red-500 btn-ghost btn-md">
-                    <FaTrashAlt></FaTrashAlt>
-                  </button>
+                  <button onClick={() => handleDelete(user._id)} className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300"><FaTrash className="text-xl hidden lg:block"></FaTrash> <span>Delete</span></button>
                 </td>
                 <td>
-                {user?.postDate}
+                  {user?.postDate}
                 </td>
               </tr>
             ))}
