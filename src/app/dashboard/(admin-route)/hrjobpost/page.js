@@ -20,7 +20,7 @@ const HrAllJobPost = () => {
     return (
         <div>
             <h2 className="text-4xl font-semibold mt-20 mb-5 text-center">HR Management All Data </h2>
-            <div className="overflow-x-auto px-10 py-10">
+            <div className="overflow-x-auto px-10 py-10 text-center">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -33,7 +33,7 @@ const HrAllJobPost = () => {
                             </th>
                             <th>HR Email</th>
                             <th>Job Title</th>
-                            <th>Job Time / Job Type</th>
+                            <th>Rating</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -65,7 +65,7 @@ const HrAllJobPost = () => {
                                 {/* Job Title */}
                                 <td>{item?.jobTitle}</td>
                                 {/* job type / job place */}
-                                <td>{item?.jobType} / {item?.jobPlace}</td>
+                                <td>{item?.rating}</td>
                                 <td>
                                     <button className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-3"><FaTrash className="text-xl hidden lg:block"></FaTrash> <span className="">Delete</span></button>
                                 </td>
