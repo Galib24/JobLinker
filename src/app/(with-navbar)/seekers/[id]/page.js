@@ -6,9 +6,11 @@ import { BsClock, BsFillPersonFill, BsHourglass } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import { IoBagCheckOutline, IoCalendarOutline, IoLanguageOutline } from "react-icons/io5";
 import { PiBookmarkSimple, PiCurrencyCircleDollarDuotone, PiGraduationCapDuotone } from "react-icons/pi";
-import { FaCoins, FaMedal } from "react-icons/fa6";
+import { FaCoins, FaLinkedin, FaMedal, FaSquareFacebook, FaTwitter } from "react-icons/fa6";
 import { GiMoneyStack } from "react-icons/gi";
 import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin, BiLogoTwitter } from "react-icons/bi";
+import { HiDownload } from "react-icons/hi";
+import { toast } from "react-hot-toast";
 
 const SingleSeekerPage = ({ params }) => {
   const [singleSeekerData, setSingleSeekerData] = useState([]);
@@ -30,6 +32,11 @@ const SingleSeekerPage = ({ params }) => {
 
     fetchSingleSeekerData();
   }, [id]);
+
+  // resume download function
+  const handleResume = () => {
+    toast.success("Resume Downloading")
+  }
 
   return (
     <div>
@@ -64,14 +71,14 @@ const SingleSeekerPage = ({ params }) => {
           <div
             className="col-span-8 lg:ml-7 mt-8">
             <div
-              className="flex">
+              className="lg:flex">
               <h1
-                className="mt-2 text-xl lg:text-3xl font-bold lg:font-semibold text-center lg:text-start">
+                className="mt-2 text-xl lg:text-3xl font-bold lg:font-semibold text-center lg:text-start flex items-center justify-center">
                 {seekerName}
               </h1>
               <p
-                className="flex items-end justify-center font-semibold text-lg ms-2">
-                - ({findingJobTitle})
+                className="flex items-end justify-center font-semibold text-lg mx-2">
+                <span className="lg:block hidden"> -</span> ({findingJobTitle})
               </p>
             </div>
             {/* icon */}
@@ -156,11 +163,12 @@ const SingleSeekerPage = ({ params }) => {
           <div
             className="col-span-3 mt-6 grid grid-rows-2 mx-6 lg:mx-0">
             <button
-              onClick={() => window.my_modal_4.showModal()}
+              onClick={handleResume}
+              // onClick={() => window.my_modal_4.showModal()}
               className="bg-blue-600 py-4 flex items-center justify-center text-white rounded-lg hover:bg-blue-700 mb-4 font-semibold">
-              Hire Me
+              <HiDownload className="text-2xl mr-2" /> Download Resume
             </button>
-            <dialog
+            {/* <dialog
               id="my_modal_4"
               className="modal">
               <form
@@ -175,20 +183,15 @@ const SingleSeekerPage = ({ params }) => {
                   Hire Me
                 </h3>
 
-                {/* file input */}
+
                 <input
                   type="file"
                   className="file-input file-input-bordered file-input-info  w-full font-semibold" />
-                {/* file input */}
 
-                {/* text area */}
                 <textarea
                   className="w-full bg-indigo-50 rounded-lg font-medium text-sm pb-16 pt-4 px-5 mt-6 mb-2 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-300"
                   placeholder="Write Your Message Here...">
                 </textarea>
-                {/* text area */}
-
-                {/* checkbox */}
                 <div
                   className="flex gap-2 items-center">
                   <input
@@ -199,13 +202,12 @@ const SingleSeekerPage = ({ params }) => {
                     You accept our Terms and Conditions and Privacy Policy
                   </p>
                 </div>
-                {/* checkbox */}
                 <button
                   className="w-full mt-6 mb-2 bg-blue-600 py-4 flex items-center justify-center text-white rounded-lg hover:bg-blue-700">
                   Hire Me
                 </button>
               </form>
-            </dialog>
+            </dialog> */}
             <button
               className="bg-blue-100 py-4 flex items-center justify-center rounded-lg text-blue-600 hover:bg-blue-700 hover:text-white duration-500 w-full mb-4" >
               <PiBookmarkSimple className="text-3xl" />
@@ -223,26 +225,70 @@ const SingleSeekerPage = ({ params }) => {
           className="w-[92%] mx-auto grid grid-cols-12">
           {/* right side div start */}
           <div
-            className="col-span-8">
+            className="col-span-12 lg:col-span-8 mx-2">
             <h2
               className="text-xl font-bold">
               Candidates About
             </h2>
             <p
-              className="text-gray-500 font-semibold text-sm mt-3 lg:mr-20">
+              className="text-gray-500 font-medium text-base mt-3 lg:mr-20">
               <p>Hello my name is Nicole Wells and web developer from Portland. In pharetra orci dignissim, blandit mi semper, ultricies diam. Suspendisse malesuada suscipit nunc non volutpat. Sed porta nulla id orci laoreet tempor non consequat enim. Sed vitae aliquam velit. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam.
 
                 Mauris nec erat ut libero vulputate pulvinar. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam. Mauris nec erat ut libero vulputate pulvinar.
-                </p>
+              </p>
               {aboutMyself}
             </p>
+
+            {/* share job icon */}
+            <div
+              className="grid grid-cols-12 mt-14 font-medium mb-10 lg:mb-0">
+              <h1
+                className="text-xs font-semibold flex items-center justify-center lg:col-span-2 col-span-12 mb-5 lg:mb-0">
+                Share This Candidates :
+              </h1>
+
+              <div
+                className="bg-[#3b5998] hover:bg-[#465e8e] flex items-center justify-center text-white rounded-lg col-span-4 lg:col-span-3 mx-2 text-xs py-3">
+                <p>
+                  <FaSquareFacebook className="text-3xl" />
+                </p>
+                <p
+                  className="ms-2">
+                  Facebook
+                </p>
+              </div>
+
+              <div
+                className="bg-[#55acee] hover:bg-[#6eb3e8] flex items-center justify-center text-white rounded-lg col-span-4 lg:col-span-3 mx-2 text-xs py-3">
+                <p>
+                  <FaTwitter className="text-3xl" />
+                </p>
+                <p
+                  className="ms-2">
+                  Twitter
+                </p>
+              </div>
+
+              <div
+                className="bg-[#0072b1] hover:bg-[#0073b1e7] flex items-center justify-center text-white rounded-lg col-span-4 lg:col-span-3 mx-2 text-xs py-3">
+                <p>
+                  <FaLinkedin className="text-3xl" />
+                </p>
+                <p
+                  className="ms-2">
+                  Linkedin
+                </p>
+              </div>
+
+            </div>
+            {/* share job icon */}
           </div>
           {/* right side div end */}
 
 
           {/* left side div start */}
           <div
-            className="col-span-4 mx-2">
+            className="col-span-12 lg:col-span-4 mx-2 mt-10 lg:mt-0">
             {/* 1st div */}
             <div
               className="bg-indigo-50 rounded-xl px-7 pt-10 pb-2 mb-10">
@@ -462,13 +508,13 @@ const SingleSeekerPage = ({ params }) => {
               {/* form */}
               <div className="mx-auto mt-5 mb-3 ">
                 {/* name */}
-              <input type="text" placeholder="Your Name" className="input input-bordered w-full py-8" />
+                <input type="text" placeholder="Your Name" className="input input-bordered w-full py-8" />
                 {/* email */}
-              <input type="email" placeholder="Email Address" className="input input-bordered w-full my-3 py-8" />
-              {/* text area */}
-              <textarea className="textarea textarea-bordered w-full h-40" placeholder="Message"></textarea>
+                <input type="email" placeholder="Email Address" className="input input-bordered w-full my-3 py-8" />
+                {/* text area */}
+                <textarea className="textarea textarea-bordered w-full h-40" placeholder="Message"></textarea>
 
-              <button  className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-3 w-full">Send Message</button>
+                <button className="btn bg-[#40e1f9] px-10 p-3 rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-3 w-full">Send Message</button>
               </div>
               {/* form */}
             </div>
