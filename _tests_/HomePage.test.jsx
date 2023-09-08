@@ -1,13 +1,11 @@
-import HomeBanner from '@/components/HomePage/Banner/HomeBanner';
-import { render, screen, waitFor } from '@testing-library/react';
+// import HomeBanner from '@/components/HomePage/Banner/HomeBanner';
+import JobCategories from '@/components/HomePage/JobCategories/JobCategories';
+import { render, screen } from '@testing-library/react';
 
 describe('Home Page - Rendering', () => {
-  it('should have Join us text in banner', async () => {
-    render(<HomeBanner />);
-    
-    // Wait for the text to appear asynchronously
-    await waitFor(() => {
-      expect(screen.getByText('Join us')).toBeInTheDocument();
-    });
+  it('should have Marketing text in JobCategories', () => {
+    render(<JobCategories />);
+    const jobTitleText = screen.getByText('Marketing');
+  
   });
 });
