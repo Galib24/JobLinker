@@ -12,7 +12,7 @@ const DashBoardHome = () => {
 
     return (
         <div >
-            <h2 className=' font-bold text-xl text-center'>DashBoard Home</h2>
+            <h2 className=' font-bold text-xl text-center'>DashBoard Admin</h2>
             <div className='lg:flex gap-10 items-center justify-between p-5'>    
                 {/* input filed  */}
                 <div>
