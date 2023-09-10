@@ -1,8 +1,10 @@
 "use client"
 
+import axios from "axios";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { FaStar, FaTrash } from "react-icons/fa6";
+import { useQuery } from "react-query";
 
 const HrAllJobPost = () => {
     const [DeleteHr, setDeleteHr] = useState([]);
@@ -85,7 +87,7 @@ const HrAllJobPost = () => {
                                                 <Image
                                                 width={100}
                                                 height={100}
-                                                src={item.companyLogo}
+                                                src={item?.companyLogo}
                                                 alt="company logo"
                                                 />
                                             </div>
