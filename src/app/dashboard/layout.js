@@ -25,14 +25,14 @@ const DashboardLayout = ({ children }) => {
       <h2 className="text-4xl font-semibold text-green-700 text-center mt-10">
         Loading...
       </h2>
-      
+
       // loader
-    //   <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-    //   <circle cx="50" cy="50" r="40" stroke="#000" stroke-width="10" fill="none">
-    //     <animate attributeName="stroke-dashoffset" from="0" to="251" dur="2s" repeatCount="indefinite" />
-    //     <animate attributeName="stroke-dasharray" values="150.6 100.4;1 250;150.6 100.4" dur="2s" repeatCount="indefinite" />
-    //   </circle>
-    // </svg>
+      //   <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+      //   <circle cx="50" cy="50" r="40" stroke="#000" stroke-width="10" fill="none">
+      //     <animate attributeName="stroke-dashoffset" from="0" to="251" dur="2s" repeatCount="indefinite" />
+      //     <animate attributeName="stroke-dasharray" values="150.6 100.4;1 250;150.6 100.4" dur="2s" repeatCount="indefinite" />
+      //   </circle>
+      // </svg>
     );
 
   const matchedUser = dbUsers?.filter(
@@ -46,6 +46,8 @@ const DashboardLayout = ({ children }) => {
 
   // const isAdmin = true;
   const isHr = userRole === "hr";
+
+  const isSeeker = userRole === "seeker";
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -66,9 +68,6 @@ const DashboardLayout = ({ children }) => {
           <li>
             <Link href={`/`}>Home</Link>
           </li>
-          <li>
-            <Link href={`/dashboard/hrjobpost`}>HR JOB POST</Link>
-          </li>
 
           {isAdmin && (
             <>
@@ -79,18 +78,34 @@ const DashboardLayout = ({ children }) => {
                 <Link href={`/dashboard/users`}>User Management</Link>
               </li>
               <li>
-                <a>To do 2 for admin</a>
+                <Link href={`/dashboard/hrpostmanage`}>HR POST MANAGE</Link>
+              </li>
+              <li>
+                <Link href={`/dashboard/seekerpostmanage`}>
+                  Seeker POST MANAGE
+                </Link>
               </li>
             </>
           )}
-          
+
           {isHr && (
             <>
               <li>
-                <Link href="/dashboard/hrjobpost">My Job Post</Link>
+                <Link href="/dashboard/specifichrpost">My Job Post</Link>
               </li>
               <li>
                 <a>Sidebar Item Hr item 2</a>
+              </li>
+            </>
+          )}
+
+          {isSeeker && (
+            <>
+              <li>
+                <Link href="/dashboard/specificseekerpost">My Job Post</Link>
+              </li>
+              <li>
+                <a>Sidebar Item seeker item 2</a>
               </li>
             </>
           )}

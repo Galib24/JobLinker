@@ -128,10 +128,10 @@ const Navbar = () => {
                   className={styles.navLinks}
                 >
                   <Link
-                    href="/employers"
+                    href="/hrjobs"
                     className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
                   >
-                    Employers
+                   Find A Job
                   </Link>
                 </li>
                 <li
@@ -139,10 +139,10 @@ const Navbar = () => {
                   className={styles.navLinks}
                 >
                   <Link
-                    href="/candidates"
+                    href="/seekers"
                     className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
                   >
-                    Candidates
+                    Find A Seekers
                   </Link>
                 </li>
                 <li
@@ -419,10 +419,10 @@ const Navbar = () => {
                   <Link href="">Dashboard</Link>
                 </li>
                 <li className="py-4 hover:underline">
-                  <Link href="/employers">Employers</Link>
+                  <Link href="/hrjobs">Find A Job</Link>
                 </li>
                 <li className="py-4 hover:underline">
-                  <Link href="/candidates">Candidates</Link>
+                  <Link href="/seekers">Find A Seekers</Link>
                 </li>
                 <li className="py-4 hover:underline">
                   <Link href="/blogs">Blogs</Link>

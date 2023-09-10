@@ -1,10 +1,8 @@
 "use client"
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaTrash } from "react-icons/fa6";
-import { toast } from "react-hot-toast";
-import axios from "axios";
-import { useQuery } from "react-query";
+import { FaStar, FaTrash } from "react-icons/fa6";
 
 const HrAllJobPost = () => {
     const [DeleteHr, setDeleteHr] = useState([]);
@@ -101,7 +99,7 @@ const HrAllJobPost = () => {
                                 {/* Job Title */}
                                 <td>{item?.jobTitle}</td>
                                 {/* job type / job place */}
-                                <td>{item?.rating}</td>
+                                <td> <FaStar className="text-yellow-500"></FaStar> {item?.rating}</td>
                                 <td>
                                     <button onClick={() => handleDelete(item._id)} className="btn  px-10 p-3 rounded-lg text-white bg-red-500 hover:bg-[#40e1f9] ease-out duration-300"><FaTrash className="text-xl hidden lg:block"></FaTrash><span>Delete</span></button>
                                 </td>
