@@ -19,6 +19,7 @@ export async function GET(request, { params }) {
   }
 }
 
+// delete function added
 export async function DELETE(request, { params }) {
   try {
     const { id } = params;
