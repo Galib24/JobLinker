@@ -39,7 +39,6 @@ const SingleSeekerPage = ({ params }) => {
   const handleResume = () => {
     toast.success("Resume Downloading")
   }
-
   return (
     <div>
       {/* Header */}
