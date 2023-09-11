@@ -148,7 +148,6 @@ const SingleSeekerPage = ({ params }) => {
                 </span>
               </div>
               <div
-
                 className="text-xs mt-3 flex justify-center items-center col-span-2 lg:mt-2">
                 <span
                   className="bg-blue-100 rounded-full py-2 px-4 text-blue-600 font-semibold">
@@ -200,7 +199,6 @@ const SingleSeekerPage = ({ params }) => {
               </p>
               {aboutMyself}
             </div>
-
             {/* education */}
             <div
               className="mt-5 lg:mt-10 mb-3">
@@ -216,7 +214,6 @@ const SingleSeekerPage = ({ params }) => {
                   <p className="font-semibold">Bachelors in Arts <span className="ml-5 bg-[#ff7a7a] rounded-full py-1 px-4 text-white text-center font-medium text-xs">2000-2003</span> </p> <p className="text-[#ff6161] font-semibold">Modern College</p> <p className="mt-5 text-gray-500 font-semibold">A Bachelor's in Fine Arts is a degree program that provides comprehensive training in various <br/> forms of visual and performing arts, fostering creativity and artistic expression.</p>
                 </div>
               </div>
-
               <div
                 className="flex items-center my-2">
                 <FaComputer className="text-8xl lg:text-5xl font-bold flex items-center justify-center mr-4" />
@@ -234,7 +231,6 @@ const SingleSeekerPage = ({ params }) => {
                 className="text-2xl lg:text-xl font-semibold mb-3  lg:text-left mt-10">
                 Work & Experience
               </h1>
-
               <div
                 className="flex items-center mt-5 my-2">
                 <MdOutlineWorkHistory className="text-7xl lg:text-4xl font-bold flex items-center justify-center mr-4" />
@@ -242,7 +238,6 @@ const SingleSeekerPage = ({ params }) => {
                   <p className="font-semibold">Product Designer <span className="ml-5 bg-[#40e1f9] rounded-full py-1 px-4 text-white text-center font-medium text-xs">2008-2011</span> </p> <p className="text-[#40e1f9] font-semibold">Spotify Inc.</p> <p className="mt-5 text-gray-500 font-semibold">Product Designer with 5 years of experience in crafting intuitive user interfaces and driving user engagement.</p>
                 </div>
               </div>
-
               <div
                 className="flex items-center my-2">
                 <GrUserWorker className="text-9xl lg:text-5xl font-bold flex items-center justify-center mr-4" />
