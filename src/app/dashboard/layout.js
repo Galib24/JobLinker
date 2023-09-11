@@ -48,6 +48,7 @@ const DashboardLayout = ({ children }) => {
 
   // console.log(matchedUser[0]);
   const userRole = matchedUser?.[0]?.role;
+  console.log(userRole);
 
   const isAdmin = userRole === "admin";
 
