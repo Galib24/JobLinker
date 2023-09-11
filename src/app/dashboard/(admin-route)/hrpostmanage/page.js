@@ -1,58 +1,23 @@
 "use client"
 
-import axios from "axios";
 import Image from "next/image";
-import {  useState } from "react";
+import { useEffect, useState } from "react";
 import { FaStar, FaTrash } from "react-icons/fa6";
-import { useQuery } from "react-query";
 
 const HrAllJobPost = () => {
-    const [DeleteHr, setDeleteHr] = useState([]);
+    const [featureJobData, setFeatureJobData] = useState([]);
 
-    const {
-        data: featureJobData = [],
-        refetch,
-        isLoading,
-        error,
-      } = useQuery({
-        queryFn: async () => {
-          const res = await axios("/api/hr"); 
-          return res.data;
-        },
-      });
-    
-      if (isLoading)
-        return (
-          <h2 className="text-4xl font-semibold text-green-700 text-center mt-10">
-            Loading...
-          </h2>
-        );
+    // get the data from mongodb
+    useEffect(() => {
+        const fetchHrData = async () => {
+            const response = await fetch("/api/hr");
+            const data = await response.json();
+            // console.log(data);
+              setFeatureJobData(data);
+        };
 
-
-    // hr delete 
-    const handleDelete = async (hrId) => {
-        try {
-          const response = await fetch(`/api/hr/${hrId}`, {
-            method: "DELETE",
-          });
-          if (response.ok) {
-            refetch();
-            toast.success(`Deleted hr`);
-          }
-    
-          if (response.status === 200) {
-            //hr deleted successfully, update the UI by removing the hr
-            setDeleteHr((prevHr) => prevHr.filter((hr) => hr._id !== hrId));
-          } else {
-            // Handle error here if needed
-            console.error("Failed to delete hr.");
-          }
-        } catch (error) {
-          // Handle network or other errors here
-          console.error("An error occurred while deleting hr.", error);
-        }
-      };
-      
+        fetchHrData();
+    }, []);
     return (
         <div>
             <h2 className="text-4xl font-semibold mt-20 mb-5 text-center">HR Management All Data </h2>
@@ -87,7 +52,7 @@ const HrAllJobPost = () => {
                                                 <Image
                                                 width={100}
                                                 height={100}
-                                                src={item?.companyLogo}
+                                                src={item.companyLogo}
                                                 alt="company logo"
                                                 />
                                             </div>
@@ -103,7 +68,7 @@ const HrAllJobPost = () => {
                                 {/* job type / job place */}
                                 <td> <FaStar className="text-yellow-500"></FaStar> {item?.rating}</td>
                                 <td>
-                                    <button onClick={() => handleDelete(item._id)} className="btn  px-10 p-3 rounded-lg text-white bg-red-500 hover:bg-[#40e1f9] ease-out duration-300"><FaTrash className="text-xl hidden lg:block"></FaTrash><span>Delete</span></button>
+                                    <button className="btn  px-10 p-3 rounded-lg text-white bg-red-500 hover:bg-[#40e1f9] ease-out duration-300"><FaTrash className="text-xl hidden lg:block"></FaTrash><span>Delete</span></button>
                                 </td>
                             </tr>
                             )
