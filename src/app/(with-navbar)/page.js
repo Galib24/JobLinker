@@ -11,6 +11,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Blog from "@/components/HomePage/Blog/Blog";
 import FeaturedJobs from "@/components/HomePage/FeaturedJobs/FeaturedJobs";
+import ContactFrom from "@/components/HomePage/ContactFrom/ContactFrom";
 
 
 
@@ -51,6 +52,9 @@ export default function Home() {
 
       {/* Testimonial section */}
       <TestimonialSection />
+
+
+      <ContactFrom></ContactFrom>
 
     </div>
   );
