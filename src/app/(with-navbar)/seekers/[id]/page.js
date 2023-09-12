@@ -211,7 +211,7 @@ const SingleSeekerPage = ({ params }) => {
                 className="flex items-center mt-5 my-2">
                 <FaBookAtlas className="text-6xl lg:text-4xl font-bold flex items-center justify-center mr-4" />
                 <div className="mt-2">
-                  <p className="font-semibold">Bachelors in Arts <span className="ml-5 bg-[#ff7a7a] rounded-full py-1 px-4 text-white text-center font-medium text-xs">2000-2003</span> </p> <p className="text-[#ff6161] font-semibold">Modern College</p> <p className="mt-5 text-gray-500 font-semibold">A Bachelor's in Fine Arts is a degree program that provides comprehensive training in various <br/> forms of visual and performing arts, fostering creativity and artistic expression.</p>
+                  <p className="font-semibold">{education}<span className="ml-5 bg-[#ff7a7a] rounded-full py-1 px-4 text-white text-center font-medium text-xs">2000-2003</span> </p> <p className="text-[#ff6161] font-semibold">Modern College</p> <p className="mt-5 text-gray-500 font-semibold">A Bachelor's in Fine Arts is a degree program that provides comprehensive training in various <br/> forms of visual and performing arts, fostering creativity and artistic expression.</p>
                 </div>
               </div>
               <div
@@ -223,7 +223,6 @@ const SingleSeekerPage = ({ params }) => {
               </div>
             </div>
             {/* education */}
-
             {/* work */}
             <div
               className="mt-5 lg:mt-10 mb-3">
@@ -247,7 +246,6 @@ const SingleSeekerPage = ({ params }) => {
               </div>
             </div>
             {/* work */}
-
             {/* share job icon */}
             <div
               className="grid grid-cols-12 mt-14 font-medium mb-10 lg:mb-0 cursor-pointer">
