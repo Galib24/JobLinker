@@ -3,14 +3,16 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsClock, BsFillPersonFill, BsHourglass } from "react-icons/bs";
+import { GrUserWorker } from "react-icons/gr";
 import { CiLocationOn } from "react-icons/ci";
 import { IoBagCheckOutline, IoCalendarOutline, IoLanguageOutline } from "react-icons/io5";
 import { PiBookmarkSimple, PiCurrencyCircleDollarDuotone, PiGraduationCapDuotone } from "react-icons/pi";
-import { FaCoins, FaLinkedin, FaMedal, FaSquareFacebook, FaTwitter } from "react-icons/fa6";
+import { FaBookAtlas, FaCoins, FaComputer, FaLinkedin, FaMedal, FaSquareFacebook, FaTwitter } from "react-icons/fa6";
 import { GiMoneyStack } from "react-icons/gi";
 import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin, BiLogoTwitter } from "react-icons/bi";
 import { HiDownload } from "react-icons/hi";
 import { toast } from "react-hot-toast";
+import { MdOutlineWorkHistory } from "react-icons/md";
 
 const SingleSeekerPage = ({ params }) => {
   const [singleSeekerData, setSingleSeekerData] = useState([]);
@@ -37,7 +39,6 @@ const SingleSeekerPage = ({ params }) => {
   const handleResume = () => {
     toast.success("Resume Downloading")
   }
-
   return (
     <div>
       {/* Header */}
@@ -146,7 +147,6 @@ const SingleSeekerPage = ({ params }) => {
                 </span>
               </div>
               <div
-
                 className="text-xs mt-3 flex justify-center items-center col-span-2 lg:mt-2">
                 <span
                   className="bg-blue-100 rounded-full py-2 px-4 text-blue-600 font-semibold">
@@ -164,50 +164,9 @@ const SingleSeekerPage = ({ params }) => {
             className="col-span-3 mt-6 grid grid-rows-2 mx-6 lg:mx-0">
             <button
               onClick={handleResume}
-              // onClick={() => window.my_modal_4.showModal()}
               className="bg-blue-600 py-4 flex items-center justify-center text-white rounded-lg hover:bg-blue-700 mb-4 font-semibold">
               <HiDownload className="text-2xl mr-2" /> Download Resume
             </button>
-            {/* <dialog
-              id="my_modal_4"
-              className="modal">
-              <form
-                method="dialog"
-                className="modal-box  max-w-xl">
-                <button
-                  className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                  ✕
-                </button>
-                <h3
-                  className="font-bold text-lg text-center my-5">
-                  Hire Me
-                </h3>
-
-
-                <input
-                  type="file"
-                  className="file-input file-input-bordered file-input-info  w-full font-semibold" />
-
-                <textarea
-                  className="w-full bg-indigo-50 rounded-lg font-medium text-sm pb-16 pt-4 px-5 mt-6 mb-2 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-300"
-                  placeholder="Write Your Message Here...">
-                </textarea>
-                <div
-                  className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    className="checkbox checkbox-info checkbox-sm" />
-                  <p
-                    className="text-xs font-medium text-gray-400">
-                    You accept our Terms and Conditions and Privacy Policy
-                  </p>
-                </div>
-                <button
-                  className="w-full mt-6 mb-2 bg-blue-600 py-4 flex items-center justify-center text-white rounded-lg hover:bg-blue-700">
-                  Hire Me
-                </button>
-              </form>
-            </dialog> */}
             <button
               className="bg-blue-100 py-4 flex items-center justify-center rounded-lg text-blue-600 hover:bg-blue-700 hover:text-white duration-500 w-full mb-4" >
               <PiBookmarkSimple className="text-3xl" />
@@ -230,18 +189,66 @@ const SingleSeekerPage = ({ params }) => {
               className="text-xl font-bold">
               Candidates About
             </h2>
-            <p
+            <div
               className="text-gray-500 font-medium text-base mt-3 lg:mr-20">
-              <p>Hello my name is Nicole Wells and web developer from Portland. In pharetra orci dignissim, blandit mi semper, ultricies diam. Suspendisse malesuada suscipit nunc non volutpat. Sed porta nulla id orci laoreet tempor non consequat enim. Sed vitae aliquam velit. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam.
+              <p>
+                Hello my name is Nicole Wells and web developer from Portland. In pharetra orci dignissim, blandit mi semper, ultricies diam. Suspendisse malesuada suscipit nunc non volutpat. Sed porta nulla id orci laoreet tempor non consequat enim. Sed vitae aliquam velit. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam.
 
                 Mauris nec erat ut libero vulputate pulvinar. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam. Mauris nec erat ut libero vulputate pulvinar.
               </p>
               {aboutMyself}
-            </p>
+            </div>
+            {/* education */}
+            <div
+              className="mt-5 lg:mt-16 mb-3">
+              <h1
+                className="text-2xl lg:text-xl font-semibold mb-3  lg:text-left mt-10">
+                Education
+              </h1>
 
+              <div
+                className="flex items-center mt-5 my-2">
+                <FaBookAtlas className="text-6xl lg:text-4xl font-bold flex items-center justify-center mr-4" />
+                <div
+                  className="mt-2">
+                  <p className="font-semibold">{education}<span className="ml-5 bg-[#ff7a7a] rounded-full py-1 px-4 text-white text-center font-medium text-xs">2000-2003</span> </p> <p className="text-[#ff6161] font-semibold">Modern College</p> <p className="mt-5 text-gray-500 font-semibold">A Bachelors in Fine Arts is a degree program that provides comprehensive training in various <br /> forms of visual and performing arts, fostering creativity and artistic expression.</p>
+                </div>
+              </div>
+              <div
+                className="flex items-center my-2">
+                <FaComputer className="text-8xl lg:text-5xl font-bold flex items-center justify-center mr-4" />
+                <div className="mt-7">
+                  <p className="font-semibold">Computer Science <span className="ml-3 lg:ml-5 bg-[#ff7a7a] rounded-full py-1 px-4 text-white text-center font-medium text-xs">2004-2007</span> </p> <p className="text-[#ff6161] font-semibold">Harvard University.</p> <p className="mt-5 text-gray-500 font-semibold">Harvard University is a prestigious Ivy League institution renowned for its academic <br /> excellence and historical significance in the United States.</p>
+                </div>
+              </div>
+            </div>
+            {/* education */}
+            {/* work */}
+            <div
+              className="mt-5 lg:mt-10 mb-3">
+              <h1
+                className="text-2xl lg:text-xl font-semibold mb-3  lg:text-left mt-10">
+                Work & Experience
+              </h1>
+              <div
+                className="flex items-center mt-5 my-2">
+                <MdOutlineWorkHistory className="text-7xl lg:text-4xl font-bold flex items-center justify-center mr-4" />
+                <div className="mt-2">
+                  <p className="font-semibold">Product Designer <span className="ml-5 bg-[#40e1f9] rounded-full py-1 px-4 text-white text-center font-medium text-xs">2008-2011</span> </p> <p className="text-[#40e1f9] font-semibold">Spotify Inc.</p> <p className="mt-5 text-gray-500 font-semibold">Product Designer with 5 years of experience in crafting intuitive user interfaces and driving user engagement.</p>
+                </div>
+              </div>
+              <div
+                className="flex items-center my-2">
+                <GrUserWorker className="text-9xl lg:text-5xl font-bold flex items-center justify-center mr-4" />
+                <div className="mt-7">
+                  <p className="font-semibold">Sr UX Engineer <span className="ml-10 bg-[#40e1f9] rounded-full py-1 px-4 text-white text-center font-medium text-xs">2012-2014</span> </p> <p className="text-[#40e1f9] font-semibold">Dropbox Inc.</p> <p className="mt-5 text-gray-500 font-semibold">Senior UX Engineer at ABC Tech with 7 years of experience in creating seamless user experiences, optimizing product usability, and leading cross-functional teams in user-centric design projects.</p>
+                </div>
+              </div>
+            </div>
+            {/* work */}
             {/* share job icon */}
             <div
-              className="grid grid-cols-12 mt-14 font-medium mb-10 lg:mb-0">
+              className="grid grid-cols-12 mt-14 font-medium mb-10 lg:mb-0 cursor-pointer">
               <h1
                 className="text-xs font-semibold flex items-center justify-center lg:col-span-2 col-span-12 mb-5 lg:mb-0">
                 Share This Candidates :

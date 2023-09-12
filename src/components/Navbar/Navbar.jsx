@@ -96,7 +96,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-blue-50 w-full fixed z-30 top-0">
+    <div className="bg-gradient-to-r from-cyan-50 to-blue-100 w-full fixed z-30 top-0">
       <header className="container mx-auto">
         <nav className="py-1 max-w-screen-3xl">
           {/* Desktop part */}
@@ -118,7 +118,7 @@ const Navbar = () => {
                 >
                   <Link
                     href="/"
-                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                   >
                     Home
                   </Link>
@@ -129,7 +129,7 @@ const Navbar = () => {
                 >
                   <Link
                     href="/hrjobs"
-                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                   >
                    Find A Job
                   </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
                 >
                   <Link
                     href="/seekers"
-                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                   >
                     Find A Seekers
                   </Link>
@@ -151,7 +151,7 @@ const Navbar = () => {
                 >
                   <Link
                     href="/blogs"
-                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                   >
                     Blogs
                   </Link>
@@ -162,7 +162,7 @@ const Navbar = () => {
                 >
                   <Link
                     href="/about"
-                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                   >
                     About
                   </Link>
@@ -177,7 +177,7 @@ const Navbar = () => {
                   >
                     <Link
                       href={matchedUser?.role === "hr" ? "/hr" : "/seekersForm"}
-                      className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                      className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                     >
                       Post-Job
                     </Link>
@@ -198,7 +198,7 @@ const Navbar = () => {
                       >
                         <p
                           onClick={() => window.my_modal_3.showModal()}
-                          className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                          className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                         >
                           Post
                         </p>
@@ -250,7 +250,7 @@ const Navbar = () => {
                 >
                   <Link
                     href="/hr"
-                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                   >
                     HR
                   </Link>
@@ -261,7 +261,7 @@ const Navbar = () => {
                 >
                   <Link
                     href="/seekersForm"
-                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:text-base hover:font-bold"
+                    className="text-sm font-semibold cursor-pointer ease-out duration-300 hover:font-bold"
                   >
                     Seekers
                   </Link>
