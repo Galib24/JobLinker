@@ -28,7 +28,7 @@ import Link from "next/link";
 import GetSpecificUsers from "@/utilities/getSpecificUsers/getSpecificUsers";
 import toast from "react-hot-toast";
 import { AuthContext } from "@/provider/AuthProvider";
-import getSeekerJobApplyFromDB from "@/database/dataFromMongoDB/getSeekerJobApplyFromDB";
+import GetSeekerJobApplyFromDB from "@/database/dataFromMongoDB/getSeekerJobApplyFromDB";
 
 const SingleHRPage = ({ params }) => {
   const [singleHrData, setSingleHrData] = useState([]);
@@ -75,7 +75,7 @@ const SingleHRPage = ({ params }) => {
   const resumeFieldRef = useRef();
   const messageFieldRef = useRef();
 
-  const [seekerApplies] = getSeekerJobApplyFromDB();
+  const [seekerApplies] = GetSeekerJobApplyFromDB();
   const matchedApplyData = seekerApplies?.find(
     (item) => item.beforeDataId === singleHrData._id
   );

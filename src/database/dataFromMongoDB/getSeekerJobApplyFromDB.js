@@ -5,7 +5,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { useQuery } from "react-query";
 
-const getSeekerJobApplyFromDB = () => {
+const GetSeekerJobApplyFromDB = () => {
   const { user } = useContext(AuthContext);
 
   //   const {
@@ -38,4 +38,4 @@ const getSeekerJobApplyFromDB = () => {
   return [seekerApplies];
 };
 
-export default getSeekerJobApplyFromDB;
+export default GetSeekerJobApplyFromDB;

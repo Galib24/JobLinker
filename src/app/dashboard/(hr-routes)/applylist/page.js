@@ -1,13 +1,13 @@
 "use client";
 
-import getSeekerJobApplyFromDB from "@/database/dataFromMongoDB/getSeekerJobApplyFromDB";
+import GetSeekerJobApplyFromDB from "@/database/dataFromMongoDB/getSeekerJobApplyFromDB";
 import { AuthContext } from "@/provider/AuthProvider";
 import { useContext } from "react";
 
 const HrSpecificApplyJobPage = () => {
   const { user } = useContext(AuthContext);
 
-  const [seekerApplies] = getSeekerJobApplyFromDB();
+  const [seekerApplies] = GetSeekerJobApplyFromDB();
 
   const specificHrJobApp = seekerApplies?.filter(
     (job) => job.HrEmail === user.email
