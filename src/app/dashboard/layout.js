@@ -134,7 +134,7 @@ const DashboardLayout = ({ children }) => {
               </li>
               <li>
                 <Link className="font-semibold" href="/dashboard/applylist">
-                  Applied Job Manage
+                  Management Applicant List
                 </Link>
               </li>
               <li>
@@ -155,7 +155,7 @@ const DashboardLayout = ({ children }) => {
               </li>
               <li>
                 <Link className="font-semibold" href="/dashboard/myjobapplied">
-                  My Job Applied
+                  Applied Job
                 </Link>
               </li>
               <li>

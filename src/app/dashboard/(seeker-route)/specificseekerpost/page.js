@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 // import axios from "axios";
 import { useContext } from "react";
-import { FaStar, FaTrash } from "react-icons/fa6";
+// import { FaStar, FaTrash } from "react-icons/fa6";
 // import { useQuery } from "react-query";
 
 const Specificseekerpost = () => {
@@ -43,6 +43,8 @@ const Specificseekerpost = () => {
     )) || ""
     } */}
 
+<h2 className="text-center font-bold text-3xl my-10">My Applied Job: {specificSeekerData.length}</h2>
+
 
     <table className="table">
       {/* head */}
@@ -50,9 +52,9 @@ const Specificseekerpost = () => {
         <tr>
           <th>#</th>
           <th>Image</th>
-          <th>OWN Email</th>
-          <th>Job Title</th>
-          <th>Rating</th>
+          <th className="text-center">My Email</th>
+          <th>My Name</th>
+          <th>Experience</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -80,7 +82,7 @@ const Specificseekerpost = () => {
             <td>{item?.seekerName}</td>
             {/* job type / job place */}
             <td>
-              <FaStar className="text-yellow-500"></FaStar> {item?.jobExperience}
+              <h2 className="text-center"> {item?.jobExperience} </h2>
             </td>
             {/* <td>
                                         {selectedItemId === item._id ? (

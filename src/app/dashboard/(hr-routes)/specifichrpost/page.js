@@ -29,7 +29,7 @@ const HrJobPostPage = () => {
   return (
     <div>
       <h2 className="text-4xl font-semibold mt-20 mb-5 text-center">
-        My Job Post Management{" "}
+        My posted Job: {specificHrData.length}
       </h2>
       <div className="overflow-x-auto px-10 py-10 text-center">
         <table className="table">
@@ -82,7 +82,7 @@ const HrJobPostPage = () => {
                   </button>
                 </td>
               </tr>
-            )) || "" 
+            )) || ""
             }
           </tbody>
         </table>

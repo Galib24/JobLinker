@@ -162,6 +162,7 @@ const SeekersForm = () => {
                 <span className="label-text">Seeker Email </span>
               </label>
               <input
+              readOnly
                 type="email"
                 name="email"
                 defaultValue={user ? user.email : ""}
@@ -264,7 +265,7 @@ const SeekersForm = () => {
             className="form-control mt-6 mx-auto">
             <input
               type="submit"
-              className="bg-[#40e1f9] rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 my-4 py-2"
+              className="bg-[#40e1f9] rounded-lg cursor-pointer text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 my-4 py-2"
               value="Submit Post"
             />
           </div>
