@@ -82,7 +82,8 @@ const HrJobPostPage = () => {
                   </button>
                 </td>
               </tr>
-            ))}
+            )) || "" 
+            }
           </tbody>
         </table>
       </div>
