@@ -6,3 +6,30 @@
 img, svg, video, canvas, audio, iframe, embed, object {
     display: inline-block;
 }
+
+/* testimonial section */
+.testimonial{
+    padding: 30px;
+    position: relative;
+    display: block;
+    background-color: #fff;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    margin: 40px 0;
+    border-radius: 10px;
+}
+.testimonial-img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    bottom: 0px;
+    margin: 0 auto;
+    right: 0;
+    z-index: 1;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+
+}

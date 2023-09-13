@@ -2,14 +2,19 @@
 import dataArray from "@/Data/testimonialData";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 // Import Swiper styles
 import 'swiper/css';
+
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
+
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { BsFillChatRightQuoteFill, BsFillStarFill } from "react-icons/bs";
+import {Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from "next/image";
+import { BsFillPersonFill, BsFillStarFill } from "react-icons/bs";
+import { MdOutlineWorkspacePremium } from "react-icons/md";
 
 const TestimonialSection = () => {
     // console.log(dataArray);
@@ -17,7 +22,7 @@ const TestimonialSection = () => {
         <div
             className="bg-blue-50">
             <div
-                className="px-10 container mx-auto pb-32 pt-8 my-20">
+                className="px-10 container mx-auto pb-10 pt-5 my-10">
                 <div
                     className="mb-10">
                     <h2
@@ -26,72 +31,60 @@ const TestimonialSection = () => {
                     </h2>
                     <p
                         className="text-center font-medium">
-                        Lorem ipsum dolor sit amet elit, sed do eiusmod tempor
+                            What do Our Customers say
                     </p>
                 </div>
+
                 <Swiper
-                    spaceBetween={20}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
+                    spaceBetween={50}
+                    slidesPerView={3}
+                     autoplay={{
+                         delay: 2500,
+                         disableOnInteraction: false,
+                     }}
                     modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper max-w-6xl bg-white shadow-sm rounded-xl">
-                    {/* TestimonialSection map review section start */}
+                    className="mySwiper"
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        620: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                        }
+                        ,
+                        840: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        }
+                    }}
+                       
+                    >
                     {
-                        dataArray.map(item => <SwiperSlide
-                            className="px-10 py-14"
-                            key={item.name}>
-                            <div
-                                className="flex justify-end pr-20">
-                                <BsFillChatRightQuoteFill className="text-6xl text-gray-400" />
+                      dataArray.map(item => 
+                      <SwiperSlide key={item.name}>
+                        <div className="testimonial">
+                            <div className="testimonial-img">
+                                <Image className=" rounded-full" src={item.img} alt="" width={0}
+                                height={0}
+                                sizes="100vw"
+                                style={{ width: '100%', height: '100%' }}></Image>
                             </div>
-                            <p
-                                className="text-center font-semibold">
-                                {item?.review}
-                            </p>
-                            <div
-                                className="mt-10 grid lg:grid-cols-2">
-                                <div
-                                    className="flex gap-5">
-                                    <div>
-                                        <Image
-                                            width={100}
-                                            height={100}
-                                            className="rounded-full"
-                                            src={item?.img}
-                                            alt="Picture of who give the review">
-                                        </Image>
-                                    </div>
-                                    <div>
-                                        <h2
-                                            className="text-2xl font-semibold">
-                                            {item?.name}
-                                        </h2>
-                                        <div
-                                            className="flex items-center justify-center">
-                                            <p
-                                                className="text-sm font-medium text-center bg-black text-white py-1 rounded-full w-fit px-5">
-                                                {item?.jobRole}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    className="flex items-center justify-end">
-                                    <div
-                                        className="w-[50%] h-[50%] text-center items-center justify-center font-semibold flex">
-                                        <BsFillStarFill className="text-xl items-center justify-center text-yellow-400 mr-1" />Customer Rating: {item?.rating}
-                                    </div>
-                                </div>
+                            
+                            <p className="mt-10 text-slate-600">{item?.review}</p>
+                            <div className="md:flex justify-between">
+                                <h1 className="mt-3 font-bold"><BsFillPersonFill className=" text-2xl text-amber-300"></BsFillPersonFill> {item?.name}</h1>
+                                <p className="mt-3 font-bold"><MdOutlineWorkspacePremium className=" text-2xl text-amber-300"></MdOutlineWorkspacePremium> {item?.jobRole}</p>
+                                <p className="mt-3 font-bold"><BsFillStarFill className=" text-lg text-amber-300"></BsFillStarFill>  {item?.rating}</p>
                             </div>
-                        </SwiperSlide>)
-                    }
-                </Swiper>
+                        </div>
+                      </SwiperSlide>)  
+                    }    
+                    
+                   
+                   
+                    </Swiper>
             </div>
         </div>
     );
