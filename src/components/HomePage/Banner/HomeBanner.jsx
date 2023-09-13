@@ -16,10 +16,10 @@ const HomeBanner = () => {
           className="col-span-2 mx-auto hidden lg:block">
           <Image
             className="w-full"
-            width={1000}
-            height={1000}
+            width={1500}
+            height={1500}
             alt=""
-            src="https://i.ibb.co/XXtZcP2/Screenshot-2023-08-31-204222-i.png" />
+            src="https://i.ibb.co/9G5CvQQ/Banner-Image.png" />
         </div>
         {/* img */}
 
