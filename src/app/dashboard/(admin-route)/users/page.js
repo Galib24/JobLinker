@@ -55,6 +55,7 @@ const UsersPage = () => {
       photo: user.photo ? user.photo : "",
       role: "admin",
     };
+
     const res = await fetch(`/api/users/${user._id}`, {
       method: "PUT",
       headers: {

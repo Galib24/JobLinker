@@ -29,7 +29,6 @@ export async function POST(request) {
 
     const query = { email: body.email }
     const existingUser = await usersCollection.findOne(query);
-
     if (existingUser) {
       return res.send({ message: 'user already exists' })
     }
