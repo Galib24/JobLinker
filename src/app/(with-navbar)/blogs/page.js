@@ -50,7 +50,7 @@ const BlogsPage = () => {
                     <div className="col-span-8 mx-6">
                         {/* card container */}
                         <div className="card w-full bg-base-300 shadow-xl">
-                           
+
                             <div className="card-body">
                                 <h2 className="card-title">Shoes!</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -143,7 +143,7 @@ const BlogsPage = () => {
                                         alt=''
                                     />
 
-                                    <p className="font-semibold">{user?.displayName || "John Doe"}</p>
+                                    <p className="font-semibold text-lg">{user?.displayName || "John Doe"}</p>
 
                                 </div>
                                 {/* img name */}
@@ -153,17 +153,15 @@ const BlogsPage = () => {
                                         <span className="label-text font-medium">Blog Title*</span>
 
                                     </label>
-                                    <input type="text" placeholder="Blog Title" className="input input-bordered w-full" />
-
+                                    <input type="text" placeholder="Blog Title" className="input input-bordered w-full font-medium" />
                                 </div>
-
                                 {/* file */}
                                 <div className="form-control w-full max-w-xs my-2">
                                     <label className="label">
                                         <span className="label-text font-medium">Select Image*</span>
 
                                     </label>
-                                    <input type="file" className="file-input file-input-bordered file-input-primary w-full" />
+                                    <input type="file" className="file-input file-input-bordered file-input-primary w-full font-medium" />
 
                                 </div>
                             </div>
@@ -171,50 +169,7 @@ const BlogsPage = () => {
                             <div className='mt-5'>
                                 <h2 className="font-medium">Blog Body*</h2>
                             </div>
-                            <div className="my-2">
-                                <div className="mb-2">
-                                    <button
-                                        className={`mr-3 ${isBold ? 'font-bold' : ''} `}
-                                        onClick={handleBoldClick}
-                                    >
-
-                                        B
-                                    </button>
-                                    <button
-                                        className={`mr-3 ${isItalic ? 'italic' : ''}`}
-                                        onClick={handleItalicClick}
-                                    >
-                                        I
-                                    </button>
-                                    <button
-                                        className={`mr-3 ${isUnderline ? 'underline' : ''
-                                            }`}
-                                        onClick={handleUnderlineClick}
-                                    >
-                                        U
-                                    </button>
-                                    <button
-                                        className={`mr-3 ${alignment === 'left' ? 'bg-blue-500 text-white' : ''
-                                            }`}
-                                        onClick={() => handleAlignmentClick('left')}
-                                    >
-                                        <BsFilterLeft />
-                                    </button>
-                                    <button
-                                        className={`mr-3 ${alignment === 'center' ? 'bg-blue-500 text-white' : ''
-                                            }`}
-                                        onClick={() => handleAlignmentClick('center')}
-                                    >
-                                        <RiAlignCenter />
-                                    </button>
-                                </div>
-                                <div
-                                    contentEditable
-                                    className={`border-2 border-blue-300 px-5 py-10 shadow-lg bg-gray-100 ${isBold ? 'font-bold' : ''} ${isItalic ? 'italic' : ''
-                                        } ${isUnderline ? 'underline' : ''} text-${alignment}`}
-                                    onInput={(e) => setContent(e.target.innerHTML)}
-                                ></div>
-                            </div>
+                            <textarea placeholder="what's on your mind" className=" my-2 textarea textarea-bordered textarea-lg w-full font-medium" ></textarea>
                             {/* text editor */}
                             {/* button */}
                             <div className='text-center w-full'>
