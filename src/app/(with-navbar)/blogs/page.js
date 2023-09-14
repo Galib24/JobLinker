@@ -2,7 +2,9 @@
 import BannerComponent from "@/components/Shared/BannerComponent/BannerComponent";
 import { AuthContext } from "@/provider/AuthProvider";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { BsFilterLeft } from "react-icons/bs";
+import { RiAlignCenter } from "react-icons/ri";
 import defaultImg from "@/asserts/profile.png";
 import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin, BiLogoTwitter } from "react-icons/bi";
 import { FiEdit } from "react-icons/fi";
@@ -10,7 +12,28 @@ import { FiEdit } from "react-icons/fi";
 
 
 const BlogsPage = () => {
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext)
+    const [content, setContent] = useState('');
+    const [isBold, setIsBold] = useState(false);
+    const [isItalic, setIsItalic] = useState(false);
+    const [isUnderline, setIsUnderline] = useState(false);
+    const [alignment, setAlignment] = useState('left');
+
+    const handleBoldClick = () => {
+        setIsBold(!isBold);
+    };
+
+    const handleItalicClick = () => {
+        setIsItalic(!isItalic);
+    };
+
+    const handleUnderlineClick = () => {
+        setIsUnderline(!isUnderline);
+    };
+
+    const handleAlignmentClick = (alignmentType) => {
+        setAlignment(alignmentType);
+    };
     return (
         <div>
             <div>
@@ -105,59 +128,55 @@ const BlogsPage = () => {
                             <form method="dialog">
                                 {/* if there is a button in form, it will close the modal */}
                                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-
-                                {/* text area */}
-                                <h2 className='text-2xl text-center font-semibold my-2'>Write A Blog</h2>
-                                <hr />
-                                <div>
-                                    {/* img name */}
-                                    <div className="flex items-center gap-2 my-3">
-                                        <Image
-                                            width={35}
-                                            height={35}
-                                            src={user?.photoURL || defaultImg}
-                                            className="rounded-full"
-                                            alt=''
-                                        />
-
-                                        <p className="font-semibold text-lg my-1">{user?.displayName || "John Doe"}</p>
-
-                                    </div>
-                                    {/* img name */}
-                                    {/*blog title  */}
-                                    <div className="form-control w-full ">
-                                        <label className="label">
-                                            <span className="label-text font-medium">Blog Title*</span>
-
-                                        </label>
-                                        <input type="text" placeholder="Blog Title" className="input input-bordered w-full" />
-
-                                    </div>
-
-                                    {/* file */}
-                                    <div className="form-control w-full max-w-xs my-2">
-                                        <label className="label">
-                                            <span className="label-text font-medium">Select Image*</span>
-
-                                        </label>
-                                        <input type="file" className="file-input file-input-bordered w-full" />
-
-                                    </div>
-                                </div>
-                                {/* text area */}
-                                <div className='mt-5'>
-                                    <h2 className="font-medium label-text">Blog Description*</h2>
-                                </div>
-                                <div className="my-2">
-                                    <textarea placeholder="What's on your mind?" className="textarea textarea-bordered textarea-md w-full" ></textarea>
-                                </div>
-                                {/* text area */}
-                                {/* button */}
-                                <div className='text-center w-full'>
-                                    <button className='btn w-full bg-[#40e1f9] rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-5'>Post Blog</button>
-                                </div>
-
                             </form>
+                            {/* text editor */}
+                            <h2 className='text-2xl text-center font-semibold my-2'>Write A Blog</h2>
+                            <hr />
+                            <div>
+                                {/* img name */}
+                                <div className="flex items-center gap-2 my-3">
+                                    <Image
+                                        width={35}
+                                        height={35}
+                                        src={user?.photoURL || defaultImg}
+                                        className="rounded-full"
+                                        alt=''
+                                    />
+
+                                    <p className="font-semibold text-lg">{user?.displayName || "John Doe"}</p>
+
+                                </div>
+                                {/* img name */}
+                                {/*blog title  */}
+                                <div className="form-control w-full ">
+                                    <label className="label">
+                                        <span className="label-text font-medium">Blog Title*</span>
+
+                                    </label>
+                                    <input type="text" placeholder="Blog Title" className="input input-bordered w-full font-medium" />
+                                </div>
+                                {/* file */}
+                                <div className="form-control w-full max-w-xs my-2">
+                                    <label className="label">
+                                        <span className="label-text font-medium">Select Image*</span>
+
+                                    </label>
+                                    <input type="file" className="file-input file-input-bordered file-input-primary w-full font-medium" />
+
+                                </div>
+                            </div>
+                            {/* text editor */}
+                            <div className='mt-5'>
+                                <h2 className="font-medium">Blog Body*</h2>
+                            </div>
+                            <textarea placeholder="what's on your mind" className=" my-2 textarea textarea-bordered textarea-lg w-full font-medium" ></textarea>
+                            {/* text editor */}
+                            {/* button */}
+                            <div className='text-center w-full'>
+                                <button className='btn w-full bg-[#40e1f9] rounded-lg text-white hover:bg-transparent hover:text-[#40e1f9] hover:font-extrabold hover:border-y-2 hover:border-x-2 hover:border-[#40e1f9] ease-out duration-300 mt-5'>Post Blog</button>
+                            </div>
+
+                            {/* text editor */}
                         </div>
                     </dialog>
                 </div>
