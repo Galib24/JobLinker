@@ -1,41 +1,36 @@
 "use client";
-
 import BannerComponent from "@/components/Shared/BannerComponent/BannerComponent";
 import { AuthContext } from "@/provider/AuthProvider";
 import Image from "next/image";
-import { useContext, useEffect, useRef, useState } from "react";
-import { BsFilterLeft } from "react-icons/bs";
-import { RiAlignCenter } from "react-icons/ri";
+import { useContext, useEffect,useState } from "react";
 import defaultImg from "@/asserts/profile.png";
-import {
-  BiLogoFacebook,
-  BiLogoInstagram,
-  BiLogoLinkedin,
-  BiLogoTwitter,
-} from "react-icons/bi";
 import { FiEdit } from "react-icons/fi";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import axios from "axios";
-import { useQuery } from "react-query";
+import BlogCard from "./BlogCard/BlogCard";
 
 const img_hosting_tkn = "a272d7fb3d5b5ee711a07f62d1b2c93f";
 
 const BlogsPage = () => {
+  const [blogData, setBlogData] = useState([]);
   const { user } = useContext(AuthContext);
 
-  // get blogs data from db
-  const {
-    data: blogs = [],
-    refetch,
-    isLoading,
-  } = useQuery({
-    queryFn: async () => {
-      const res = await axios("/api/blogs");
-      return res.data;
-    },
-  });
-  console.log(blogs);
+
+  const BlogsData = async () => {
+    try {
+      const response = await fetch("/api/blogs");
+      const data = await response.json();
+      setBlogData(data);
+      // setIsLoading(false); // Set loading to false when data is fetched
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      // setIsLoading(false); // Set loading to false in case of an error
+    }
+  };
+  useEffect(() => {
+
+    BlogsData();
+  }, []);
 
   // img hosting url link
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_tkn}`;
@@ -87,14 +82,13 @@ const BlogsPage = () => {
 
         if (response.ok) {
           toast.success("Your blog has been submitted.");
-          refetch();
+          BlogsData();
         }
       } catch (error) {
         toast.error(error.message);
       }
     };
   };
-
   return (
     <div>
       <div>
@@ -109,15 +103,13 @@ const BlogsPage = () => {
           {/* card */}
           <div className="col-span-8 mx-6">
             {/* card container */}
-            <div className="card w-full bg-base-300 shadow-xl">
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
-              </div>
-            </div>
+
+            {
+              blogData.map(blog=><BlogCard
+              key={blog._id}
+              blog={blog}
+              ></BlogCard>)
+            }
             {/* card container */}
           </div>
           {/* card */}
@@ -186,7 +178,7 @@ const BlogsPage = () => {
                       </label>
                       <input
                         type="text"
-                        placeholder="blog title"
+                        placeholder="Blog Title"
                         {...register("blogTitle", {
                           required: true,
                         })}
@@ -203,11 +195,11 @@ const BlogsPage = () => {
                       </label>
                       <input
                         type="file"
-                        placeholder="blog photo"
+                        placeholder="Blog Photo"
                         {...register("blogPhoto", {
                           required: true,
                         })}
-                        className="w-full p-2 rounded"
+                        className="w-full file-input file-input-bordered"
                       />
                     </div>
 
@@ -222,8 +214,9 @@ const BlogsPage = () => {
                         id=""
                         cols="30"
                         rows="4"
+                        placeholder="Blog Description"
                         {...register("blogDetails", { required: true })}
-                        className="bg-transparent border-[1px] p-2 rounded border-black"
+                        className="textarea textarea-bordered textarea-md w-full "
                       ></textarea>
                     </div>
 
@@ -239,23 +232,8 @@ const BlogsPage = () => {
                 </div>
               </dialog>
             </div>
-
-            {/* social div */}
-            <div className="bg-indigo-50 rounded-xl px-7 py-3  mb-7 mt-5">
-              <div className="my-5 flex justify-between">
-                <p className="font-semibold">Social Media</p>
-                <p className="flex gap-2 cursor-pointer">
-                  <BiLogoFacebook className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
-                  <BiLogoInstagram className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
-                  <BiLogoTwitter className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
-                  <BiLogoLinkedin className="text-2xl text-gray-600 hover:text-pink-500 duration-300" />
-                </p>
-              </div>
-            </div>
-            {/* social div */}
-
             {/* contact Div */}
-            <div className="bg-indigo-50 rounded-xl px-7 py-3  mb-7 text-xl">
+            <div className="bg-indigo-50 rounded-xl px-7 py-3  mb-7 text-xl mt-8">
               <h2 className="text-xl font-semibold mt-4">Contact Us</h2>
               {/* form */}
               <div className="mx-auto mt-5 mb-3 ">
