@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
-const img_hosting_tkn = "81a7c8422a28322c0f8454a153fd86b4";
+const img_hosting_tkn = "a272d7fb3d5b5ee711a07f62d1b2c93f";
 
 const HRFormPage = () => {
   const { user } = useContext(AuthContext);
