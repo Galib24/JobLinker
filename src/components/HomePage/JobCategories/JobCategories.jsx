@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { TbCoins } from "react-icons/tb";
-import { BsFillArrowRightCircleFill, BsGear } from "react-icons/bs";
+import { BsGear } from "react-icons/bs";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { IoMegaphoneOutline } from "react-icons/io5";
 import { PiCode, PiNewspaperClippingLight } from "react-icons/pi";
@@ -52,14 +52,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 1 end */}
 
@@ -87,14 +79,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 2 end */}
 
@@ -122,14 +106,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 3 end */}
 
@@ -157,14 +133,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 4 end */}
 
@@ -192,14 +160,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 5 end */}
 
@@ -227,14 +187,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 6 end */}
 
@@ -262,14 +214,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 7 end */}
 
@@ -297,14 +241,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 8 end */}
 
@@ -332,14 +268,6 @@ const JobCategories = () => {
               </p>
             </div>
           </div>
-          {/* Link section start */}
-          <Link
-            href="/hrjobs"
-            className="group/edit invisible group-hover/item:visible px-2 py-1 rounded-full hover:duration-300">
-            <BsFillArrowRightCircleFill
-              className="group-hover/edit:text-blue-500 text-3xl text-blue-300 hover:duration-300" />
-          </Link>
-          {/* Link section end */}
         </div>
         {/* card 9 end */}
 

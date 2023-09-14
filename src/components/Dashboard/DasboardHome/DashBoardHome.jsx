@@ -1,7 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
-import { BiSearch } from 'react-icons/bi';
 import { FaEnvelopeOpenText, FaRegNewspaper, FaUsersViewfinder } from 'react-icons/fa6';
 import InsinghtsChart from '../Chart/InsinghtsChart/InsinghtsChart';
 import RevenueChat from '../Chart/RevenueChat/RevenueChat';
@@ -35,32 +33,54 @@ const DashBoardHome = () => {
 
             <div className='flex  justify-evenly'>
 
-
-
             </div>
 
             <div className='mt-5'>
-                <h2 className=' font-bold'>Today Jobs summery</h2>
+                <h2 className='font-bold'>
+                    Today Jobs summery
+                </h2>
                 <div className='md:flex'>
 
                     {/* Jobs summery start     */}
-                    <div className='md:flex gap-5 rounded-lg mt-5'>
+                    <div
+                        className='md:flex gap-5 rounded-lg mt-5'>
 
-                        <div className='rounded-lg border border-gray-200 p-2'>
-                            <FaRegNewspaper className=' text-2xl'></FaRegNewspaper>
-                            <h2 className='font-bold mt-2'>40</h2>
-                            <p className=' text-sm font-bold'>Total Jobs Post</p>
-                            <p className=' text-sm text-slate-500'>8% from Yesterday</p>
+                        <div
+                            className='rounded-lg border border-gray-200 p-2'>
+                            <FaRegNewspaper className=' text-2xl' />
+                            <h2
+                                className='font-bold mt-2'>
+                                40
+                            </h2>
+                            <p
+                                className='text-sm font-bold'>
+                                Total Jobs Post
+                            </p>
+                            <p
+                                className='text-sm text-slate-500'>
+                                8% from Yesterday
+                            </p>
                         </div>
-                        <div className='rounded-lg border border-gray-200 p-2'>
-                            <FaUsersViewfinder className=' text-2xl mb-2'></FaUsersViewfinder>
-                            <h2 className='font-bold'>5</h2>
-                            <p className='text-sm font-bold'>Total Interview</p>
-                            <p className='text-sm text-slate-500'>5% from Yesterday</p>
+                        <div
+                            className='rounded-lg border border-gray-200 p-2'>
+                            <FaUsersViewfinder className=' text-2xl mb-2' />
+                            <h2
+                                className='font-bold'>
+                                5
+                            </h2>
+                            <p
+                                className='text-sm font-bold'>
+                                Total Interview
+                            </p>
+                            <p
+                                className='text-sm text-slate-500'>
+                                5% from Yesterday
+                            </p>
                         </div>
 
-                        <div className='rounded-lg border border-gray-200 p-2'>
-                            <FaEnvelopeOpenText className=' text-2xl mb-2'></FaEnvelopeOpenText>
+                        <div
+                            className='rounded-lg border border-gray-200 p-2'>
+                            <FaEnvelopeOpenText className=' text-2xl mb-2' />
                             <h2 className='font-bold'>100</h2>
                             <p className='text-sm font-bold'>Total Apply</p>
                             <p className='text-sm text-slate-500'>5% from Yesterday</p>
