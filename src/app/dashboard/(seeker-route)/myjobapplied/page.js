@@ -59,38 +59,42 @@ const MyjobappliedPage = () => {
               <FaStar className="text-yellow-500"></FaStar> {item?.rating}
             </td>
             <td className="text-center">
-                <Link className="text-blue-600 " href={item?.seekerResumeLink}>
-                  Link
-                </Link>
+              <Link
+                target="_blank"
+                className="text-blue-600 "
+                href={item?.seekerResumeLink}
+              >
+                Link
+              </Link>
             </td>
-            {/* <td>
-                                        {selectedItemId === item._id ? (
-                                            <div>
-                                                <button
-                                                    className="btn px-4 py-2 rounded-lg text-white hover:bg-red-500 bg-[#40e1f9] ease-out duration-300"
-                                                    onClick={handleDelete}
-                                                >
-                                                    <FaTrash className="text-xl hidden lg:block" />
-                                                    <span>YES</span>
-                                                </button>
-                                                <button
-                                                    className="btn px-4 py-2 rounded-lg text-white bg-green-500 hover:bg-blue-500 ml-2"
-                                                    onClick={() => setSelectedItemId(null)} // Cancel deletion
-                                                >
-                                                    Cancel
-                                                </button>
-                                            </div>
-                                        ) : (
-                                            <button
-                                                className="btn px-4 py-2 rounded-lg text-white hover:bg-red-500 bg-[#40e1f9] ease-out duration-300"
-                                                onClick={() => setSelectedItemId(item._id)}
-                                            >
-                                                <FaTrash className="text-xl hidden lg:block" />
-                                                <span>Delete</span>
-                                                
-                                            </button>
-                                        )}
-                                    </td> */}
+            {/* 
+              <td>
+                {selectedItemId === item._id ? (
+                  <div>
+                    <button
+                      className="btn px-4 py-2 rounded-lg text-white hover:bg-red-500 bg-[#40e1f9] ease-out duration-300"
+                      onClick={handleDelete}
+                    >
+                      <FaTrash className="text-xl hidden lg:block" />
+                      <span>YES</span>
+                    </button>
+                    <button
+                      className="btn px-4 py-2 rounded-lg text-white bg-green-500 hover:bg-blue-500 ml-2"
+                      onClick={() => setSelectedItemId(null)} // Cancel deletion
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    className="btn px-4 py-2 rounded-lg text-white hover:bg-red-500 bg-[#40e1f9] ease-out duration-300"
+                    onClick={() => setSelectedItemId(item._id)}
+                  >
+                    <FaTrash className="text-xl hidden lg:block" />
+                    <span>Delete</span>
+                  </button>
+                )}
+              </td> */}
           </tr>
         )) || ""
 
