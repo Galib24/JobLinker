@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import { FaStar } from "react-icons/fa6";
+import { FiSend } from "react-icons/fi";
 
 const MyjobappliedPage = () => {
   const { user } = useContext(AuthContext);
@@ -18,8 +19,8 @@ const MyjobappliedPage = () => {
 
   return (
     <div>
-      <h2 className="text-center font-bold text-3xl my-10">
-        My Applied Job: {myJobApplies.length}
+      <h2 className="text-center font-bold text-2xl my-10">
+        <FiSend className="text-" /> My Applied Job: {myJobApplies.length}
       </h2>
 
       <table className="table">
@@ -59,7 +60,7 @@ const MyjobappliedPage = () => {
               <td>{item?.jobTitle}</td>
               {/* job type / job place */}
               <td>
-                <FaStar className="text-yellow-500"></FaStar> {item?.rating}
+                <FaStar className="text-yellow-500" /> {item?.rating}
               </td>
               <td className="text-center">
                 <Link
@@ -70,8 +71,7 @@ const MyjobappliedPage = () => {
                   Link
                 </Link>
               </td>
-              {/* 
-              <td>
+              {/* <td>
                 {selectedItemId === item._id ? (
                   <div>
                     <button

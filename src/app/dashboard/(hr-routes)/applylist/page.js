@@ -61,7 +61,7 @@ const HrSpecificApplyJobPage = () => {
               <FaStar className="text-yellow-500"></FaStar> {item?.rating}
             </td> */}
             <td className="text-center">
-              <Link className="text-blue-600 " href={item?.seekerResumeLink}>
+              <Link  target="_blank" className="text-blue-600 " href={item?.seekerResumeLink}>
                 Link
               </Link>
             </td>
