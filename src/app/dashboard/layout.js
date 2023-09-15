@@ -152,11 +152,11 @@ const DashboardLayout = ({ children }) => {
                     Management Applicant List
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <a>
                     Sidebar Item Hr item 2
                   </a>
-                </li>
+                </li> */}
               </>
             )
           }
