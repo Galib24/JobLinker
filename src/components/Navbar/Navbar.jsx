@@ -165,7 +165,7 @@ const Navbar = () => {
                   </Link>
                 </li>
 
-                {/*  */}
+                {/* Modal working here */}
                 {
                   matchedUser?.role ===
                     "hr"
