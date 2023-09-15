@@ -110,7 +110,7 @@ const Profile = () => {
                                     type="text"
                                     readOnly
                                     placeholder="Add Your Name"
-                                    defaultValue={user?.displayName}
+                                    defaultValue={user?.displayName || "Anonymous"}
                                     className="input input-bordered text-gray-400"
                                     required />
                             </div>

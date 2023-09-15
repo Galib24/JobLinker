@@ -11,8 +11,9 @@ import { FiSend } from "react-icons/fi";
 import { GrBlog } from "react-icons/gr";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { IoAnalyticsSharp, IoHomeOutline } from "react-icons/io5";
-import { MdOutlinePersonSearch, MdRebaseEdit } from "react-icons/md";
+import { MdOutlineForwardToInbox, MdOutlinePersonSearch, MdRebaseEdit } from "react-icons/md";
 import { useQuery } from "react-query";
+import { HiOutlineUserGroup } from "react-icons/hi";
 
 const DashboardLayout = ({ children }) => {
   const { user } = useContext(AuthContext);
@@ -142,21 +143,16 @@ const DashboardLayout = ({ children }) => {
                   <Link
                     className="font-semibold"
                     href="/dashboard/specifichrpost">
-                    My Job Post
+                    <MdOutlineForwardToInbox className="text-2xl text-gray-600" /> My Job Post
                   </Link>
                 </li>
                 <li>
                   <Link
                     className="font-semibold"
                     href="/dashboard/applylist">
-                    Management Applicant List
+                    <HiOutlineUserGroup className="text-2xl text-gray-600" /> Applicant List Manage
                   </Link>
                 </li>
-                {/* <li>
-                  <a>
-                    Sidebar Item Hr item 2
-                  </a>
-                </li> */}
               </>
             )
           }
@@ -176,7 +172,7 @@ const DashboardLayout = ({ children }) => {
                   <Link
                     className="font-semibold"
                     href="/dashboard/myjobapplied">
-                    <FiSend className="text-xl" />Applied Job
+                    <FiSend className="text-xl" />My Applied Job
                   </Link>
                 </li>
               </>
