@@ -182,7 +182,7 @@ const BlogsPage = () => {
                         {...register("blogTitle", {
                           required: true,
                         })}
-                        className="w-full p-2 rounded border-[1px] border-black"
+                        className="w-full input input-bordered uppercase"
                       />
                     </div>
 
