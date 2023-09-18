@@ -25,7 +25,7 @@ const JobSeekers = () => {
       <div className="my-10">
         <h2 className="text-3xl font-bold text-center mb-4">Find Seekers</h2>
         <p className="text-center font-medium">
-          Lorem ipsum dolor sit amen elite, sed do elusion tempore
+          We Try to provide a connection with Seeker and HR 
         </p>
       </div>
       <div className="grid md:grid-cols-3">

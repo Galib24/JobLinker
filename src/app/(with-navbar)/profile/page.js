@@ -52,7 +52,7 @@ const Profile = () => {
                             quality={100}
                             priority={true}
                             className='rounded-full'
-                            src={user?.photoURL}
+                            src={user?.photoURL || ""}
                             alt="" />
                     </div>
                     <div
@@ -70,14 +70,14 @@ const Profile = () => {
                         className='flex items-center justify-center mt-2'>
                         <p
                             className='text-xl font-semibold px-3 rounded-full mb-1'>
-                            Name: {user?.displayName}
+                            Name: {user?.displayName || "Anonymous"}
                         </p>
                     </div>
                     <div
                         className='flex items-center justify-center'>
                         <p
                             className='text-sm font-semibold mt-1 mb-3 text-gray-500'>
-                            Email: {user?.email}
+                            Email: {user?.email || "Anonymous"}
                         </p>
                     </div>
                     <p
@@ -124,7 +124,7 @@ const Profile = () => {
                                 <input
                                     type="text"
                                     readOnly
-                                    defaultValue={user?.email}
+                                    defaultValue={user?.email || "Anonymous"}
                                     className="input input-bordered text-gray-400"
                                     required />
                             </div>
@@ -162,7 +162,7 @@ const Profile = () => {
                         <div
                             className="form-control mt-6 lg:mx-0 mx-4">
                             <input
-                                className="bg-[#40e1f9] rounded-lg text-white ease-out duration-300 mt-3 py-3 mx-4"
+                                className="bg-[#40e1f9] rounded-lg cursor-pointer text-white ease-out duration-300 mt-3 py-3 mx-4"
                                 type="submit"
                                 value="Save Your Info" />
                         </div>

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import yeahia from '../../../asserts/about/yeahia.jpg'
+// import yeahia from '../../../asserts/about/yeahia.jpg'
 import rahat from '../../../asserts/about/rahat.jpg'
 import shakil from '../../../asserts/about/shakil.jpg'
 import likhon from '../../../asserts/about/likhon.jpg'
@@ -12,7 +12,7 @@ const AboutPage = () => {
 
                 <div className="about">
                     <div className="about-img"> 
-                        <Image className='profile-pic rounded-full' src={yeahia} width={0} height={0} style={{ width: '100%', height: '100%'}} alt=''></Image>
+                        <Image className='profile-pic rounded-full' src='https://i.ibb.co/fN2CS0r/Capture.png' width={100} height={100} style={{ width: '100%', height: '100%'}} alt=''></Image>
                     </div>
 
                     <div className='about-info mx-auto'>
