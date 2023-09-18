@@ -2,25 +2,91 @@
 
 import { AuthContext } from '@/provider/AuthProvider';
 import Image from 'next/image';
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MdEditNote } from 'react-icons/md';
+import defaultImg from "@/asserts/profile.png";
+import toast from 'react-hot-toast';
+import Loading from '@/components/Shared/Loading/Loading';
 
 const Profile = () => {
-
     // user come from AuthContext
     const { user } = useContext(AuthContext);
+    const [profileInfos, setProfileInfos] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
 
-    const [isEditing, setIsEditing] = useState(false);
-    const [inputValue, setInputValue] = useState('Initial Value');
-
-    const handleEditClick = () => {
-        setIsEditing(true);
+    const profileInfoData = async () => {
+        try {
+            const response = await fetch("/api/profileinfo");
+            const data = await response.json();
+            setProfileInfos(data);
+            setIsLoading(false);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     };
+    useEffect(() => {
+        profileInfoData();
+    }, []);
+    console.log(profileInfos);
 
-    const handleSaveClick = () => {
-        setIsEditing(false);
-        // You can handle saving the edited value to your backend or perform any other actions here
-    };
+
+    const matchedUserWithArray = profileInfos?.filter(
+        (info) => info?.email === user?.email
+    );
+
+    // if (!user || isLoading) {
+    //     // use a loading please...
+    //     if (isLoading) {
+    //         <Loading />
+    //     }
+    // }
+
+    const matchedProfileData = matchedUserWithArray[0];
+
+
+    const handleUserInfo = (event) => {
+        event.preventDefault();
+        const form = event.target;
+
+        const name = form.name.value;
+        const phone = form.phone.value;
+        const address = form.address.value;
+        const country = form.country.value;
+        const education = form.education.value;
+
+        const userProfileData = {
+            name: user?.displayName || name,
+            email: user.email,
+            phone,
+            address,
+            country,
+            education,
+        }
+        // console.log(userProfileData);
+
+        // send users data to db
+        const userInfoToDb = async (userProfileData) => {
+            try {
+                const response = await fetch("/api/profileinfo", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                    body: JSON.stringify(userProfileData),
+                });
+
+                if (response.ok) {
+                    toast.success("Profile update successfully completed.");
+                    profileInfoData();
+                }
+            } catch (error) {
+                toast.error(error.message);
+            }
+        };
+
+        userInfoToDb(userProfileData);
+
+    }
 
     return (
         <div
@@ -52,7 +118,7 @@ const Profile = () => {
                             quality={100}
                             priority={true}
                             className='rounded-full'
-                            src={user?.photoURL || ""}
+                            src={user?.photoURL || defaultImg}
                             alt="" />
                     </div>
                     <div
@@ -86,88 +152,128 @@ const Profile = () => {
                     </p>
                 </div>
 
-                <div
-                    className='col-span-8 bg-indigo-50 me-4 rounded-lg'>
-                    <div
-                        className='text-center text-2xl font-medium mt-4'>
-                        Your Addition Information
-                    </div>
-                    {/* form section start */}
-                    <form
-                        className="font-bold mt-6 pb-6"
-                    // onSubmit={handleUpdate}
-                    >
-                        <div
-                            className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span
-                                        className="label-text">
-                                        * Name (Name cannot be changed)
-                                    </span>
-                                </label>
-                                <input
-                                    type="text"
-                                    readOnly
-                                    placeholder="Add Your Name"
-                                    defaultValue={user?.displayName || "Anonymous"}
-                                    className="input input-bordered text-gray-400"
-                                    required />
+                {
+                    matchedProfileData?.phone ? <>
+                        <h2>Hello: {matchedProfileData.phone}</h2>
+                    </> : <>
+                        {
+                            isLoading ? <div className='flex items-center justify-center'><Loading /></div> : <div
+                                className='col-span-8 bg-indigo-50 me-4 rounded-lg'>
+                                <div
+                                    className='text-center text-2xl font-medium mt-4'>
+                                    Your Addition Information
+                                </div>
+                                {/* form section start */}
+                                <form
+                                    className="font-bold mt-6 pb-6"
+                                    onSubmit={handleUserInfo}
+                                >
+                                    <div
+                                        className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span
+                                                    className="label-text">
+                                                    * Name (Name cannot be changed)
+                                                </span>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name='name'
+                                                placeholder="Add Your Name"
+                                                defaultValue={user?.displayName || ""}
+                                                className="input input-bordered text-gray-400"
+                                                required />
+                                        </div>
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span
+                                                    className="label-text">
+                                                    * Email Address (Email Address cannot be changed)
+                                                </span>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                readOnly
+                                                defaultValue={user?.email || "Anonymous"}
+                                                className="input input-bordered text-gray-400"
+                                                required />
+                                        </div>
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span
+                                                    className="label-text">
+                                                    * Phone Number
+                                                </span>
+                                            </label>
+                                            <input
+                                                type="number"
+                                                name="phone"
+                                                placeholder="Add Your Phone Number"
+                                                // defaultValue={phone}
+                                                className="input input-bordered"
+                                                required />
+                                        </div>
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span
+                                                    className="label-text">
+                                                    * Address
+                                                </span>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="address"
+                                                placeholder="Add Your Address"
+                                                className="input input-bordered"
+                                                // defaultValue={address || "or"}
+                                                required />
+                                        </div>
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span
+                                                    className="label-text">
+                                                    * Your Country
+                                                </span>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="country"
+                                                placeholder="Add Your Country"
+                                                className="input input-bordered"
+                                                // defaultValue={address || "or"}
+                                                required />
+                                        </div>
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span
+                                                    className="label-text">
+                                                    * Education Background
+                                                </span>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="education"
+                                                placeholder="Add Your Education"
+                                                className="input input-bordered"
+                                                // defaultValue={address || "or"}
+                                                required />
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="form-control mt-6 lg:mx-0 mx-4">
+                                        <input
+                                            className="bg-[#40e1f9] rounded-lg cursor-pointer text-white ease-out duration-300 mt-3 py-3 mx-4"
+                                            type="submit"
+                                            value="Save Your Info" />
+                                    </div>
+                                </form>
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span
-                                        className="label-text">
-                                        * Email Address (Email Address cannot be changed)
-                                    </span>
-                                </label>
-                                <input
-                                    type="text"
-                                    readOnly
-                                    defaultValue={user?.email || "Anonymous"}
-                                    className="input input-bordered text-gray-400"
-                                    required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span
-                                        className="label-text">
-                                        * Phone Number
-                                    </span>
-                                </label>
-                                <input
-                                    type="number"
-                                    name="phone"
-                                    placeholder="Add Your Phone Number"
-                                    // defaultValue={phone}
-                                    className="input input-bordered"
-                                    required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span
-                                        className="label-text">
-                                        * Address
-                                    </span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="address"
-                                    placeholder="Add Your Address"
-                                    className="input input-bordered"
-                                    // defaultValue={address || "or"}
-                                    required />
-                            </div>
-                        </div>
-                        <div
-                            className="form-control mt-6 lg:mx-0 mx-4">
-                            <input
-                                className="bg-[#40e1f9] rounded-lg cursor-pointer text-white ease-out duration-300 mt-3 py-3 mx-4"
-                                type="submit"
-                                value="Save Your Info" />
-                        </div>
-                    </form>
-                </div>
+                        }
+                    </>
+                }
+
+
             </div>
         </div>
     );
