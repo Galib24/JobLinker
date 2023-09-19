@@ -87,7 +87,7 @@ const Profile = () => {
         userInfoToDb(userProfileData);
 
     }
-
+console.log(matchedProfileData);
     return (
         <div
             className='container mx-auto pt-16'>
@@ -154,7 +154,15 @@ const Profile = () => {
 
                 {
                     matchedProfileData?.phone ? <>
-                        <h2>Hello: {matchedProfileData.phone}</h2>
+                       <div className='grid grid-cols-2 gap-5'>
+                       <h2>Name: {matchedProfileData.name}</h2>
+                        <h2>Phone: {matchedProfileData.phone}</h2>
+                        <h2>Address: {matchedProfileData.address}</h2>
+                        <h2>Country: {matchedProfileData.country}</h2>
+                        <h2>Education: {matchedProfileData.education}</h2>
+                        <h2>Email: {matchedProfileData.email}</h2>
+                        <h2>User ID: {matchedProfileData._id}</h2>
+                       </div>
                     </> : <>
                         {
                             isLoading ? <div className='flex items-center justify-center'><Loading /></div> : <div
