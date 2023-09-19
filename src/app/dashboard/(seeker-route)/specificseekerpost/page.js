@@ -55,7 +55,7 @@ const Specificseekerpost = () => {
     (job) => job.seekerEmail === user?.email
   );
 
-  console.log(specificSeekerData);
+  // console.log(specificSeekerData);
 
   return <div>
     {/* {specificSeekerData?.map((jobPost) => (

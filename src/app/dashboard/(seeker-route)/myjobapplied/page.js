@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import { FaStar } from "react-icons/fa6";
 import { FiSend } from "react-icons/fi";
+import './page.css'
 
 const MyjobappliedPage = () => {
   const { user } = useContext(AuthContext);
@@ -15,14 +16,14 @@ const MyjobappliedPage = () => {
   const myJobApplies = seekerApplies?.filter(
     (job) => job.seekerEmail === user.email
   );
-  console.log(myJobApplies);
+  // console.log(myJobApplies);
 
   return (
     <div>
       <h2 className="text-center font-bold text-2xl my-10">
         <FiSend className="text-" /> My Applied Job: {myJobApplies.length}
       </h2>
-
+      <div className="overflow-x-auto">
       <table className="table">
         {/* head */}
         <thead>
@@ -102,6 +103,7 @@ const MyjobappliedPage = () => {
           )) || ""}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

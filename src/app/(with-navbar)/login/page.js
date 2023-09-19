@@ -37,7 +37,7 @@ const LoginPage = () => {
 
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     // sign in user
     signInUser(email, password)
@@ -101,7 +101,7 @@ const LoginPage = () => {
   // Reset Password functionality
   const handleResetPassword = () => {
     const email = emailRef.current?.value;
-    console.log(email);
+    // console.log(email);
     if (!email) {
       toast.error("Provide your email.", {
         position: "top-center",

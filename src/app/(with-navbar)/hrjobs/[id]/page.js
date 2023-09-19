@@ -79,7 +79,7 @@ const SingleHRPage = ({ params }) => {
   const matchedApplyData = seekerApplies?.find(
     (item) => item.beforeDataId === singleHrData._id
   );
-  console.log(matchedApplyData);
+  // console.log(matchedApplyData);
 
   // handle job apply
   const handleJobApply = async () => {

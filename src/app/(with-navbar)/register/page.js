@@ -39,7 +39,7 @@ const RegisterPage = () => {
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         if (loggedUser.email) {
           toast.success("Successfully Sign Up");
           replace(from);

@@ -14,7 +14,7 @@ const HrSpecificApplyJobPage = () => {
   const specificHrJobApp = seekerApplies?.filter(
     (job) => job.HrEmail === user.email
   );
-  console.log(specificHrJobApp);
+  // console.log(specificHrJobApp);
   // make the table with this data specificHrJobApp
 
   return <div>

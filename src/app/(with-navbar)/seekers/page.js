@@ -12,7 +12,7 @@ const JobSeekersPage = () => {
   // get the data from db
   useEffect(() => {
     const fetchSeekerData = async () => {
-      console.log(experience);
+      // console.log(experience);
       const response = await fetch(`/api/seeker?experience=${3}`);
       const data = await response.json();
       setSeekerData(data);

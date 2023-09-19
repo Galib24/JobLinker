@@ -13,7 +13,7 @@ const JobSeekers = () => {
     const fetchSeekerData = async () => {
       const response = await fetch("/api/seeker");
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setDataOfJobSeekers(data);
     };
 

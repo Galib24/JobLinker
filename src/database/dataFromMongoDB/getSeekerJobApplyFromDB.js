@@ -28,7 +28,7 @@ const GetSeekerJobApplyFromDB = () => {
     const fetchSeekerApplyData = async () => {
       const response = await fetch("/api/seekerJobApply");
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setSeekerApplies(data);
     };
 

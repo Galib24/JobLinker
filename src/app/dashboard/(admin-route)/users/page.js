@@ -6,6 +6,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { focusManager, useQuery } from "react-query";
 import { FaTrash } from "react-icons/fa6";
 
+
 const UsersPage = () => {
   // const [users, setUsers] = useState([]);
   const [DeleteUsers, setDeleteUsers] = useState([]);

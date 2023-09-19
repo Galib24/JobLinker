@@ -1,0 +1,22 @@
+/* Add this CSS to your stylesheet or style tag */
+@media (max-width: 768px) {
+    /* Adjust table column widths and hide some columns */
+    table.table {
+      width: 100%;
+    }
+    table.table th,
+    table.table td {
+      padding: 8px;
+      font-size: 14px;
+    }
+    table.table th:nth-child(2),
+    table.table td:nth-child(2) {
+      display: none; /* Hide the Image column */
+    }
+    table.table th:nth-child(3),
+    table.table td:nth-child(3) {
+      display: none; /* Hide the Company Email column */
+    }
+    /* You can hide other columns as needed */
+  }
+  

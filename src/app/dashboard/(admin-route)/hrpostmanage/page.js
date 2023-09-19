@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaStar, FaTrash } from "react-icons/fa6";
+import './page.css'
 
 const HrAllJobPost = () => {
     const [featureJobData, setFeatureJobData] = useState([]);

@@ -20,7 +20,7 @@ const SingleSeekerPage = ({ params }) => {
 
   const { id } = params;
 
-  console.log(singleSeekerData)
+  // console.log(singleSeekerData)
   const { education, findingJobTitle, image, jobExperience, seekerEmail, seekerJobTime, seekerName, skills, aboutMyself } = singleSeekerData
 
   // get the data

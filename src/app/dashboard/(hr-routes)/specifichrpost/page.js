@@ -14,7 +14,7 @@ const HrJobPostPage = () => {
     const fetchHrData = async () => {
       const response = await fetch("/api/hr");
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setFeatureJobData(data);
     };
 
@@ -24,7 +24,7 @@ const HrJobPostPage = () => {
   const specificHrData = featureJobData?.filter(
     (job) => job.HrEmail === user.email
   );
-  console.log(specificHrData);
+  // console.log(specificHrData);
 
   return (
     <div>

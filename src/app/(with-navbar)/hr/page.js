@@ -22,7 +22,7 @@ const HRFormPage = () => {
 
   // onsubmit function for react hook form
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     const {
       jobTitle,
       HrEmail,

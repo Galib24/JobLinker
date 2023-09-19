@@ -14,7 +14,7 @@ const FeaturedJobs = () => {
     const fetchHrData = async () => {
       const response = await fetch("/api/hr");
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setDataOfFeaturedJobs(data);
     };
 

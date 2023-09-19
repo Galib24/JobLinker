@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa6";
+import './page.css'
 
 const Seekerpostmanage = () => {
   const [dataOfJobSeekers, setDataOfJobSeekers] = useState([]);
@@ -45,7 +46,7 @@ const Seekerpostmanage = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-4xl font-semibold mt-20 mb-5 text-center">Seeker Management All Data </h2>
+      <h2 className="text-4xl font-semibold mt-20 mb-5 text-center sm:text-sm">Seeker Management All Data </h2>
       <div className="overflow-x-auto px-10 py-10 text-center">
 
         {isLoading ? ( // Render loader when isLoading is true
