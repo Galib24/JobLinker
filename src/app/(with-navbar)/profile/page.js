@@ -109,7 +109,7 @@ const Profile = () => {
                 className='grid grid-cols-12 mt-6 mb-10'>
 
                 <div
-                    className='col-span-4 bg-indigo-50 rounded-lg mx-4 h-fit'>
+                    className='col-span-12 lg:col-span-4 bg-indigo-50 rounded-lg mx-4 h-fit'>
                     <div
                         className='flex items-center justify-center mt-6'>
                         <Image
@@ -153,132 +153,169 @@ const Profile = () => {
                 </div>
 
                 {
-                    matchedProfileData?.phone ? <>
-                        <div className='grid grid-cols-2 gap-5'>
-                            <h2>Name: {matchedProfileData.name}</h2>
-                            <h2>Phone: {matchedProfileData.phone}</h2>
-                            <h2>Address: {matchedProfileData.address}</h2>
-                            <h2>Country: {matchedProfileData.country}</h2>
-                            <h2>Education: {matchedProfileData.education}</h2>
-                            <h2>Email: {matchedProfileData.email}</h2>
-                            <h2>User ID: {matchedProfileData._id}</h2>
-                        </div>
-                    </> : <>
-                        {
-                            isLoading ? <div className='flex items-center justify-center'><Loading /></div> : <div
-                                className='col-span-8 bg-indigo-50 me-4 rounded-lg'>
+                    matchedProfileData?.phone ?
+                        <>
+                            <div
+                                className='col-span-12 lg:col-span-8 lg:grid lg:grid-cols-2 mx-10 my-4'>
                                 <div
-                                    className='text-center text-2xl font-medium mt-4'>
-                                    Your Addition Information
+                                    className='col-span-2 flex text-2xl'>
+                                    <h2
+                                        className='font-semibold text-blue-400'>
+                                        Your Additional Info
+                                    </h2>
                                 </div>
-                                {/* form section start */}
-                                <form
-                                    className="font-bold mt-6 pb-6"
-                                    onSubmit={handleUserInfo}
-                                >
-                                    <div
-                                        className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span
-                                                    className="label-text">
-                                                    * Name (Name cannot be changed)
-                                                </span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name='name'
-                                                placeholder="Add Your Name"
-                                                defaultValue={user?.displayName || ""}
-                                                className="input input-bordered text-gray-400"
-                                                required />
-                                        </div>
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span
-                                                    className="label-text">
-                                                    * Email Address (Email Address cannot be changed)
-                                                </span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                readOnly
-                                                defaultValue={user?.email || "Anonymous"}
-                                                className="input input-bordered text-gray-400"
-                                                required />
-                                        </div>
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span
-                                                    className="label-text">
-                                                    * Phone Number
-                                                </span>
-                                            </label>
-                                            <input
-                                                type="number"
-                                                name="phone"
-                                                placeholder="Add Your Phone Number"
-                                                // defaultValue={phone}
-                                                className="input input-bordered"
-                                                required />
-                                        </div>
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span
-                                                    className="label-text">
-                                                    * Address
-                                                </span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="address"
-                                                placeholder="Add Your Address"
-                                                className="input input-bordered"
-                                                // defaultValue={address || "or"}
-                                                required />
-                                        </div>
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span
-                                                    className="label-text">
-                                                    * Your Country
-                                                </span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="country"
-                                                placeholder="Add Your Country"
-                                                className="input input-bordered"
-                                                // defaultValue={address || "or"}
-                                                required />
-                                        </div>
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span
-                                                    className="label-text">
-                                                    * Education Background
-                                                </span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="education"
-                                                placeholder="Add Your Education"
-                                                className="input input-bordered"
-                                                // defaultValue={address || "or"}
-                                                required />
-                                        </div>
-                                    </div>
-                                    <div
-                                        className="form-control mt-6 lg:mx-0 mx-4">
-                                        <input
-                                            className="bg-[#40e1f9] rounded-lg cursor-pointer text-white ease-out duration-300 mt-3 py-3 mx-4"
-                                            type="submit"
-                                            value="Save Your Info" />
-                                    </div>
-                                </form>
+                                <h2
+                                    className='font-semibold my-5 lg:my-0'>
+                                    Name: {matchedProfileData.name}
+                                </h2>
+
+                                <h2
+                                    className='font-semibold my-5 lg:my-0'>
+                                    Email: {matchedProfileData.email}
+                                </h2>
+                                <h2
+                                    className='font-semibold my-5 lg:my-0'>
+                                    Phone: {matchedProfileData.phone}
+                                </h2>
+                                <h2
+                                    className='font-semibold my-5 lg:my-0'>
+                                    Address: {matchedProfileData.address}
+                                </h2>
+                                <h2
+                                    className='font-semibold my-5 lg:my-0'>
+                                    Country: {matchedProfileData.country}
+                                </h2>
+                                <h2
+                                    className='font-semibold my-5 lg:my-0'>
+                                    Education: {matchedProfileData.education}
+                                </h2>
+                                <h2
+                                    className='font-semibold text-xs text-gray-500'>
+                                    User ID: {matchedProfileData._id}
+                                </h2>
                             </div>
-                        }
-                    </>
+                        </>
+                        :
+                        <>
+                            {
+                                isLoading ?
+                                    <div
+                                        className='flex items-center justify-center'><Loading />
+                                    </div>
+                                    :
+                                    <div
+                                        className='col-span-8 bg-indigo-50 me-4 rounded-lg'>
+                                        <div
+                                            className='text-center text-2xl font-medium mt-4'>
+                                            Your Addition Information
+                                        </div>
+                                        {/* form section start */}
+                                        <form
+                                            className="font-bold mt-6 pb-6"
+                                            onSubmit={handleUserInfo}>
+                                            <div
+                                                className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span
+                                                            className="label-text">
+                                                            * Name (Name cannot be changed)
+                                                        </span>
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        name='name'
+                                                        placeholder="Add Your Name"
+                                                        defaultValue={user?.displayName || ""}
+                                                        className="input input-bordered text-gray-400"
+                                                        required />
+                                                </div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span
+                                                            className="label-text">
+                                                            * Email Address (Email Address cannot be changed)
+                                                        </span>
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        readOnly
+                                                        defaultValue={user?.email || "Anonymous"}
+                                                        className="input input-bordered text-gray-400"
+                                                        required />
+                                                </div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span
+                                                            className="label-text">
+                                                            * Phone Number
+                                                        </span>
+                                                    </label>
+                                                    <input
+                                                        type="number"
+                                                        name="phone"
+                                                        placeholder="Add Your Phone Number"
+                                                        // defaultValue={phone}
+                                                        className="input input-bordered"
+                                                        required />
+                                                </div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span
+                                                            className="label-text">
+                                                            * Address
+                                                        </span>
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        name="address"
+                                                        placeholder="Add Your Address"
+                                                        className="input input-bordered"
+                                                        // defaultValue={address || "or"}
+                                                        required />
+                                                </div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span
+                                                            className="label-text">
+                                                            * Your Country
+                                                        </span>
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        name="country"
+                                                        placeholder="Add Your Country"
+                                                        className="input input-bordered"
+                                                        // defaultValue={address || "or"}
+                                                        required />
+                                                </div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span
+                                                            className="label-text">
+                                                            * Education Background
+                                                        </span>
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        name="education"
+                                                        placeholder="Add Your Education"
+                                                        className="input input-bordered"
+                                                        // defaultValue={address || "or"}
+                                                        required />
+                                                </div>
+                                            </div>
+                                            <div
+                                                className="form-control mt-6 lg:mx-0 mx-4">
+                                                <input
+                                                    className="bg-[#40e1f9] rounded-lg cursor-pointer text-white ease-out duration-300 mt-3 py-3 mx-4"
+                                                    type="submit"
+                                                    value="Save Your Info" />
+                                            </div>
+                                        </form>
+                                    </div>
+                            }
+                        </>
                 }
 
 
