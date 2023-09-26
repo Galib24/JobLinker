@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "@/provider/AuthProvider";
 import { FiLogIn } from "react-icons/fi";
-import { BiMenuAltRight } from "react-icons/bi";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import defaultImg from "@/asserts/profile.png";
 // import matchedUser from "@/utilities/getSpecificUsers/getSpecificUsers";

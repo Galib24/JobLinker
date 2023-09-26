@@ -7,7 +7,8 @@ const ContactFrom = () => {
         <div className='container mx-auto px-10 mb-20 mt-32'>
             <h1 className=' text-3xl  text-center font-bold'>Contact US</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 items-center justify-center my-5'>
-                <div>
+                <div
+                className='hidden lg:block'>
                     <Image
                         src={contactFrom}
                         alt=''
