@@ -138,6 +138,7 @@ const LoginPage = () => {
           </div>
         </Link>
       </div>
+      {/* practice */}
       {/* lottie */}
 
       {/* form */}
