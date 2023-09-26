@@ -18,6 +18,8 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
     "firebase": "^10.1.0",
+    "jose": "^4.14.6",
+    "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.0",
     "mongodb": "5.8",
     "next": "^13.4.19",

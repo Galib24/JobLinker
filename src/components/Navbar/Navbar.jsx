@@ -11,6 +11,8 @@ import defaultImg from "@/asserts/profile.png";
 // import matchedUser from "@/utilities/getSpecificUsers/getSpecificUsers";
 import GetSpecificUsers from "@/utilities/getSpecificUsers/getSpecificUsers";
 import { HiMenuAlt2 } from "react-icons/hi";
+import toast from "react-hot-toast";
+import { usePathname, useRouter } from "next/navigation";
 
 const styles = {
   navLinks:
@@ -23,10 +25,25 @@ const Navbar = () => {
 
   // user come from AuthContext
   const { user, signOutUser } = useContext(AuthContext);
+  const { replace } = useRouter();
+  const path = usePathname();
+
 
   // logout functionality
-  const handleLogout = () => {
-    signOutUser().then().catch();
+  const handleLogout = async () => {
+    try {
+      await signOutUser();
+      const res = await fetch("/api/auth/logout", {
+        method: "POST",
+      });
+      const data = await res.json();
+      toast.success("Successfully logout!");
+      if (path.includes('/hrjobs') || path.includes('/seekers')) {
+        replace('/login')
+      }
+    } catch (error) {
+      toast.error("Not logout!");
+    }
   };
 
 

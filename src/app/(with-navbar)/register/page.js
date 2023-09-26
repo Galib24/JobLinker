@@ -11,6 +11,7 @@ import { toast } from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "@/provider/AuthProvider";
 import { useRouter, useSearchParams } from "next/navigation";
+import createJWT from "@/utilities/createJWT/createJWT";
 
 const RegisterPage = () => {
   const { createUser } = useContext(AuthContext);
@@ -39,6 +40,7 @@ const RegisterPage = () => {
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        createJWT({ email });
         // console.log(loggedUser);
         if (loggedUser.email) {
           toast.success("Successfully Sign Up");

@@ -16,6 +16,7 @@ import Image from "next/image";
 import { AuthContext } from "@/provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { useRouter, useSearchParams } from "next/navigation";
+import createJWT from "@/utilities/createJWT/createJWT";
 
 const LoginPage = () => {
   const [show, setShow] = useState(false);
@@ -43,10 +44,11 @@ const LoginPage = () => {
     signInUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        createJWT({email});
         // console.log(loggedUser);
         if (loggedUser?.email) {
-          toast.success("Login successfully");
           replace(from);
+          toast.success("Login successfully");
         }
       })
       .catch((error) => {
@@ -61,6 +63,7 @@ const LoginPage = () => {
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((result) => {
+
         toast.success("Login successfully");
         // console.log(result.user.displayName);
         const loggedUser = result.user;
@@ -72,6 +75,8 @@ const LoginPage = () => {
           photo: loggedUser.photoURL,
           role: "",
         };
+
+        createJWT(userData.email);
 
         // send user data to db
         userDataPost(userData);
