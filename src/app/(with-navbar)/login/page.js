@@ -16,7 +16,7 @@ import Image from "next/image";
 import { AuthContext } from "@/provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { useRouter, useSearchParams } from "next/navigation";
-import createJWT from "@/utilities/createJWT/createJWT";
+// import createJWT from "@/utilities/createJWT/createJWT";
 
 const LoginPage = () => {
   const [show, setShow] = useState(false);
@@ -42,31 +42,21 @@ const LoginPage = () => {
 
     // sign in user
     signInUser(email, password)
-    .then((result) => {
-      const loggedUser = result.user;
-      createJWT({ email });
-
-      // Check if there's a redirectUrl in the query parameter
-      const searchParams = new URLSearchParams(window.location.search);
-      const redirectUrl = searchParams.get('redirectUrl');
-
-      if (redirectUrl) {
-        // Redirect to the specified URL after successful login
-        window.location.href = redirectUrl;
-      } else {
-        // If no redirectUrl is specified, you can redirect to a default route
-        // Replace this with your default route
-        window.location.href = '/';
-      }
-      
-      toast.success("Login successfully");
-    })
-    .catch((error) => {
-      console.log(error?.message);
-      toast.error(error?.message, {
-        position: "top-center",
+      .then((result) => {
+        const loggedUser = result.user;
+        // createJWT({email});
+        // console.log(loggedUser);
+        if (loggedUser?.email) {
+          replace(from);
+          toast.success("Login successfully");
+        }
+      })
+      .catch((error) => {
+        console.log(error?.message);
+        toast.error(error?.message, {
+          position: "top-center",
+        });
       });
-    });
   };
 
   // google login functionality
@@ -86,7 +76,7 @@ const LoginPage = () => {
           role: "",
         };
 
-        createJWT(userData.email);
+        // createJWT(userData.email);
 
         // send user data to db
         userDataPost(userData);
@@ -153,7 +143,6 @@ const LoginPage = () => {
           </div>
         </Link>
       </div>
-      {/* practice */}
       {/* lottie */}
 
       {/* form */}

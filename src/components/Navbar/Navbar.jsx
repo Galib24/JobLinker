@@ -32,16 +32,10 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await signOutUser();
-      const res = await fetch("/api/auth/logout", {
-        method: "POST",
-      });
-      const data = await res.json();
-      toast.success("Successfully logout!");
-      if (path.includes('/hrjobs') || path.includes('/seekers')) {
-        replace('/login')
-      }
+      // Redirect the user to the login page or any other desired page
+      window.location.href = '/login';
     } catch (error) {
-      toast.error("Not logout!");
+      console.error('Logout error:', error);
     }
   };
 
