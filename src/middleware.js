@@ -15,12 +15,12 @@ export const middleware = async (request) => {
         return NextResponse.next();
     } catch (error) {
         return NextResponse.redirect(
-        new URL(`/login?redirectUrl=${pathname}`,request.url))
+        new URL(`/login?redirectUrl=${pathname}` ,request.url))
     }
 
 };
 
 // See "Matching Paths" below to learn more
 export const config = {
-    matcher: ['/hrjobs/:path*', '/seekers/:path*'],
+    matcher: ['/about/:path*', '/blogs/:path*'],
 }
